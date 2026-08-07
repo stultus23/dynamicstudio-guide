@@ -1,0 +1,52 @@
+PAGE|27
+6 Requirements
+6.1 Minimum requirements
+l 64-bit PC with a modern multi-core Intel processor
+l 64-bit Microsoft® Windows 10™ with latest service packs and Windows updates
+l Microsoft® Windows© Installer v3.5 or later
+l Microsoft® .NET 4.8
+l 8 GB of RAM
+l FHD (1920x1080 pixels) or higher-resolution monitor with millions of colors
+l Mouse or compatible pointing device
+l For GPU processing:
+l NVIDIA GPU with Compute Capability 5.2 or higher and at least 2 GB memory
+l NVIDIA Driver >=516.94
+6.2 Recommended configuration
+l 16+ GB of RAM
+l 1 TB RAID0 configured hard-disk space for data storage
+l SSD for OS and programs storage media
+l GigaBit Base-T Ethernet or faster adapter with RJ-45 connector
+Microsoft® Windows© 95, 98, 98SE, Me, NT, 2000, XP, Vista, Windows© 7 and 32-bit Windows©
+10 operating systems are not supported.
+Notice: Installation must always be done as administrator, if necessary contact your network admin-
+istrator.
+Notice: Some basic Windows system files can be missing during the installation on a clean Win-
+dows PC. Therefore we always recommend having all the latest Windows service packs and
+updates installed along with the latest Edge browser.
+Warning: All USB dongles must be removed during the installation!
+During the installation, additional third-party products are installed:
+Rainbow Sentinel System Driver: This driver can be updated or removed using the add/remove
+pane in the Windows Control Panel. For more information or driver updates please visit www.rain-
+bow.com.
+DynamicStudio and remote agents require Microsoft .NET Framework Version 4.8 or later which
+will be installed as part of the DynamicStudio installation.
+If the Imaging system includes timer boards, frame grabbers or other computer boards for insertion
+in the PC, the appropriate drivers must be installed before installing DynamicStudio. Please follow
+the instructions provided in the Unpacking and Installation Guide on the download section
+http://www.dantecdynamics.com/download-login
+PAGE|28
+6.2.1 High DPI monitors
+Getting the most from DynamicStudio requires a monitor with at least 1920x1080 pixel. For phys-
+ically small screens or higher resolutions text, icons and so on may become very small in which
+case Windows Display settings can be set to scale up with 125%, 150%, 175% or even 200% to
+make them bigger. DynamicStudio is designed to adapt accordingly and enlarge fonts, dialogs etc
+when the display is scaled higher than the default 100%. It can however not handle a mix of dif-
+ferent scalings that may occur when running on a PC with multiple displays. The monitor on which
+DynamicStudio is initially opened determine the scaling used. If DynamicStudio is moved to a mon-
+itor with a different scaling it will remain functional, but may appear strange on screen. Using
+remote desktop to operate DynamicStudio remotely can cause similar problems if the remote dis-
+play runs with a different scaling than the local one. To recover from this shut down and restart
+DynamicStudio, it will reopen on the monitor from which it was closed and adapt to the scaling used
+there. Likewise dialogs may appear strange if they open on a monitor with another scaling than the
+one on which DynamicStudio itself was opened. To avoid the problem scale all monitors the same
+or try to keep all dialogs on the same monitor as the one on which DynamicStudio is running.

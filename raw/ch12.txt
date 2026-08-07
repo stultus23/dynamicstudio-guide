@@ -1,0 +1,1431 @@
+PAGE|50
+PAGE|51
+12 Getting Started
+The DynamicStudio Image Acquisition System comprises the DynamicStudio software including
+on-line image acquisition. The acquisition system can be configured with the desired parameter set-
+tings and data can be acquired, pre-viewed and saved to disk at the operator needs.
+A comprehensive number of data processing methods are available for analyzing the data after the
+acquisition has been made and the data are saved to disk.
+Normally the acquisition hardware used to control the camera and illumination system (typically a
+laser), hardware synchronization and data acquisition/transfer are installed in the same PC as the
+DynamicStudio software.
+The system supports a multitude of different cameras and can be configured for one or more cam-
+eras (typically using multiple cameras of the same type).
+A synchronization unit is used to generate trigger pulses for all cameras, light sources and/or a shut-
+ter devices.
+For more information about supported devices please see "Cameras" on page 210, "Syn-
+chronizers" on page 315, and "Illumination Systems" on page 405.
+12.1 Warranties and Disclaimers
+12.1.1 Camera Sensor Warranty
+Direct or reflected radiation from Argon or Nd:YAG lasers can damage the sensor of the camera.
+This may happen with or without power to the camera and with or without the lens mounted. There-
+fore when setting up and aligning for measurements, take extreme care to prevent this from hap-
+pening.
+Laser damage may turn up as white pixels in the vertical direction, or as isolated white pixels any-
+where in the image. This shows up clearly when acquiring an image with the lens cap on.
+The manufacturer has identified all sensor defects into classes. Often the character and location of
+all defects are on record. Additional defects arising from laser-induced damage may void the
+sensor warranty.
+Precautions
+1. Cap the lens whenever the camera is not in use.
+2. Cap the lens during set-up and alignment of the light sheet. Before removing the cap, make
+sure that reflections off the surface of any objects inside the light sheet do not hit the lens by
+observing where reflections go.
+3. As general precautions to avoid eye damage, carefully shield any reflections so that they do not
+exit from the measurement area. You must wear appropriate laser safety goggles during laser
+alignment and operation.
+12.2 Installation
+Please follow the instructions found in "Unpacking and installation guide" found on the download
+section of Dantec Dynamics A/S home page (http://www.dantecdynamics.com/download-login).
+12.2.1 Multiple installations of DynamicStudio
+It is possible to have multiple versions of DynamicStudio on the same PC and even have them run-
+ning side by side. This applies to major versions, so e.g. DynamicStudio 6.x, 7.x and 8.x can coex-
+ist, but e.g. DynamicStudio 7.5 & 7.6 cannot. Installing e.g. DynamicStudio 8.1 will preserve
+DynamicStudio 7.x, but overwrite 8.0 if present.
+PAGE|52
+The DynamicStudio installations are separated to avoid any conflict between them, but when a new
+version is installed a copy of the old Analysis Sequence Library will be made. Depending on con-
+tents some analysis sequences will work on both the old and the new DynamicStudio version, while
+others may not.
+12.3 Using DynamicStudio
+12.3.1 User Interface
+This helps contents information about the "Layout, tool bar and file menu" below and provides a
+step by step getting started procedure for the "Normal Use" on page 54 (data analysis) and for
+"Acquisition Mode" on page 55 (acquiring images).
+Layout, tool bar and file menu
+Layout and windows
+The classical look of DynamicStudio follows the interaction policy from other Dantec Dyncamics
+software products, and the Microsoft windows guidelines for the MS Office package.
+The ribbon based interface has six main tab categories. These six category tabs guide user
+through a measurement - from planning to data export - while going from left to right through the cat-
+egories, each of these tabs has multiple icons in the ribbon to interact with your data, or acquisition
+system.
+The categories are:
+l File: Start screen when no database was opened. Here you can find links to help files and
+videos, latest news on DynamicStudio, options, and settings.
+PAGE|53
+l Home: is the tab to create DynamicStudio databases, getting an overview of a database, and
+or general inspection
+l Setup: this tab offers multiple options for settings, tools, and libraries to plan and prepare your
+acquisition system
+l Acquisition: in this tab the data acquisition is carried out
+l Calibration: is the tab used for spatial calibration, scales factor computation and coordinate sys-
+tem layout. Note it is important to measure scale factors, or perform calibration before data ana-
+lysis!
+l Analysis: is used to process data, from pre-prpcessing until exportation of a final video.
+PAGE|54
+The layout can be customized differently for acquisition mode and normal mode. Different windows
+can be displayed from the drop down menue next to the help file (grey three from overview image),
+or from the Show / Hide Icon from the Ribbon present in the Home, the Acquisition, the calibration
+and the analysis tab.
+l Devices: to add devices and to see the one (cameras, frame grabbers, agent,...) are use. For
+more information see "Automatic device detection" on page 56 or "Adding devices manually"
+on page 57.
+l Device Properties: to read and change the devices properties displayed in the device window.
+l System Control: to acquire data and to set acquisition parameters. For more information see
+"Acquiring Images" on page 59.
+l Acquired Data: to display the database tree.
+l Synchronization Cables: to tell DynamicStudio how devices are connected. For more inform-
+ation "Device connection" on page 58.
+l Log: to display error and warning messages. It is recommended to keep this window.
+l Database: display and handle the database.
+l Record Properties: view and edit properties of individual database records.
+l Agents: state of acquisition agents.
+All entries that you add to the Tool menu will still be present after installation of a new Dynam-
+icStudio version. In general, all files added manually to the DynamicStudio folder wil not be deleted
+by installing or re-installing DynamicStudio.
+Normal Use
+When you start DynamicStudio you will see the default database view:
+PAGE|55
+You can change the screen layout, but this is the default and will be used throughout this manual.
+The top of the screen features a normal menu and toolbar. Everything in the right hand side is
+related to the acquisition of images, while the left hand side is intended for managing both images
+that has already been acquired and other data derived from them. The gray area in the middle is
+the working area where you can display and examine acquired images as well data derived from
+them.
+Creating a Database
+From the File menu you can open existing DynamicStudio databases or create a new one to hold
+the images that you acquire. To create a new one click File, and from the home window, open a
+new database... and specify name and location for a new database.
+DynamicStudio has a specific data structure to keep the data stored in the database in one loc-
+ation, they are stored as separate files to prevent that corruption of single data set doesn’t lead to a
+corruption of the entire database.
+Acquisition Mode
+To enter Acquisition Mode press Run/Enter Acquisition Mode or click the little green button
+on the toolbar.
+PAGE|56
+When you enter acquisition mode DynamicStudio will search for Acquisition Agents on the local PC
+and/or other PC's on the local network. The agents found will be prompted for information about
+various hardware devices connected to the PC in question.
+Automatic device detection
+Cameras and synchronization devices are auto-detected by DynamicStudio and appear auto-
+matically in the 'Devices' list in the middle right-hand part of the screen: The auto-detection will also
+detect if connection is lost to either of them and indicate this by changing the text color to red.
+PAGE|57
+The auto-detection may take a few seconds, but you need not do anything to tell the system e.g.
+what kind of camera(s) are connected.
+Adding devices manually
+Only 'intelligent' devices can be auto-detected, while e.g. lasers or other light sources typically can-
+not. These have to be added manually, by right clicking in the device list below the last device
+shown. In the context menu select Add New Device... and select your laser from the list:
+PAGE|58
+Having selected a laser, the device list should look like this:
+Device connection
+When all devices in your system are listed it is time to tell DynamicStudio how they are connected.
+Some synchronization units are very flexible with respect to where e.g. the camera trigger cable
+should be connected, while other synchronization units allow only one specific way of connecting
+the other devices.
+From the View menu select Synchronization Cables to display a diagram of connected devices.
+PAGE|59
+At first you should just see the various devices without any connections between them. If you right
+click e.g. the arrow at camera trig you can Restore Default Connections..., which will suggest a pos-
+sible connection to the synchronization unit.
+Provided of course devices really are connected as shown in the diagram, you are now ready to
+start acquiring images.
+Acquiring Images
+In the default screen layout of DynamicStudio the main system control is in the upper right corner of
+the screen. If Acquired Data is shown click the tab labeled System Control.
+PAGE|60
+You can specify how many images you wish to acquire (limited by the size of the image buffer).
+You can also specify the time between pulses to use if double-frames (or double-exposed single
+frames) are to be acquired.
+You can specify the desired trigger rate, limited by the capabilities of the camera.
+You can specify whether to acquire single- or double-frame images.
+Here you can also specify if you want to change the coordinate system from the beginning of your
+project, by selecting " Axes" on the facing page
+There are three different ways of acquiring images with DynamicStudio, corresponding to the three
+topmost buttons in the right hand side of the system control window:
+Free Run
+In free run the camera is running freely, i.e. not synchronized with other hardware devices. This
+means e.g. that in this mode the laser (or other light source) is not flashing, and the frame rate of
+the camera does not necessarily correspond to the nominal value from the system control. If ambi-
+ent light is strong enough compared to exposure time you should be able to see images and focus
+the camera.
+The camera will continue acquiring data until you press Stop continually overwriting the oldest
+images in the buffer. If you set the system up to acquire say 20 images, the last 20 acquired will
+remain in the buffer after you press Stop so you can browse through them and store them if you
+wish.
+Preview
+In preview mode all devices are synchronized, the laser is flashing and camera triggers acquires
+images at the rate specified in the System Control panel. It will not stop acquiring images when the
+requested number of images have been acquired, but simply overwrite the oldest image with the
+most recent one. It will continue acquiring images until you press Stop and again the last images
+acquired remain in the buffer for evaluation and possibly storage.
+Acquire
+Acquire does exactly the same as Preview with the one exception that it stops when the requested
+number of images have been acquired. You can of course stop it earlier by pressing the Stop but-
+ton, in which case the allocated buffer will not be full, but hold the images acquired until you
+stopped the acquisition.
+Note Common to all run modes is that acquired data can be saved to the database.
+After selecting "Acquire" or "Preview" it might be needed that cameras or other sensors might need
+calibration. Therefore DynamicStudio automatically checks if the calibration of one or more devices
+is needed and will warn the user, in case not all sensors are calibrated which is described in the fol-
+lowing section.
+Semi Automatic Sensor calibration
+For high image quality and noise removal a camera sensor calibration might be necessary after
+changing the exposure time, the frequency, the operation mode form single- to double-frame (or
+the other way round). When the user tries to start a preview or an acquisition after a change of para-
+meters and the software reminds him to perform a calibration and the following pop up will occur:
+PAGE|61
+In case you are fine with the camera sensor calibration you can press "Cancel", or "Acquire". In
+case you want to update the sensor calibration please press preview and calibrate. and you are
+guided through the sensor calibration procedure, where the software will automatically select the
+needed method for your actual camera configuration. Please note that for many cameras without
+an internal mechanical shutter the lens has to be covered during the process.
+This "Semi automatic calibration" can also be started from the device settings under "Image Sensor
+Calibration" in case of cameras or other devices.
+Axes
+when selecting "Define axes" the following dialog will appear. Note that you can not assign axis dir-
+ections, these are set up in the interfaces of the "Multi Camera Calibration", the "Measure Scale
+Factor" or the "Field of View"
+together with the scale factor.
+When axes are reassigned, it is of importance that in record properties, and in all other parts of
+DynamicStudio where coordinate systems are affected, one takes great care to be consistent with
+the axes' definition. If you want to change you axis definition later you can also get to the settings
+window by a right mouse click on the calibration record and then choose "Define axes".
+PAGE|62
+But Note if you change the settings for the Axis definition or your scalefactor after you have pro-
+cessed images you have to recompute your results to make the changes beeing affective.
+Storing and Evaluating Acquired Images
+Whether acquisition stops automatically or because you click Stop, the last images acquired will
+remain in the buffer for evaluation and storage.
+To evaluate and/or store the images in the buffer click the tab labeled Acquired Data:
+Evaluating images
+When acquisition stops the very last image acquired will typically be shown on the screen and with
+controls in the Acquired Data window you can browse through the images in the buffer while the dis-
+play window updates accordingly. You can even play back as a movie specifying the time between
+each new frame in the dialog Time interval.
+You need not play back all images, but can start part way into the buffer and stop before reaching
+the end. To do this, click and drag the pink dots at either end of the green line in the window above.
+PAGE|63
+The blue arrow indicates which image is presently shown on the screen and can also be moved
+around by clicking and dragging with the mouse.
+Storing images
+While in the buffer images is still only stored temporarily in RAM. In the window with Acquired Data
+you can choose to store the images in the database, meaning also that they are transferred to the
+hard disk for permanent storage.
+As with the playback described above you need not store all of the images, but may opt to store just
+some of them using the same controls as used for the movie playback.
+There are two buttons for storing images, Save in Database and Save for Calibration.
+The first one is for normal data, while the second, as the name implies, is intended for calibration
+images of various kinds. If for example you've taken a picture of a ruler to determine scaling, you
+would store the image for calibration.
+Specifically identifying calibration images to the system is an advantage for later processing, since
+such images are inherently different from other images and are generally processed and used very
+different from 'normal' images.
+When images are saved in the database they will appear in the database view in the left hand side
+of the screen, from where you can access them the same as you would access old data from an
+existing database.
+12.3.2 Normal Use
+When you start DynamicStudio you will see the ribbon based interface, typically with the last
+opened database. DynamicStudio holds 6 main control features.
+With the first one, the tab is selected , with the 2nd one the user has icons to initiate different
+actions to acquire or analyze data
+You can change the screen layout, but this is the default and will be used throughout this manual.
+The top of the screen features a normal menu and toolbar. Everything in the right hand side is
+related to the acquisition of images, while the left hand side is intended for managing both images
+that has already been acquired and other data derived from them. The gray area in the middle is
+the working area where you can display and examine acquired images as well as data derived from
+them.
+PAGE|64
+When you fist time start DynamicStudio you are left with an empty database in the home tab, here
+or in the file tab, you can create a new database. In case you want to open an existing one, you can
+find this in the file tab.
+The data structure of DynamicStudio
+DynamicStudio is getting regular updates to make it easier, faster, add new functionality and more.
+This also means, that from time to time also data formats change. In DynamicStudio each single
+data set is saved as a separate item to ensure data security. These files are stored in sub-folders
+for each project, run and analysis step. For more information please look here: "Database Access"
+on page 73
+The main folder of the database and is integrated with the DynamicStudio Icon, see image below.
+ThedatabasestructureintroducedinDynamicStudio7.
+The Database converter
+Another change is introduced with DynamicStudio 8, where each of the data set files now has a dif-
+ferent format. This means older databases need to be converted to the new DynamicStudio 8
+format. Therefore an extra database converter is introduced.
+Installation of the Database converter
+On the download page of DynamicStudio next to the installation of the main program itself the
+installation of the Database converter can be found. Ones this is downloaded one simply needs to
+follow the installation instructions.
+PAGE|65
+If the database converter is not downloaded and installed separately, DynamicStudio will ask users
+to download it automatically, if an older DynamicStudio database is opened.
+Converting DynamicStudio databases
+If older DynamicStudio databases are opened with DynamicStudio 8 it will recognize that the data-
+base is using an outdated format, it will ask you if you want to create a copy of it and convert this to
+the latest format. Alternative the Database converter can by launched via the start menu. Ones
+installed the converter can be started from the program folder, or by typing "database converter"
+into the windows start menu.
+To select a database simply select it from the following browser window.
+But as mentioned already double clicking an old database will also launch the converter and ask if a
+copy should be created and converted.
+The converter
+The database converter will never overwrite existing databases, but always generate a copy which
+gets converted. During the conversion the raw images are changed to the new "Coordinate Sys-
+tem" on page 83 of DynamicStudio. A line by line log file informing about the status is created dur-
+ing the conversion. If something is going wrong, this is highlighted in red, and a suggestion is made
+PAGE|66
+on what to change. In the example below it highlights that 2 errors were found.
+This is caused by deleted raw images. In general the converter has problems if the database holds
+deleted content, or if camera scale factors are not consistent within older DynamicStudio projects.
+in the given database the deleted original images can not be restored, thus this project is lost and
+can not be used in DynamicStudio 8 or later.
+Ones the converter has finished, the database is automatically opened, and as one can see below
+all the content of the computed data appears to be deleted. This is due to the change of the coor-
+diante system in DynamicStudio 8 which makes a re-computation necessary.
+To recompute the data, simply use the "Update non current analysis (entire branch)" on the main
+database symbol, and all analysis steps will be updated.
+PAGE|67
+Acquisition Mode
+To enter Acquisition Mode press Acquisition Mode or click the little green button
+on the gibbon
+of the acquisition tab
+When you enter acquisition mode DynamicStudio will search for Acquisition Agents on the local PC
+and/or other PC's on the local network. The agents found will be prompted for information about
+various hardware devices connected to the PC in question.
+Automatic device detection
+Most cameras and synchronization devices are auto-detected by DynamicStudio and appear auto-
+matically in the 'Devices' list in the middle right-hand part of the screen: The auto-detection will also
+detect if connection is lost to either of them and indicate this by changing the text color to red.
+PAGE|68
+The auto-detection may take a few seconds, but you need not do anything to tell the system e.g.
+what kind of camera(s) are connected.
+Adding devices manually
+Only a specific devices can be auto-detected it is mostly frame grabber or some USB based cam-
+eras or synchronizers, while e.g. lasers or other light sources typically cannot. These have to be
+added manually, by right clicking in the device list below the last device shown. In the context menu
+select Add New Device... and select your laser from the list:
+PAGE|69
+Having selected a laser, the device list should look like this:
+Device Properties
+Each added device has specific device properties, these are shown in the “Device Property” win-
+dow. In the example shown below the device properties of a simulated camera are shown. Please
+note that there are many different settings. For clarification the different properties are normally
+grouped in different sections which can be expended.
+PAGE|70
+Furthermore, these properties have different levels of depending on the users experience and com-
+plexity of the task. With a right mouse-click in the device property window and UI Level one can
+select the different modes, alternatively the user mode can easily be selected in the header of the
+device properties and thereby can switch from the most important to all possible settings in the
+view. For the given example the settings of the “UI Level: Expert” is given below:
+Device connection
+When all devices in your system are listed it is time to tell DynamicStudio how they are connected.
+Some synchronization units are very flexible with respect to where e.g. the camera trigger cable
+should be connected, while other synchronization units allow only one specific way of connecting
+the other devices.
+From the View menu select Synchronization Cables to display a diagram of connected devices.
+PAGE|71
+At first you should just see the various devices without any connections between them. If you right
+click e.g. the arrow at camera trig you can Restore Default Connections..., which will suggest a pos-
+sible connection to the synchronization unit.
+Provided of course devices really are connected as shown in the diagram, you are now ready to
+start acquiring images.
+Acquiring Images
+In the default screen layout of DynamicStudio the main system control is in the upper right corner of
+the screen. If Acquired Data is shown click the tab labeled System Control.
+The system control is used to define some of the acquisition parameters :
+l Time between pulses : time between the two laser pulses, i.e. the time difference between the
+two particle images
+PAGE|72
+l Trigger rate : Sampling frequency of the PIV setup
+l Number of images : specifies how many images are required in the acquisition
+l Single of Double frame PIV mode : in order to reach the minimum Time between pulses, the
+camera has to tun in double frame mode.
+Once those parameters are changed, they must be validated in order to be used by Dynam-
+icStudio. This can be done by pressing either TAB or Enter.
+If the validation is not done, and the user tries to click on one the acquisition button, the software
+will not start the acquisition. A second click on the
+button will be necessary to validate the parameters and start the process.
+There are three different ways of acquiring images with DynamicStudio, corresponding to the three
+topmost buttons in the right hand side of the system control window:
+Free Run
+In free run the camera is running freely, i.e. not synchronized with other hardware devices. This
+means e.g. that in this mode the laser (or other light source) is not flashing, and the frame rate of
+the camera does not necessarily correspond to the nominal value from the system control. If ambi-
+ent light is strong enough compared to exposure time you may be able to see images and perhaps
+focus the camera.
+The camera will continue acquiring data until you press Stop continually overwriting the oldest
+images in the buffer. If you set the system up to acquire say 20 images, the last 20 acquired will
+remain in the buffer after you press Stop so you can browse through them and store them if you
+wish.
+Preview
+In preview mode all devices are synchronized, the laser is flashing and the camera is triggered to
+acquire images at the rate specified in the System Control panel. It will not stop acquiring images
+when the requested number of images have been acquired, but simply overwrite the oldest image
+(s) with the most recent one(s). It will continue acquiring images until you press Stop and the latest
+images acquired remain in the buffer for evaluation and possibly storage.
+Note: For some cameras - especially High-Speed cameras - preview mode will result in bursts of
+measurements. While each burst will have the correct frame rate, the overall data rate may not be
+the same as when using the "acquire" mode.
+Acquire
+Acquire does exactly the same as Preview with the one exception that it stops when the requested
+number of images have been acquired. You can of course stop it earlier by pressing the Stop but-
+ton, in which case the allocated buffer will not be full, but hold the images acquired until you
+stopped the acquisition.
+Note: In all run modes acquired data can be saved to the database.
+Storing and evaluating and Acquired Images
+Whether acquisition stops automatically or because you click Stop, the last images acquired will
+remain in the buffer for evaluation and storage.
+To evaluate and/or store the images in the buffer click the tab labeled Acquired Data:
+PAGE|73
+Evaluating images
+When acquisition stops the very last image acquired will typically be shown on the screen and with
+controls in the Acquired Data window you can browse through the images in the buffer while the dis-
+play window updates accordingly. You can even play back as a movie specifying the time between
+each new frame in the dialog Time interval.
+You need not play back all images, but can start part way into the buffer and stop before reaching
+the end. To do this, click and drag the pink dots at either end of the green line in the window above.
+The blue arrow indicates which image is presently shown on the screen and can also be moved
+around by clicking and dragging with the mouse.
+Storing images
+While in the buffer images are still only stored temporarily in RAM. In the window with Acquired
+Data you can choose to store the images in the database, meaning also that they are transferred to
+the hard disk for permanent storage.
+As with the playback described above you need not store all of the images, but may opt to store just
+some of them using the same controls as used for the movie playback.
+There are two buttons for storing images, Save in Database and Save for Calibration.
+The first one is for normal data, while the second, as the name implies, is intended for calibration
+images of various kinds. If for example you've taken a picture of a ruler to determine scaling, you
+would store the image for calibration.
+Specifically identifying calibration images to the system is an advantage for later processing, since
+such images are inherently different from other images and are generally processed and used very
+different from 'normal' images.
+When images are saved in the database they will appear in the database view in the left hand side
+of the screen, from where you can access them the same as you would access old data from an
+existing database.
+12.3.3 Database Access
+This help provides information about
+PAGE|74
+Database Structure
+Copying and Moving Ensembles
+Database structure
+DynamicStudio stores data in a tree structure. The database is at the root of the tree structure,
+branching out into one or more project folders. Each project folder can hold both calibration images
+and normal images stored in so-called 'Runs'. Every time you transfer data from the image buffer to
+the database by saving the acquired images, a new Run is added to the latest project and time
+stamped for later reference. All project, run and ensemble labels can be changed later. You can cre-
+ate new projects e.g. to separate different experiment configurations.
+By right clicking on the different levels of the database, you can access different operations and
+properties
+PAGE|75
+Ensembles
+A core feature of DynamicStudio is the concept of ensembles, which represent a series of data as a
+single icon in the database. Typically an ensemble corresponds to a Run and can hold anywhere
+from a single to thousands of images or derived datasets. This helps navigate the very large
+amounts of data that can easily be acquired with modern imaging systems.
+The ensemble is the main data type in a DynamicStudio database and analysis methods default to
+processing entire ensembles. It is also possible to access and/or process subsets of ensembles by
+selecting datasets from the ensemble content. When analyzing an ensemble results are stored in a
+new child ensemble that branch off from the parent ensemble in the database tree. In special cases
+a single analysis may generate multiple child ensembles from one or more parent ensembles.
+These data ensembles are referred to as 'Siblings'.
+In the figure in the previous section the topmost ensemble has been renamed to 'Gain 0' and the
+text right next to the name indicate that this ensemble contain 50 datasets. From the icon we can
+see that the ensemble contain single frame images. Double-clicking the ensemble icon displays the
+1st image in the ensemble. To inspect individual images in an ensemble, right click the ensemble
+and select Contents from the resulting context menu:
+Browsing inside the contents list the display window will update accordingly to show individual data-
+sets in the ensemble.
+Project
+The database can be fragmented into projects. For example a project can correspond to a specific
+flow setup configuration.
+Calibration
+A calibration folder will always be present in a project that contains data. It is recommended to store
+images for calibration int this folder. Only one calibration folder per project can be created. From
+the ensemble under the calibration, the specific operations are:
+l To Define Origin and Scale
+l To perform a calibration
+l To pre-process images (Image Processing Library and Image arithmetic)
+PAGE|76
+Run
+When acquired images are stored, a new run will be created to contain the ensemble of stored data-
+sets. The analysis tools (among other things) are available in the ensemble right click menu as well
+as the analysis tab in the ribbon
+Deleting, Duplicating or Moving ensembles
+Any ensemble can be deleted from the database, by selecting it and pressing the 'Delete' key.
+Please note that child datasets will be deleted as well. The user will be asked to confirm once more
+before the data is actually deleted to avoid doing so by mistake. If the data about to be deleted was
+used as input to other analyses elsewhere in the database the user will be warned about this in the
+prompt to confirm if the data is to be deleted.
+Via 'Show Contents List' from the Context menu it is also possible to select and delete individual
+datasets from the ensemble, but only if the ensemble in question does not have child ensembles.
+From the context menu it is also possible to 'Duplicate' an ensemble, i.e. create a copy of the same
+data. This can be useful to compare analysis results with different recipe settings or try a new ana-
+lysis on the same data without mixing it up with analysis results previously computed. The duplicate
+ensemble will be added as a new child of the same parent, child data are not copied when a duplic-
+ate is made of their parent.
+Ensembles that do not have children can also be moved between runs or projects or from e.g. a nor-
+mal run to the calibration folder by a simple click and drag operation with the mouse. It is not pos-
+sible to move data the other way from the calibration folder to a normal run.
+When moving data between runs the settings such as time between frames, camera count and so
+on MUST be the same in the source and destination runs.
+Warning: Moving data around in the database may lead to loss of information, such as dependency
+between various datasets and it may thus corrupt the database. Moving ensembles is entirely the
+users responsibility, not recommended and should be done only in extreme necessity.
+PAGE|77
+12.3.4 Delete and Restore
+When enabled, the database feature 'Delete and Restore' will enable a 'Waste Bin', where items
+deleted from the database are temporarily stored, providing the option to restore the data to their
+original location in the database.
+By default 'Delete and Restore' is enabled, but it can be disabled via DynamicStudio Options.
+If 'Delete and Restore' is enabled, data deleted from DynamicStudio databases are not immediately
+deleted, but moved to a Waste Bin named 'Deleted Items'. If the deletion was a mistake it is pos-
+sible to restore the deleted items to their original location in the database.
+Deleted Items record
+When 'Delete and Restore' is enabled a record named 'Deleted Items' will appear in the database
+tree just below the root database icon.
+When the feature is first enabled the waste bin will be empty as shown by the icon in the left of the
+two figures above. Once data have been deleted (and thus moved to the waste bin) the icon will
+change to the one shown on the right, indicating that the waste bin contains items, which can poten-
+tially be restored.
+The properties of the Deleted Items record will indicate how much data is in the waste bin:
+Indicate parents to deleted items
+When data is deleted the parent record is marked in the database tree with a small indicator. This
+tells the user that deleted child items are in the waste bin, from where they can be restored.
+The indicators can be toggled on and off by pressing Ctrl-I, or by right-clicking the waste bin and
+selecting "Indicate parents to deleted items" or "Do not Indicate parents to deleted items". By
+default the indicators are on.
+Restoring deleted items
+To restore deleted items right-click the parent and select 'Restore deleted items (recursive)'. This
+will restore child datasets and possibly entire database branches descending from the record you
+right-clicked. The record from where you start need not itself have an indicator that deleted child
+data are in the waste bin. The system will scan through all descendant datasets restoring all
+deleted items recursively. This means also that in the extreme case you may right-click the data-
+PAGE|78
+base icon itself, select 'Restore deleted items (recursive)', and the system will restore all deleted
+items in the waste bin back to their original location in the database.
+Emptying the waste bin
+To empty Deleted Items right click the Deleted Items record and select 'Empty Deleted items'. All
+data in the waste bin will now be permanently deleted.
+To limit the amount of data in the waste bin you are also prompted to clean it up when a database is
+closed:
+This prompt will not appear if 'Delete and Restore' is disabled or if the waste bin is empty.
+The first 3 buttons are self-explaining, you may delete all items, leave all items, or delete old items,
+keeping only items deleted within the last week.
+To prevent this message from appearing again click 'Show alternatives...', which will open the 'Data-
+base' tab of the 'Options' dialog:
+With respect to the handling of deleted items you have three possibilities here. The last one is to be
+prompted as shown above every time a database is closed, the other two will permanently delete
+PAGE|79
+all or delete old items without prompting the user. If the prompt has been disabled and you wish to
+enable it again you can access the Options dialog via the 'Tools' menu in DynamicStudio.
+Note: Even if you set up the system to delete items older than 7 days the waste bin may in fact con-
+tain items that are older. This is because the clean-up takes place when the database is closed, not
+when it is opened. Imagine that you close a database and decide to keep deleted items that are
+less than 7 days old. If two weeks pass before the database is opened again it may then contain
+deleted items that are 3 weeks old.
+12.3.5 Working with the Database
+DynamicStudio databases are based on ensembles. An ensemble is a collection of data, which
+logically behaves like one single dataset. If for example the user has acquired 100 PIV images from
+1 camera, they will appear in the database as one ensemble. If two cameras were used, the images
+would be represented by two ensembles - one for each camera.
+Working on ensembles
+Most data processing is performed directly on the ensembles. Lets say that you want to perform a
+PIV analysis of the above-mentioned ensemble. By selecting "Analyze" from the context menu of
+the ensemble and then "Planar PIV & PTV" -> "Analysis" -> "Adaptive PIV", the PIV analysis will be
+carried out on all 37 image pairs in the ensembles. The result is another ensemble - containing 37
+Vector maps.
+PAGE|80
+Methods, which require a long range of successive input, are easily handled via the ensembles. For
+instance calculating the average of the above-mentioned 37 Vector maps. From the context menu
+of the vector map ensemble select "Planar PIV & PTV"-> "Post-Processing & Visualization" ->
+"Vector Statistics" and the average of all 37 Vector maps will be calculated along with other stat-
+istical properties of the vector ensemble.
+Expanding ensembles
+It is also possible to work on individual elements of an ensemble. From the context menu of the
+ensemble select "Contents", the ensemble will open and you can see the individual data. Double
+clicking any data in this list will open op this particular dataset of the ensemble.
+Analyzing a part of an ensemble
+Selecting "Analyze.." from the context menu of a specific dataset will make it possible to perform an
+analysis on this dataset only. The result will be a new ensemble containing one dataset only. When
+the dataset has been analyzed you will be prompted if you wish to also analyze the remaining data-
+sets in the parent ensemble.
+PAGE|81
+User Selected Data
+Some analysis methods require data from more than one ensemble to be specified. An example is
+the masking function. Here it is necessary to select the mask before the masking is carried out. The
+selection method is used for this. Data selected by this method is called "User Selected data".
+When trying to perform an analysis, which require a user selection, without having performed the
+selection, this method's info box will contain a statement in red, that the selection is missing.
+Another example of how to use the select method is when performing an average correlation. Here
+it is not mandatory to have a selected dataset. However, if a vector map has been selected before
+the analysis is called, this vector map will be used to offset the interrogation areas.
+PAGE|82
+Pairing ensembles
+It is possible to pair multiple datasets from two ensembles. This could for instance be necessary
+when adding to sets of image maps. If the analysis method: "Image Arithmetic" - "add" is carried out
+on an ensemble containing 37 image maps, while another ensemble containing another 37 image
+maps has been "selected", the add function will add image 1 from the input ensemble to image 1
+from the selected ensemble, image 2 from the input ensemble to image 2 from the selected
+ensemble and so on.
+Multi selection
+It is possible to select multiple ensembles and perform the same action on all the selected
+ensembles. There are three ways to select multiple ensembles:
+PAGE|83
+l Hold down the Ctrl key and click on the ensembles that are to be selected
+l Select the first ensemble and while holding down the Shift key select the last ensemble of a
+series.
+l Use the arrow keys to move to the first ensemble, hold down the shift key an move to the last
+ensemble to be selected
+To perform the same analysis on the selected ensembles, then from the context menu of the selec-
+ted ensembles, select analysis. The following analysis will be carried out on all the selected
+ensembles.
+Multi selection works on other database operations such as delete, open etc..
+12.3.6 Coordinate System
+DynamicStudio is intended for imaging, where cameras are used to measure things.
+Tracking for example the movement of a particle from one image to another is of little use finding
+only that the particle moved e.g. 4.8 pixels to the right and 1.3 pixels down. If on the other hand the
+distance between neighboring pixels is known to correspond to e.g. 2mm in the light-sheet where
+the particle was, it can be inferred how far it moved in metric units.
+Finally a global coordinate system is required to say exactly where the particle was when the
+images were acquired.
+Likewise knowing the time between consecutive images will allow the measured displacements to
+be converted to estimated velocities, but identifying when the measurement took place requires a
+global timescale.
+The acquisition system generally takes care of all timing including synchronization of various
+devices and also assign accurate timestamps to all acquired images.
+The acquisition system does however not have information about the geometry of the image acquis-
+ition system so a calibration is required to assign spatial coordinates. Typically this involves the
+acquisition of "Calibration Images" on page 115 of a dedicated target or at least an object with dis-
+tinct features where the locations and/or distance between them is known. If always the same set-
+up with all distances fixed to each other, always the same camera parameters are used, the scale
+factor and the origin can also be defined in the "Origin and scale definition" on page 95.
+For single camera systems such as classic 2D-PIV, where the camera is looking at a light-sheet at
+right angles, it is often sufficient to "Measure scale & define origin" on page 92. A dedicated cal-
+ibration target can be used for this, but an object of known size can also be used provided there are
+corners or other distinct features that can easily be identified on the image.
+PAGE|84
+For measurements in a plane such as a lightsheet, the calibration target should of course be
+aligned with the lightsheet, where the measurements are made.
+A common global coordinate system is required for multi-camera systems or single camera setups,
+where the camera is not normal to the lightsheet so perspective effects need to be accounted for.
+When perspective and/or distortion is involved Scale Factor varies across the cameras Field of
+View and a full camera calibration is required, using a dedicated calibration target with markers in
+known and well defined positions that cover as much as possible of the cameras field of view.
+The target can be an "Active Target" (on page 440), turning individual markers on and off in a con-
+trolled manner or it can be a passive target, where all markers are illuminated at the same time. Tar-
+gets can be chessboard or dot matrix style, single-sided or double-sided and they can be planar or
+multilevel. Several known targets of varying types and sizes are in the target library or users can
+enter parameters of a custom target of their own.
+Camera calibration is a two-step process, where calibration markers are first identified and located
+on a series of calibration images. Once a list of corresponding object-space and image-plane
+coordinates has been established the second step is to fit a mathematical model to the list of mark-
+ers found. There are several such Imaging Models to choose from, each with a number of para-
+meters to describe a mapping from object space to image plane. Since Camera Calibration aim to
+determine these parameters it is also referred to as an Imaging Model Fit, IMF.
+Both the marker identification and the imaging model fit is performed by "Multi Camera Calibration"
+on page 765.
+Calibration Models in DynamicStudio
+An imaging model is a mathematical model that describes how points in 3-D "Object Space" are
+transferred to the 2-D "Image Plane". Object space coordinates are typically measured in metric
+units such as mm and Image plane coordinates are typically measured in pixel as the camera
+sensor defines the image plane.
+Depending on the choice of imaging model the transformation may describe perspective, lens dis-
+tortion (e.g. barrel or pincushion distortion) or some other arbitrary spatial distortion. All imaging
+models have a number of parameters and determining the value of these parameters in a specific
+image acquisition setup is referred to as "Camera Calibration" or "Imaging Model Fit", since para-
+meters are fitted to give the best possible match between corresponding coordinates in object
+space and image plane.
+A full 3D model describes how points in the object space (world) are mapped onto the image plane
+(sensor) of the camera, while a 2D model describes only the mapping of points from the object
+plane (light-sheet) to the image plane. 2D imaging models are often cropped 3D models ignoring
+some of the parameters or simply setting them to zero.
+3D models generally require a multilevel target or multiple images of a planar target in different pos-
+itions and/or orientations.
+2D models can be based on a single image of a planar target.
+DynamicStudio supports a number of imaging models, each with their strengths and weaknesses.
+"Direct Linear Transform (DLT)" (on page 659)
+Direct linear transform is a linear affine transform to describe position, orientation, scaling and per-
+spective.
+It is a strictly linear transform, unable to model any non-linear distortions.
+"3'rd order XYZ polynomial imaging model fit" (on page 660)
+A polynomial in 3D that will map the object space to the image plane.
+PAGE|85
+This model is purely empirical and does not relate to physical measures like position and ori-
+entation of the camera in object space.
+It is capable of handling severe distortion caused by the lens and/or refraction in air/water inter-
+faces (windows).
+With a multilevel target only 2 Z-levels are available so the model is restricted to be 1st order (lin-
+ear) in Z.
+Extrapolation beyond the target markers found is not advised with the polynomial model, it is likely
+to diverge very quickly.
+"Pinhole camera model" (on page 662)
+The pinhole model is an idealized physical model of a camera, including parameters to describe
+position and orientation of the camera plus other parameters to describe radial and tangential dis-
+tortions.
+It is the only model capable of estimating a full 3D mapping based on a single image of a planar tar-
+get, but this is inaccurate and not recommended. Multiple images of a traversed target is much bet-
+ter. Alternatively this model supports a pan/tilt approach, where a series of images are acquired
+with the target in random positions and orientations. One of these, typically the first, is considered
+the reference, determining the coordinate system.
+In general this model requires more images than the others.
+"Telecentric camera model" (on page 665)
+Mathematically identical to the Pinhole camera Model, with some constraints to handle Imaging
+without perspective
+Capable of describing Telecentric Lenses without perspective.
+Requires multiple images from multiple cameras/views and thus available only via 'Multi-Camera
+Calibration'
+The calibration target contain markers that defines the object coordinate system and proper illu-
+mination is required to ensure that all markers are clearly visible on the recorded image(s). Please
+verify also that the calibration markers covers as much as possible of the cameras field of view.
+Moving the camera or the light-sheet or otherwise changing the image recording setup will require
+the imaging model parameters to be recomputed.
+For some imaging models the parameters can in principle be calculated from known angles, dis-
+tances, etc, but in practice this approach is not feasible. In the actual laboratory setup it is often dif-
+ficult if not impossible to measure these angles, distances and so on with sufficient accuracy.
+Therefore all imaging model fits require images of a calibration target, which are analyzed to
+determine the imaging model parameters.
+2D imaging models requires that the calibration target is aligned with the light sheet and usually a
+single image is sufficient.
+For a full 3D imaging model you must either use a multilevel target or acquire multiple images of a
+plane target positioned in front of, centered in and behind the light-sheet. In at least one of these
+images the target should be aligned with the lightsheet and with the origin at the desired position.
+Axes definitions and locations
+In DynamicStudio, by default each set of acquired images is given a right handed coordinate sys-
+tem in pixels with it´s 0|0|0 - location in the upper left corner of an image. Note, the center location is
+not the corner of a pixel, but it´s center, as shown in the next image:
+PAGE|86
+Also Note, the X-direction is towards the right hand side and the y-direction is vertical direction.
+By default when looking on the same image in metric scaling, still with the default properties, it´s
+coordinate 0|0|0 - location now is on the lower left corner. By default the scaling of a pixel is 1 mm
+/pixel and the right handed coordinate system is positive to the right and the top of the image, see
+below:
+PAGE|87
+If the axes, the scaling, or the location of the coordinate center should be changed, any of these set-
+tings need to be applied prior to the analysis.
+The axes of the coordinate system can be changed here in the "Define Axes" on page 105 menu.
+As mentioned, the scaling can be done through the "Measure scale & define origin" on page 92
+interface or in the "Origin and scale definition" on page 95. In case of a multi-camera system for
+combined measurements, Stereo PIV, or Volumetric Measurements, a full camera calibration need
+to be performed, see "Multi Camera Calibration" on page 765, the way to acquire the images for
+this is described here: "Calibration Images" on page 115
+If offsets in the X-, Y, or Z-direction need to be applied this can be handled also in these interfaces,
+in the way it is described in those chapters
+Target Types in DynamicStduio
+DynamicStudio also can use different types of targets. In general there are 4 different types of
+standard targets:
+The figures below illustrate different calibration targets that the imaging model fit can use. Most of
+them are available as both single- and double-sided targets (a double sided target has markers on
+both sides and is required for image acquisition setups, where cameras are on opposite sides of
+the lightsheet).
+PAGE|88
+Plane dot matrix target
+The larger center dot (zero marker) is used to identify the origin of the coordinate system.
+Multilevel dot matrix target
+Half the markers are in the same level as the zero marker, the other half are in a 2nd level, closer to
+or farther from the viewer.
+Checkerboard target (plane)
+Origin and orientation of the coordinate system is shown in red
+PAGE|89
+Active Target, or ActiveTarget PC screen (plane + traverse option)
+Origin and orientation of the coordinate system is encoded in the different dots, wile the are
+switched on and off during their recording.
+In case customized targets are used, these can be added to target library
+PAGE|90
+Target library & Custom targets
+DynamicStudio maintains a library of known calibration targets. This library can be accessed from
+the 'Tools' menu:
+The Target Manager is a small program launched from inside DynamicStudio, listing all known tar-
+gets and offering the possibility of adding new (custom) targets to the list or edit the targets already
+in it:
+It is possible to edit specifications for predefined targets, but instead it's recommended to create a
+custom target by pressing 'New...':
+PAGE|91
+Specify a name that you will be able to recognize, preferably describing the target so you can dis-
+criminate between different ones. Two target types are supported, 'Dotted' and 'Checker board',
+and when you press 'OK' the resulting dialog will depend on the target type chosen
+.
+If you choose the target type 'Dotted', you will be asked to provide information about dot spacing,
+dot sizes etc:
+The zero marker should always be larger than all the other markers and ~50% of the dot spacing
+will usually work well.
+The main markers must not exceed 50% of the dot spacing and ~33% of the dot spacing is normally
+a good choice.
+The axis markers (the four nearest neighbors of the zero marker) must be smaller than or equal to
+the main markers. Try f.ex. 25% of the dot spacing.
+For multi-level targets, put a checkmark in 'Enabled' and specify what the level distance is. This
+parameter describes the z- (out-of-plane-) distance from the level where the zero marker is to the
+level of the other markers. This parameter is signed in order to distinguish whether the second level
+is closer to or further from the camera than the zero marker level. If the zero marker level is closer
+to the camera, the level distance should be negative. Depending on the camera viewing angles you
+intend to use 20% of the dot spacing is normally a good choice. For very steep angles acceptable
+PAGE|92
+level distance becomes smaller, for modest viewing angles larger level distance may be OK.
+For double-sided targets, put a checkmark in 'Enabled' and specify what the thickness is. This para-
+meter describes the difference in z-distance for the same marker when viewed from front and rear.
+It must be greater or equal to zero.
+Finally you must specify whether the (custom) target contain black dots on a white background or
+white dots on a black background.
+If you choose the target type 'Checker board' there are fewer parameters to specify, just the num-
+ber of tiles horizontally and vertically and of course the tile size, describing the spacing between
+crossings in the checker board pattern. The number of tiles horizontally and vertically need not be
+identical, but both should be odd numbers.
+Please note the circles inside 3 of the checker board tiles that identify both the zero position and the
+orientation of axes. They are not specifically mentioned in the target definition, but the zero marker
+MUST be in the center of the target and it MUST be a white circle in a black tile. Nominally the circle
+diameters should be half the tile size, but slightly smaller diameters work OK, while larger dia-
+meters will cause the calibration routine to fail.
+Measure scale & define origin
+Every project in DynamicStudio needs a correct scaling from the camera coordinate system in
+pixels to the real coordinate system in mm. If this is not defined prior to the analysis the results will
+be in a wrong scaling of 1 mm/px, which will also lead to wrong computed derivatives like dis-
+placements, gradients... Please note, if the scaling is changed after the analysis took place, the
+analysis will need to be recomputed to update the correct scaling.
+In the scaling of a project the mm/px ratio and the 0|0|0 coordinate will be defined. This can simply
+be done in the settings "Origin and scale definition" on page 95settings if a scale factor is already
+known, or if it is not known it can be measured based on a target, a ruler, or a distances feature in
+the image of which the size is known.
+Scaling of measurements to metric units.
+Using the measure scale factor is used to determine the scale factor and position converting pixel
+units into metric units. Furthermore, the origin of the measurement is defined and the type of
+coordinate system. For information on how to create a calibration record please refer to "Calibration
+Images" on page 115.
+To display the dialog, right click an image ensemble inside a calibration record and select the menu
+option and select the "Measure Scale Factor" after a right mouse click or select it via the "Measure
+Scale Factor" Icon from the calibration tab.
+PAGE|93
+The Origin and Scale Factor dialog will now appear:
+PAGE|94
+The Measure Scale Factor User interface is separated into two main parts. Some sections and
+fields to on the left hand side, and a view of the image in which the scaling will be applied, here
+three markers with points "A" "B" and "R" can be seen. In the menu on the left hand side, the type of
+coordinate system is defined. A definition for the X,Y,Z- position as a "Reference Point" which is the
+physical 0|0|0 marker representation in mm of the. Furthermore there are some description of the
+Distance of the points "A" and "B" here is where the user defines the physical distance between the
+points. For the given example this is 10 mm. Additionally, there are some information points, where
+your "A" and "B" markers are placed based on the reference point "R"
+If the calibration image appears dark it's possible to enhance the image by right-clicking inside the
+image and selecting 'Colormap and Histogram'.
+Three reference markers labeled "R", "A" & "B" must be set to determine both origin and scale
+factor. The markers are picked and moved around using the mouse; Point a marker, press and hold
+the left mouse button while dragging the marker to the new position and release the left mouse but-
+ton. If two markers are very close to one another you can pick a specific one by pressing O, A or B
+on the keyboard while you click the left mouse button.
+To position markers accurately you can zoom in on a detail. There are several ways to zoom; Right-
+clicking inside the display area will open a context menu, from where a number of predefined
+zooms can be chosen. Especially 'Fit to Window' is useful to return to a zoom where the entire
+image is scaled to fit inside the dialog. You can also zoom by clicking and holding the left mouse
+button while drawing a rectangle around an area of interest, or you can use the scroll-wheel on the
+mouse to zoom in or out around the current mouse position. While zoomed you can pan the image
+around by pressing the Ctrl-key while left-clicking and dragging the mouse. Finally you can press
+the Alt-key to convert the mouse cursor to a magnifier performing a temporary local zoom while you
+move the mouse around.
+PAGE|95
+The "R"-marker determines the location of the origin, which by default will be in the lower left corner
+of the image. If (0,0) is outside the image or cannot be identified you can pick some other reference
+point and specify it's nominal coordinates as the origin.
+Markers "A" & "B" determine the scale factor. Simply position the markers at identifiable positions
+within the image and specify the nominal distance between the markers which is done on the left
+hand side of the User Interface under "Points"
+Tip:
+The precision of the calculated scale factor is proportional with the distance between reference
+marks A and B. A large distance will give a better precision.
+Note:
+The value of the scale factor represents the magnification of the lens system. Therefore the phys-
+ical size of a pixel element (pixel pitch) is needed to perform the conversion into metric units. The
+formula is : unitsmm = ScaleFactor * Pixel_Pitchmm.
+To leave the dialog and save the current settings press the OK -button.
+To discard any changes made select the Cancel button.
+Origin and scale definition
+Every project in DynamicStudio needs a correct scaling from the camera coordinate system in
+pixels to the real coordinate system in mm. If this is not defined prior to the analysis the results will
+be in a wrong scaling of 1 mm/px, which will also lead to wrong computed derivatives like dis-
+placements, gradients... Please note, if the scaling is changed after an analysis, the analysis will
+need to be recomputed to update for the corrected scaling.
+An overview about the Calibration and coordinate definition can be found in the "Coordinate Sys-
+tem" on page 83 section of the manual.
+There are 3 different ways to define the origin and scale used in a project:
+1) By editing the Origin and scale definition
+2) By "Measure scale & define origin" on page 92 of an image
+3) By performing a "Multi Camera Calibration" on page 765 and dewarping the images which has to
+be done for systems with multiple cameras, or for systems where the viewing angle onto the light
+sheet is not 90°
+Typically for 2D-2C, LIF, BOS or most other analysis methods, a "Measure scale & define origin" on
+page 92, is the method of choice to set a scaling for the acquired images. If no changes are made
+to the measurement set-up, i.e. same camera, sensor settings, and distances between the cam-
+eras and lenses etc. the scale factor will typically be the constant as well.
+If the user failed to acquire initial reference images, or if object of known geometry or positions
+aren't present in the flow images one needs to hand fill the Origin and scale definition to measure
+plausible values. The Origin and scale definition can be used to change the default origin and
+scale.
+The Origin and scale definition can be found in the Calibration folder of each "Project" (see "Data-
+base Access" on page 73). It can be accessed by a double click. Default values will be marked as
+such in the database until changed by the user.
+PAGE|96
+The menu of the Origin and scale is similar to the "Measure scale & define origin" on page 92. On
+the left hand part, the axis direction of the coordinate system is defined, on the right hand side the
+coordinate of 0|0|0 is defined and the width hand height of the image.
+In the given example a right handed coordinate system with the 0-location in the lower left corner is
+chosen. This location is assigned to be 0 mm in X-, Y-, and Z-direction. Furthermore, the width of
+the image is entered to be 75 mm. Based on this info the Height, the Scale Factor (mm/pix) as well
+as the Magnification are computed.
+Note, If the "Origin and scale definition" is opened with a double click and a "Measure scale &
+define origin" on page 92 was previously applied to an image from this project, the specific menu
+with the measured scale will open instead of the "Origin and scale definition"
+Multi Camera Calibration
+The Multi Camera Calibration method is used to generate spatial camera calibrations, a.k.a. IMF's,
+Imaging Model Fits, for each of the cameras in the system.
+As implied by the name it is designed to calibrate multiple cameras at the same time, but they can
+also be calibrated one by one.
+It is based on multiple images of a calibration target with markers in known positions. The target
+can be active, turning individual markers on and off in a controlled manner or it can be passive,
+where all markers are illuminated at the same time. Targets can be chessboard or dot matrix style,
+single-sided or double-sided and they can be planar or multilevel. Several known targets of varying
+types and sizes are in the target library or users can enter parameters of a custom target of their
+own.
+Often the target is traversed to cover a volume, but in some cases a pan/tilt approach can be used
+with just one well-defined reference target position and orientation, followed by a series of images
+where the target has been moved and/or tilted randomly to cover the intended measuring volume.
+The Multi Camera Calibration method provides a fully automatic or alternatively a semi-automatic
+calibration, which automatically detects individual markers but the user still has the possibility to
+manually specify the origin of the calibration target. In addition, also a Manual Calibration is
+provided that lets the user freely create a calibration grid with markers, to be manually placed on
+top of the calibration images in order to relate the dimensions of the image to a coordinate system
+in physical space.
+The input requirements for the method is either single a calibration image ensemble or multiple cal-
+ibration image ensembles from multiple cameras, which are then selected as fixed inputs. For
+PAGE|97
+detailed information regarding acquisition of calibration images please See "Acquiring calibration
+images".
+One or multiple calibration image ensembles with acquired calibration images (with or without the
+Z-coordinates specified) must be selected in the database tree. From the Calibration Tab in the rib-
+bon select 'Calibrate...', or right mouse click on the images and select analyze, and in the resulting
+dialog, select the method 'Multi Camera Calibration' from the 'Calibrations' group.
+The Multi Camera Calibration recipe is divided into four frames:
+l Browse Datasets
+l
+Image view
+PAGE|98
+l Target Info
+l Calibration model
+By using the slider inside the 'Browse Dataset' frame, it is possible to inspect the individual images
+in the ensemble(s). The image is displayed in the image view with a graphic overlay showing the
+currently detected markers. For general information on how to manipulate the image view please
+refer to "Using the display from within an analysis method" on page 1017.
+Target Types & Parameters
+ActiveTarget
+For calibration using Active target calibration images, target information is saved together with the
+images. In this case setting up target parameters is done automatically and in this case the user is
+prohibited access to changing Target parameters.
+NormalTargets
+Before starting the calibration, information about the calibration target must be entered into the tab
+'Target Info'.
+If a Dantec provided target is used, this can be selected in the drop down list of known target types
+will be enabled and you will have to specify the 'Marker Shape' as 'Crosses', 'Dots' or 'Check-
+erboard'. Subsequently you will have to specify marker spacing and other 'Target Info' parameters
+that depend on the target type chosen.
+Apart from Standard targets the list also includes custom targets previously created and saved
+(See Target Library & Custom Targets in Imaging model fit). In this case most target parameters
+such as marker spacing will be locked to values loaded from the target library.
+The only exception is 'Target Processing', that is relevant for checkerboard targets only; With dif-
+ferent types of 'Edge Detector' you can choose between different methods for finding the check-
+erboard crossings; The first 6, 'Detector_NxN', attempts to identify individual tiles on the
+chessboard target and subsequently locate the corners of each tile. The last one, 'Detector_DOH',
+compute the 'Determinant of Hessian' from gray-scale intensity gradients in order to identify and
+PAGE|99
+locate saddle points (=Crossings) in the calibration images. Generally the topmost methods in the
+list are the fastest, that works best with high-quality images, while the last one is the slowest, but
+also the most robust against e.g. blurry and/or poor contrast images.
+Dual level and dual sided targets
+If for instance the 270x190mm two level dual sided target is used. Please select the cameras
+observing it by the spacebar before entering the "Multi camera calibration" method. The Front side
+of the target is the one where the 0-marker is located on the outside plane of the target. as shown in
+the image below.
+"Multi level, 270x190mm,2nd level -4" as the standard target. the -4 means that the 2nd plane is 4
+mm behind the first plane. To have the coordinates right you need to select that is the front side or
+the rear side of the target in lower left corner.
+Another input that can be made is in the target processing. since often the a reflection is formed
+between the 2 planes, a check for the circularity is introduced. Here, 1 would represent a perfect
+circle. This parameter needed to be varied if gridpoints are not properly detected.
+Front camera observing the dual sided target.
+PAGE|100
+Backside camera observing the dual sided target.
+Reference Point
+In some cases the origin of the target (center marker) , should not be the measurement 0|0|0 loc-
+ation, the Settings with the " Reference Point can be used, the an offset in X-, Y-, and Z-direction is
+entered.
+Automatic/Semi-automatic Calibration
+If 'Target Identification Type' is set to 'Automatic', all the markers are detected based on the selec-
+ted calibration target type. If 'Target Identification Type' is set to 'Semi-automatic', the markers are
+detected after pressing 'Start Marker Identification' on the 'Calibration Model' tab.
+Once the marker identification has been initiated by pressing the button 'Start Marker Identification',
+the following frame will be displayed.
+PAGE|101
+The reference marker (origin of the calibration) is indicated by red coordinate axes in the image
+view, the position of the reference marker can be altered by left clicking any of the detected mark-
+ers. Once the desired reference marker is set, the button 'Accept' will store the position and move
+on to the next image in the calibration ensemble. Since the reference marker will define the origin of
+the calibration, it is vital that the same reference marker is selected in all images.
+If the image is not to be used in the calibration, press the button 'Skip', which will disregard the cur-
+rent image and move on to the next image in the ensemble. The green or red circle (as seen in the
+picture above) indicate whether or not the current image is used in the calibration - Green indicate
+that the image is used, red that it is not.
+To complete the calibration process the desired imaging model and the orientation of the coordin-
+ate system must be selected from the 'Imaging Model' menu. For calibration of multiple cameras
+only the Pinhole camera model is available. For calibration of multiple cameras it is also necessary
+that at least two cameras observe the calibration from the same side with the same coordinate sys-
+tem orientation all the time. For a detailed description about the imaging models and coordinate sys-
+tem orientation please refer to Imaging Model Fit.
+Finally press the 'Apply' or 'Ok' button, to calculate the calibration.
+Active Target Calibration
+When images are loaded from the database it will detected from Multi Camera Calibration that the
+acquired images are images generated with Active Target.
+The user interface will in this situation be very limited.
+It is possible to select which calibration model to use:
+l Direct linear transformation model
+l Pinhole camera model
+l 3rd order calibration model
+PAGE|102
+For Each target position a number of images has been acquired. First a series of images where all
+markers are turned on and off. After these image a number of images where the encoding of the
+marker position is acquired.
+Manual Calibration
+When the Target Identification Type is set to Manual, the user is able to freely place the calibration
+grid onto the calibration image, by moving the corner markers with the mouse. This is convenient
+e.g. in situations where it’s not possible to place a conventional calibration target, and so other
+means of calibration is necessary.
+When Manual Calibration is chosen, first go to the Calibration Model tab. Here the desired Imaging
+Model and the Coordinate System Orientation must be selected. For a detailed description about
+the imaging models and coordinate system orientation please refer to Imaging model fit.
+Once the settings in Imaging Model Fit are completed, press the button 'Start Marker Identification'
+to overlay a default grid of calibration markers on the calibration image. Now, by going back to the
+Target Info tab, the parameters of the grid and the markers can be changed. Adjust the parameters
+so that the marker grid matches an object with well-known dimensions in the image.
+Grid spacing:
+Defines the physical distance in mm between the markers in the grid, in the x and y directions indi-
+vidually.
+Reference point:
+Defines the coordinates (mm) for the grid reference point in physical space.
+Grid size:
+Defines the number of rows and columns of calibration markers used in the grid.
+PAGE|103
+The markers on the grid consist of two concentric circles, and inner one and an outer one. When
+zooming in on one of the markers, this is seen more clearly, as shown in the figure below. By left
+clicking in the inner circle, the user can use the mouse to move the four corner markers of the grid
+to the desired position. If the calibration image is an image of a physical grid of any type, the user
+can move the four corners so that the marker grid matches the physical grid in the image.
+By clicking in the outer circle, the user can define the marker to be the reference marker (origin of
+the calibration) of the grid. This is indicated by red coordinate axes in the image view, as shown in
+the figure below. Since the reference marker will define the origin of the calibration, it is vital that the
+same reference marker is selected in all images.
+PAGE|104
+During this process, the user can alter the parameters of the grid in Target Info at any time, and the
+marker grid seen on screen will conveniently be updated accordingly.
+Once the marker grid is properly placed on the calibration image and the desired reference marker
+is set, return to the Calibration Model tab. Clicking the button 'Accept' will store the marker positions
+and move on to the next image in the calibration ensemble (if any). If the image is not to be used in
+the calibration, press the button 'Skip', which will disregard the current image and move on to the
+next image in the ensemble.
+The green or red circle (as seen in the upper-left corner of the image view below) indicates whether
+or not the current image is used in the calibration - Green indicate that the image is used, red that it
+is not.
+When all the marker grids for the relevant calibration images have been accepted, finally press the
+'Apply' or 'Ok' button to complete the calibration process.
+PAGE|105
+The calibration can be used to dewarp images, to e.g. straighten out the coordinate system in a
+skewed image view. For more on this topic, see Image Dewarping.
+Define Axes
+to change the coordinate system for a project within a DynamicStudio Database.
+the "Define axes" can be reached by a right mouse click on the calibration record similarly as the
+settings for "Field of View" as shown in the image below.
+Ones the "Define axes" is selected, the following window will open:
+In this menu, you can define your axis based on the image definition and the "Axis Definition" drop-
+down menu on the right-hand side of the window. With "Origin [mm]" you can define an offset to
+PAGE|106
+0,0,0 coordinate shown in the sketch from the main window. Note to make the offset work properly
+you need also need to define the sale factor in the Define Origin and Scale menu item. Please note
+if you have measured a scale factor by using "Measure scale & define origin" on page 92 and
+refined your 0,0 coordinate here, this 0,0 will also be applied to the new axis definition. Fur-
+thermore, if you have traversed calibrations, if you define several measurements via the acquisition
+manager, please take care to follow the specified coordinate system. Hence, it is best to already
+define the coordinate system before image acquisition. see more info in the "Acquiring images" sec-
+tion of the "User Interface" on page 52 description.
+"Measure scale & define origin" on page 92
+12.3.7 DynamicStudio Agent Setup
+Content
+This help contents information about
+Agent DynamicStudio
+Traverse Installation
+Light Source Wizard to add, remove or edit a light source
+Agents DynamicStudio
+Agents DynamicStudio rely on so-called 'Agents' to handle external hardware such as frame grab-
+bers, cameras, timer boards and so on. An 'Agent' is a program, which may run on the same PC as
+DynamicStudio itself or on another PC communicating with DynamicStudio via a normal network.
+DynamicStudio can handle multiple agents running on several PC's, but the most common setup
+handles everything from a single PC.
+A configuration wizard is supplied with DynamicStudio to help you set up the agent(s); either click
+the shortcut which the installation created on the desktop or click Start/All Programs/Dantec Dynam-
+ics/DynamicStudio.
+When DynamicStudio is running click Tools/Configuration Wizard and go through the wizard.
+12.3.8 Light Source Wizard
+To add, remove and configure a new light source such as laser, flash lamp or stroboscope, select
+from tools the light source wizard. If you use a standard light source you may skip this part.
+PAGE|107
+Follow the instructions from the wizard.
+Press next and check the operation you want to perform
+PAGE|108
+Adding a light source
+After giving a name to the light source, it has to be configured. Select the number of cavities and
+light source type between:
+According to the selected light source, you need to type different properties
+PAGE|109
+The following window appears when the light source is created.
+PAGE|110
+Your new light source is now available form the dive list (right lick on the agent icon and select add
+new device):
+PAGE|111
+12.3.9 Image Buffer resources
+Unless your camera has onboard RAM for temporary image storage you will need to allocate RAM
+in the computer to use as a buffer when acquiring images. DynamicStudio will warn you as shown
+below if this is the case:
+You will now have to chose which type of memory you will use during acquisition:
+1. Right click the in the Devices view and set a check mark at "Advanced view"
+2. Select "Image buffer resources" in the Device tree view.
+3. Select the Memory mode to use.
+4.
+In the Device Properties view set the property "Buffer size" to ex. 1024 MBytes
+5.
+If you have chosen "Reserved memory" you will have to reboot the PC, otherwise the system is
+ready for acquisition.
+"Image buffer resources" on page 264
+12.3.10 Ensemble Linking
+As implied by the name Ensemble Linking will allow you to 'Link' two or more DynamicStudio data
+ensembles such that anything you do to one of the linked ensembles is automatically done to the
+others as well. This can be used for Analysis, but is most often used when displaying multiple data-
+sets side by side for comparison; The Linked Ensemble display could for example show Input and
+Output of some analysis, or represent images from several cameras that were acquired sim-
+ultaneously. If you zoom in on a detail in one display the other display(s) will automatically zoom in
+on the same area and if you pan one display the other(s) will automatically pan also.
+Image pairs acquired with the DualScope will for example be stored as Linked Ensembles by
+default so opening (or closing) the display of one will automatically open (or close) the display of
+the other also. (Read more about "DualScope" on page 455).
+Data from linked ensembles obviously come from different ensembles. If you wish to have multiple
+displays of the same data open and close synchronously, use "Group Displays" on page 1055.
+To establish the link first select (Ctrl-Click) each of the ensembles that you wish to include in the
+link, then right-click either of them and pick 'Link ensembles' in the context menu:
+PAGE|112
+Small chain symbols will now appear on each ensemble icon in the database to visualize that they
+have been linked.
+When you open either of the linked ensembles for display the others will automatically be opened
+also and display windows be distributed and scaled for synchronized display. Similarly closing
+either of these displays will automatically close the others as well. You can in principle link any num-
+ber of ensembles, but in most cases you will be comparing 2, 3, 4 or perhaps 6 displays side by
+side.
+Linked displays work best when all of the display windows involved have the same size. The dis-
+play 'Tile' function can be used to achieve this easily.
+Please note that linked displays may be out of sync if two or more of the ensembles were already
+displayed when the link was established. This can be fixed by selecting a fixed zoom and/or 'Fit con-
+tent to Window' in the context menu of either display.
+In the example used here, we've linked 4 ensembles for side-by-side comparison; One input image,
+one intermediate result and two outputs.
+The images are from measurements on arc welding, where PIV seeding has been added to the
+shielding gas and droplets of molten metal is also flying around.
+Image processing is applied in an attempt to separate the small PIV seeding particles from the
+much larger metal droplets so the two can subsequently be analyzed separately.
+Despite narrow band filtering the welding process itself generates a lot of background noise so the
+first step attempts background removal, leading to an intermediate result where seeding particles
+and metal droplets remain mixed, but background intensity has been reduced. Further processing
+of this leads to separate images with large and small objects respectively. Ensemble linking is used
+to quickly and easily zoom in on different image regions to assess how well the analysis performs
+and perhaps see where it fails and thus needs modification.
+Top left is the input image, bottom left has the background removed. Top right is the large objects
+(i.e. the metal droplets) and bottom right is the small objects (i.e. PIV seeding particles in the shield-
+ing gas):
+PAGE|113
+There is a foreground object in the bottom left corner of the image. Zooming in here confirms that
+the background removal takes care of the secondary scattering from this object:
+PAGE|114
+From there panning to the top right corner shows that the large objects are indeed in the top right
+image, while the bottom right one contain only small objects:
+Please note that Ensemble Linking is stored in the database along with the data and thus remain
+even after shutting down and restarting DynamicStudio and reloading the database. The
+ensembles will remain linked until you actively cancel the linking by right-clicking either of the linked
+ensembles and selecting 'Unlink ensembles' in the context menu:
+PAGE|115
+12.3.11 Calibration Images
+Acquiring and saving calibration images
+The acquisition of calibration images is no different from any other image acquisition, but when you
+store the images you need to tell the system that they are intended for calibration rather than meas-
+urements. This is done by selecting 'Save for Calibration' rather than 'Save in Database' in the
+'Acquired Data' window:
+This will open a dialog prompting you to select one or more custom properties that needs to be
+stored along with the images.
+If for example the images are to be used for an Imaging Model Fit, the relevant custom property is
+'Z', describing the position of the calibration target relative to the lightsheet.
+PAGE|116
+Press 'OK' and you're finally requested to specify a value for the custom property. Continuing the
+example of Imaging Model Fits Z=0 is typically in the center of the lightsheet, while Z=-2 in the
+example below may represent a position behind the lightsheet as seen from the cameras point of
+view.
+In other contexts such as the calibration of a concentration-LIF experiment, you will of course
+choose the custom property 'Concentration' and then type in the known concentration that apply for
+the calibration images you are about to save in the database.
+Press OK and images will be stored and appear in the database in a group named 'Calibration':
+If you right-click an ensemble of calibration images and select 'Contents' you will be able to browse
+through the images in the ensemble and for each the custom property you entered will be shown in
+the record properties. You can also assign custom properties to the ensemble as a whole and
+whatever value you enter here will apply for any member of the ensemble that does not have a spe-
+cific property value of its own. Custom properties can also be assigned to ordinary measurements,
+but are rarely used for anything and thus optional. For all but the simplest calibrations custom prop-
+erties are mandatory, since they are a vital part of any calibration.
+Tip:
+It is possible to move images from another ensemble in the database to the calibration record by
+simply dragging the ensemble onto the calibration record. If the project does not contain a cal-
+ibration record it can be created by right clicking the project and selecting the menu option "Create
+Calibration Record". It is however not possible to move images and ensembles out of the cal-
+ibration folder and into a normal acquisition "Run".
+PAGE|117
+12.3.12 AgentHost service
+After having installed any part of the DynamicStudio installation, AgentHost service will be running.
+AgentHost is the key component in the distributed environments that are supported by Dynam-
+icStudio.
+Distributed Analysis, Acquisition and Database is based no using the local area network between
+the PC's.
+Note: DynamicStudio supports only IPv4.
+When AgentHost is running it is possible to use the PC as a Database-, Analysis- or Acquisition-
+agent. If AgentHost is not running the PC can not be used by other DynamicStudio installations.
+AgentHost service is ready as soon as Windows has started up. You do not need to log in on the
+PC to have AgentHoset started.
+A "DynamicStudio Icon" is shown in the notification area when AgentHost serive is running.
+Stopping and Starting AgentHost service
+If you want to start/stop or prevent AgentHost service from running when the PC has booted do the
+following:
+1. Login as an administrator
+2. Click Start -> Control Panel -> Administrative Tools-> Computer Management -> Service and
+Applications -> Services
+3. RightClick on the service named "DynamicStudio Agent Host Service" and select Properties
+4. Select the Tap named "General
+5. Change "Startup type:" to
+"Automatic" to have AgnetHost started when the PC is booted.
+"Manual" : to prevent AgentHost service from starting when the PC is booted.
+6. At Service Status you can click
+"Start" to start AgentHost Service
+"Stop" to stop AgentHost Service
+7. Click OK to close the dialog.
+Stopping and Starting AgentHost service remotely
+It is possible to remotely start and stop the AgentHost service, you must be an administrator on the
+remote computer in order to do so:
+1. Login as an administrator
+2. Click Start -> Control Panel -> Administrative Tools-> Computer Management
+3. Right click "Computer Management " and select Connect to another computer.
+4. When connected click Service and Applications -> Services.
+5. Follow step 3 trough 7 in order to control AgentHost service on the remote computer.
+PAGE|118
+Manually Starting and Stopping AgentHost
+When AgentHost serivce is not running you can manually start AgentHost:
+Click Start->All programs->Dantec Dynamics -> Remote Agent for DynamicStudio
+To stop AgentHost right click the Icon in the notification area and select "exit".
+12.3.13 Known issues
+When using Distributed acquisition it is not possible to modify the amount of memory to use as
+reserved memory on the Agent PC's.
+When using Distributed acquisition it is not possible to use the already reserved memory for acquis-
+ition on the Agent PC's
+Reason:
+New restriction has been added to the OS that makes it impossible to access level 0 device driver
+such as DXMapMem.
+Two ways exists to solve this issue:
+Solution 1:
+Starting up Agent host service with a specific login name and password that has the necessary
+rights to access Level 0 device drivers such as DXMapMem:
+On each agent host do the following:
+1. From Control Panel\Administrative Tools select and open Services
+2. Find the service named "DynamicStudio Agent Host Service" and double click the service:
+3. Go to Tap "Log On":
+PAGE|119
+4.Instead of "Local System account" select "This account:" and enter the login name and password.
+5.Go to Tap "General" and click first the button "Stop" and then the button "Start".
+Now when the service is started the login that you described in step 4 will be used and this login
+has the necessary rights to access hardware the issues are solved.
+Solution 2:
+Instead of letting AgentHostService start up Agent.AgentHost.exe do this manually.
+On each agent host do the following:
+1. From Control Panel\Administrative Tools select and open Services
+2. Find the service named "DynamicStudio Agent Hoset Service" and double click the service
+3.Set Startup type to "Disabled".
+4.Click the button "Stop"
+5.Clock OK. Now the service is stopped, and will not start up again on the next boot.
+6. Click Start->All programs->Dantec Dynamics->Remote Agent for DynamicStudio
+Now the Agent.Host Icon will appear in the notification tray, and the Agent PC is now ready for use.
+You will have to manually start up Agent host each time you have rebooted.
+PAGE|120
+12.3.14 Database with Demo Data
+On the download section, from where DynamicStudio is downloaded, different demo databases
+can be found also. These databases reflect a wide range of applications and introduce the analysis
+methods in DynamicStudio that are most widely used to process the raw data with the goal to
+extract physical information.
+The Databases are so called compressed databases with a .dZip file ending, and a special icon
+indicating that this is a compressed database.
+These compressed databases can be opened, by double clicking, or through the file Tab of Dynam-
+icStudion on the home screen under the "Database" menu.
+Than select one of the Demo Database files with the ending ".dZip"
+To reduce the size of the databases, some content from them got deleted, which is not strictly
+necessary to understand the processing and work with the examples. This is indicated by icons that
+are grayed out, like in the Voxel Reconstruction example shown below
+PAGE|121
+If you try to open these you will only open an empty window, and if you try to apply an analysis on
+them, you will get the following waring indicating that the parent data is missing:
+In order to recompute the data simply right mouse click on it and select "Perform Analysis again"
+Databases
+with DS 8.0 four new demo databases were introduced, or the old ones updated. along with the ana-
+lysis you can find images and read-me files in the database that explain the processing
+l DS8_Demo_Data_base_01_EDU_PIV
+l Demo_Data_base_02_Microfluidics
+l Demo_Data_base_03_EduStereoPIV
+l Demo_Data_base_04_VolumetricVelocimetry
+l Demo_Data_base_05_BOS
+l Demo_Data_base_06_Adaptive Shadow
+EDU-PIV Demo Data
+This database gives you an introduction to the basic application of PIV data and how it is analyzed.
+The data is based on a jet-flow from our educational PIV system (EDU PIV). Two different analysis
+approaches can be found. In a first basic one the vectors are computed, filtered, averaged, and
+some profiles and Power-spetctra are extracted. In a more advanced 2nd section, the flow is pre-
+filtered by a POD analysis before the pressure fields are computed and vector uncertainties are
+computed and propagated into some vortex criteria.
+Microfluidics Demo Data
+This database gives you an introduction to the concept of image pre-processing and masking.
+Before a velocity profile is extracted. Note that in this case no proper scaling is given.
+EDUStereo PIV Demo Data
+This database is all about stereo PIV processing, teaching calibrations, calibration refinement,
+image dewarping and stereo PIV processing
+VV Demo Data
+This database discusses the concept of Volumetric Calibration Refinement, as well as all the dif-
+ferent Volumetric analysis methods for 3D LSM and 3D PTV. To show the impact of the calibration
+refinement different images are added and can be re-created by dragging the different data-sets
+above each other.
+Background Oriented Schlieren (BOS) Demo Data
+This database illustrates the convection flow over a candle, and uses BOS techniques with a high
+speed imaging system to provide this easy to set-up Schlieren experiment
+PAGE|122
+Adaptive Shadow Demo Data
+This database uses old and the new Shadow processing routines to perform droplet size and velo-
+city analysis. Different images and plots are extracted from it.
+12.3.15 Combined PIV-DIC measurements
+Additional Cabling
+Sync –Out of Trigger Box (BNC backside) to -> IN 1 PIV System
+Trigger Out (BNC front side) to -> IN 2 PIV System PIV System
+Calibration
+The systems can be calibrated separately from each other. But also the PIV system needs at least
+a Pin-hole calibration even if only one camera is used. The target plane must be the light sheet
+plane.
+Measurement settings
+PIV-System
+Connect the synchronization as described in Figure 1. Select the image mode you need and set the
+system for external synchronization, external start. Therefor got to the timer box device settings
+PAGE|123
+and set the
+l Start: “Start on external trig”
+l Mode: “External”
+l Use Trigger enable input: “Yes”
+Measurement Procedure
+l
+(DIC) Acquire at least one image of the object without load/flow. This shall be the reference
+state of the surface. Store these in on measurement series (evaluate it and check the quality).
+l
+(DIC) Use Pre/Post trigger mode for the measurement under load. E.g. 5 frames Pre-trigger.
+Set the number of images at least 5 higher than the number of frames you need (to cover the
+pre trigger images).
+l
+(PIV) Prepare the Acquisition of PIV system by enetering the frame-mode and the the amount
+of images you want to acquire and activate thy system clicking on “Acquire” Now the system
+waits for a start trigger
+l
+(DIC) Start the synchronized measurement e.g. by mouse click in Istra4D or TTL at Trigger In.
+This soft trigger creates a TTL pulse in the timer box that starts the synchronized PIV meas-
+urement. Note that starting the Pro/Post trigger mode also generates a sync pulse. Hence the
+DIC system needs to be enabled before the PIV system is set to “Acquire”
+l
+(DIC) Check the images. The first laser should be visible at the images defined by the Pre trig-
+ger. This is the first image recorded by PIV. You will see more images with laser illumination
+than defined in the PIV software, which does not has an influence of the PIV measurement
+l
+(DIC) Save the images starting from the Pre trigger image.
+l
+(PIV) Save the images
+Evaluation and Export of the DIC system
+l Add the reference image (first series) at pos 0 in the evaluation series.
+l Perform a standard evaluation (be aware, that you may not be able to evaluate the intersection
+of the laser beam with the surface of the object).
+l Define an object coordinate system in a way that the XY plane is in the surface of the object.
+l Select the other visualization parameter accordantly (e.g. Step 0 = reference step).
+l Export the Data as HDF snapshot.
+Evaluation of PIV data and Import of the DIC Data
+l Preform the 3D calibration
+l
+Incase 2D 3C Data chose a stereo method you like using the stereo processing based on
+dewarped images is recommended
+l
+In case of 2D 2C measurements dewarp the images, based on the 3D calibration
+l Analyze the PIV Data
+l
+Import the DIC Data by having a run selected and then select ->“File”->”Import”->“import
+HDF5datatoselectedRun
+PAGE|124
+l Opening the data enables the 3D view.
+l Drag-Drop the desired PIV analysis into the 3D view:
+You can also drag the images of your PIV measurement into the 3D view, if you are interested. Or
+even other PIV results, as long your object has well defined metric information.
+Different coordinate Systems
+Please note, that if your calibration planes are different between the PIV and the DIC meas-
+urements it is necessary to transform the DIC coordinate system so that it fits the PIV coordinates.
+For this purpose you best measure the distances between your calibration target center markers.
+The transformation is achieved by right clicking in the visualization of the DIC results and chose
+“Display options”. In this Surface Setup UI one can select X-Y-and Z- translations of the coordinate
+system defined in mm. As well as the rotations around the X-Y- or Z- Axis in degree.
+PAGE|125
+In the given example one can clearly see the light sheet positions of the PIV experiment. And for
+fine adjustment, it is also possible to drag the dewarped image into the 3D – view, this can be used
+for fine-alignments.
+l For this purpose switch off the perspective view.
+l Right click in the visualization, > “View” > unselect “Perspective Projection”
+l Select a view that aligns with your coordinate system. In the example from below it is the X-Y
+View
+l Right click in the visualization, > “View” > select “xyz view” according to your initial coordinate
+system.
+l
+In case your coordinate systems does not align with the standard views one can use the
+mouse to rotate the view
+How to algine the 2 coordinate systems with
+Final visualisation of the combined PIV-DIC
+help of the raw images
+measurement
+12.3.16 Dantec Dynamics Feedback Tool
+Dynamic Studio contains a feedback tool that can be used in two instances.
+If an nonrecoverable error occurs during execution of an operation in Dynamic Studio, the Dynamic
+Studio Feedback tool is shown to the user.
+PAGE|126
+The user can also use the tool to make suggestions for features or enhancements of Dynamic Stu-
+dio by launching the Feedback Tool from Help section of the Dynamic Studio Backstage.
+The Feedback tool can be accessed from the help section of the backstage.
+The Dantec Dynamics Feedback tool contains three sections.
+The first tab contains an introduction to the tool and the feedback process. On this page the user is
+able to en/disable automatic bug reporting when a potential critical error occurs.
+PAGE|127
+The second tab contains the error reporting interface.
+Here the user can enter either a bug or an idea. And a short title.
+And a description about the idea or events can be added to the feedback report.
+Attachments and images can be added to the report. In the case of the automatic bug report a
+screen shot of the application is added to the feedback automatically.
+If the user can add contact information and might be contacted if further information is needed by
+the Dynamic Studio development team.
+PAGE|128
+The last tab contains information about previously submitted reports.

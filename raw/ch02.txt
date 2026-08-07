@@ -1,0 +1,29 @@
+PAGE|18
+2 Related Documentation
+The following printed manuals, user guides and documents contain information that you might find
+helpful as you use this online help file. Some of these manuals are only delivered for specific applic-
+ations and systems
+l 2DPIVReferenceManual- 9040U1752 This manual describes the fundamental techniques of
+PIV. Including seeding, light sources, cameras, the mathematics of PIV data processing and
+using the software.
+l StereoscopicPIVReferenceManual- 9040U4115 This manual describes the fundamental
+techniques of Stereoscopic PIV. Including laser safety, principles in Stereoscopic PIV, cal-
+ibrations, system components, and using the software.
+l Planar-LIFSoftwareInstallation&User'sGuide- 9040U3652 This manual describes the fun-
+damental techniques of liquid LIF. Including theory and practice with planar LIF, using the soft-
+ware for calibration, re-sampling and the quality of planar LIF data.
+l LIFApplicationGuide- 9040U3041 This manual describes the fundamental techniques of gas
+and combustion LIF processes. Including how to handle gas LIF tracers, using the software,
+and the quality of gas and combustion LIF data.
+l InteferometricParticleImaging(IPI)ReferenceManual- 9040U1191 This manual describes
+the IPI particle sizing techniques. Including camera setup, particle light scattering and detec-
+tion, calibration and post-processing using the software.
+l APracticalGuidetoLaserSafetyandRiskAssessment(SafetyGuide)- 9040U4031 This
+safety guide includes safety instruction in working with lasers. Including risk assessment, per-
+sonal safety, creating safe environments, and a check list.
+l HandlingFluorescenceDyes(SafetyGuide)- 9040U3671 This safety guide includes instruc-
+tions in working with fluorescence dyes for planar LIF. Including interpretation of MSDS stand-
+ards, risks and safety phrases.
+l OEMDocumentation- A number of OEM supplied manuals and guides are delivered together
+with the devices delivered for your system. This includes cameras, lasers, frame grabbers, AD
+boards, etc.

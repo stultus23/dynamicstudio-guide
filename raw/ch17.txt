@@ -1,0 +1,386 @@
+PAGE|1002
+17 Data Exchange
+You can import images into DynamicStudio using the Image Import option from the File Menu.
+Data can be exported from DynamicStudio to disk through different methods:
+l
+Image export: The dataset is exported as an image that can be viewed and processed by
+external programs
+l Numeric data: The data is exported as a numeric representation to a file. The data rep-
+resentation is similar to that shown in the numeric view.
+l Ensemble zip export: The selected ensembles can be zipped into zip file representing a sub set
+of the existing database.
+l Dataset export: Specific datasets can be selected from the content list to a zip file.
+l Dataset export with dependencies: The selected dataset and its dependencies are com-
+pressed in a zip file.
+17.1 Image Import
+Available from the context menu of an existing database, project, run and image ensemble. It is not
+possible to import images into a project containing acquired images.
+17.1.1 Formats
+The import function allows to import images in the following formats:
+File extension
+File type
+.bmp
+Windows Bitmap file
+.tif, .tiff
+TIFF Tagged Image File Format file
+.jpg, .jpeg
+JPEG File Interchange Format file
+.png
+PNG Portable Network Graphics
+.raw
+Raw file format
+.im7, .imx
+DaVis Binary Image File
+The selected record from where the import is initiated determines the location of imported images
+in the database:
+l
+If the selected record is the database root, a new project and run will be created.
+l
+If the selected record is a project, a new run will be created.
+l
+If the selected record is a run, a new ensemble will be created.
+l
+If the selected record is an image ensemble, the images will be appended, if size and pixel
+depth matches existing images.
+JPEGs, PNGs, and Windows Bitmaps are always converted and imported as 8-bit grayscale
+images. The accepted input formats are 8 bpp indexed, 24 bpp RGB, 32 bpp RGB and 32 bpp
+ARGB. TIFF images are imported as either as 8-bit or 16-bit, depending on the input format.
+For the ".raw" file format, the size and pixel depth of the image are usually not stored in the image.
+DynamicStudio will try to retrieve this information from the file by reading the "Image Width", "Image
+Height" and "Image Bit-Depth" properties. If the properties are not available, the user will be asked
+to manually input them.
+PAGE|1003
+17.1.2 How to Import Images
+Right-click on the database, project, run or ensemble in the database. Expand theImport images >
+option from the context menu and select either Import as single-frame... or Import as double-
+frame..., depending on whether you want images imported to a single-frame or double-frame
+image ensemble. A file dialog window will appear, where you can choose the images you wish to
+import. Once you have selected the images you wish to import, press Open, and the import images
+dialog will be shown. Depending on whether you choose Import as single-frame... or Import as
+double-frame..., the dialog will differ slightly.
+Single-frame import
+The single-frame image import dialog is shown on Figure 1. The selected images to import are
+shown in the list on the left side of the dialog. You can use the Add images to open another file dia-
+log to add additional images to import, as well as the Add folder to add an entire folder. The
+Images properties in the lower left corner shows the image size, pixel depth and number of frames
+in the each of the images chosen for import. It is only possible to add additional images, which have
+the same properties as the already chosen images. The Remove images button will remove the
+images selected in the list. You can select images in the list by clicking on them with the mouse.
+You can use the Shiftkey and/or Ctrlkey to select multiple images. It is also possible to drag-and-
+drop the selected images in the list to reorder the images, which will affect the order they have in
+the ensemble as well as their timestamps. You can also press the Nameheader to sort the images
+alphabetically in ascending or descending order.
+Figure 1) Single-frame import images dialog.
+PAGE|1004
+When you have added and ordered all the images you want imported to the list, it is time to choose
+the camera settings. This is described in the section called Camera selection further down in this
+document. If you are importing to an existing ensemble, the camera selection option will be dis-
+abled.
+Double-frame import
+The double-frame image import dialog is shown on Figure 2.
+Figure 2) Double-frame import images dialog
+This dialog has an additional list of images labeled "Frame 2". When importing, the images on the
+same position in the two lists will be matched together to create a single double-frame image. Note
+thatiftheimportedimagesarealreadydouble-frameimages,likedouble-frameTIFFfiles,thenthe
+"Frame2"listwillnotappearandthetwoframeswillbetakenfromthesamefile.
+Above each list of images, a text is added with "Image count: " to show how many images are in the
+list below. The text will be red, if there are not an equal amount of images in each list When images
+are added, they will initially be added at the end of the frame 1 list. There are several ways to move
+the images between frame 1 and frame 2 to balance the two lists. The images can be drag-and-
+dropped by selecting one or move images from a list and dragging them to the other list. Altern-
+atively the buttons between the two lists can be used to move images between the two lists. They
+are described in Table 1 below.
+Move selected images in frame 1 to frame 2.
+Flip the
+content of
+the two
+lists.
+Move selected images in frame 2 to frame 1.
+Move all
+images in
+frame 2 to
+frame 1.
+Move the second half of the images to frame 2.
+Move
+every
+second
+image to
+frame 2.
+Table 1) Buttons for moving images between frame 1 and 2.
+PAGE|1005
+Finally, it is possible to write an expression in the text box below the "Frame 2" list and clicking
+Apply. All the images which match the expression will be placed in the frame 2 list, while the
+images which do not match will be placed in the frame 1 list. Wildcard matching is used per default,
+where "*" matches any sequence of characters including no characters, "?" matches any single
+character, and any other character matches that exact character. For instance, the expression "*-
+2.png" will match any filename ending with "-2.png", which would properly sort the images shown in
+Figure 2. Alternatively, regular expressions can be used by checking the check box below the text
+field. Regular expressions are beyond the scope of this help, but there are many guides available
+online. The supported syntax is described on Microsoft website.
+Camera selection
+Once you have selected the images for import, it is necessary to select the camera to be asso-
+ciated with the created image ensemble. The drop down menu under camera selection can be
+used to choose the camera source as shown on Figure 3.
+Figure 3) Selecting camera source.
+You can choose to create a new custom camera, choose an existing camera from the same project
+or database, or create a new camera based on a device library template. If you want to create a
+new camera, you must fill in the cameras properties in the property sheet below the drop down
+menu, including the cameras name, pixel pitch and sensor size as shown on Figure 4. If you want
+to choose an existing camera, the name option is changed to a drop down menu where you can
+select the camera you wish to use and you will not be able to change the camera properties as
+shown in Figure 5. Notethatwhenimportingtoanexistingensemble,thecameraselectionwillbe
+disabledasthecamerafromtheexistingensembleisused.
+PAGE|1006
+Figure 4) Creating a new camera.
+Figure 5) Choosing an existing camera.
+Completing the import
+Once the images and camera is chosen, you must set the right timing parameters and the
+ensemble name.
+There are two different timing parameters, "Time between pulses" and "Trigger rate". Notethatthe
+timebetweenpulsesisonlyavailablefordouble-frameimportandonlywhencreatinganewrun.If
+youareimportingtoanexistingrun,thetimebetweenpulsesfortheexistingrunisused.Similarly,
+ifyouareimportingtoanexistingensemblewithatleasttwoimagesinit,thetriggerratewillbe
+takenfromtheexistingensemblebylookingatthetimestampsoftwoconsecutiveimages.
+The ensemble name is automatically named after the camera, but it is possible to manually input an
+alternative name. Notethatifyouareimportingtoanexistingensemble,itisnotpossibletochange
+theensemblenamehere.
+Finally, press the import button to begin the import of the images.
+17.1.3 Note
+If you want to use your imported images as calibration images you can move them to a calibration
+ensemble afterwards.
+17.2 Image Export
+Image export function can be opened by right-clicking an ensemble or a collection of images and
+selecting export.
+17.2.1 Formats
+The export function allows to export data in the following formats:
+PAGE|1007
+File extension
+File type
+.bmp
+Windows Bitmap file
+.tif
+TIFF Tagged Image File Format file
+.jpg
+JPEG File Interchange Format file
+.avi
+Video for Windows Movie file
+.emf
+Windows Enhanced Metafile file
+.raw
+raw format, only pixel data is saved to the file
+When one of the image or movie formats is selected the display representation is exported; for
+Images this means the image itself, and for Vector plots an image of the vector plot.
+Image Export
+When JPEG or Windows Bitmap formats are selected the images are represented in only 8-bit.
+This means, that when an Image with a higher resolution is exported the original image resolution is
+reduced by resampling the pixel values, resulting in loss of information. If loss-less export of
+Images is required, choose the TIFF format. Exported images in the TIFF format will contain full
+pixel information in 8-bit, 16-bit and 32-bit floating point using LSbit-first fill order, - currently suit-
+able for all image formats. If double frames are exported in this format the both frames will be con-
+tained in a single TIFF file.
+Note
+Most image viewers and tools in Windows does not support 16-bit integer or 32-bit floating point tiff
+images. An example of a image processing tool that do support these tiff formats is ImageJ
+(http://rsbweb.nih.gov/ij/)
+If double frames are exported in Bitmap or JPEG a image file will be created for each frame and
+signed with the letter a or b indicating frame a or frame b.
+When exporting tot eh "raw" format, information on the image size and pixel depth is stored as prop-
+erties on the file. These properties is not visible in Windows, but can be retrieved by use of special
+tools found on the Internet. The property names are "Image Width", "Image Height" and "Image Bit-
+Depth".
+Pixel data is stored as a stream of pixel values, row by row, starting from the upper left corner of the
+image. If pixel depth is 8 bit, then only one byte per pixel is used. If pixel depth is more than 8 two
+bytes per pixel is written to the file(little endian format).
+Please note that some of the export formats takes very long time for exporting; especially when
+large Images are exported as Text format.
+AVI Export
+When exporting images or vectors to AVI, movies are always saved as 8-bit using the current LUT
+information.
+Vector Export
+When exporting Vector plots it is possible to save images as Windows Enhanced Metafiles.
+17.2.2 File Format
+The exported data sets are saved into a Destination path, using a Base file name, File type and
+Index to construct the resulting export file name.
+<Destination path>\<Base file name>.<Ensemble id>.<Index>.<File type>
+PAGE|1008
+The index is prefixed with 0, zeros are added until 6 digits is reached. This format is useful when list-
+ing and sorting in the Windows Explorer. The Ensemble id uniquely identifies the ensemble record,
+ensuring unique output file names.
+17.2.3 Enhanced image quality
+Prior to exporting images, it is possible to enhance image contrast or to change color for example.
+l From the images to export, open the color map and histogram (right mouse click)
+l Adjust the ColorMap(contrast), select grayscale or color display
+l Close the "color map and histogram" window and save the new display settings as Global color
+map.
+l The images can now be exported with the new display settings
+17.2.4 How to Export Data
+Single data sets can be exported from within an expanded ensemble by right-clicking on the data
+set index or name. All data sets in an ensemble can be exported by right-clicking on the ensemble
+record.
+1. Select the ensemble or data set inside the ensemble to export.
+2. Right-click on the record and select Export....
+3. Fill the Export dialog
+Destination path is remembered between sessions and is default set to \<database
+PAGE|1009
+folder>\Exports\
+Base file name is preset by the name of the selected ensemble
+File type is remembered between sessions and is default set to .tiff format.
+Start index is preset to 1.
+4. Press Ok to start exporting.
+5. During export a progress bar is displayed. It is not possible to perform other tasks in Dynam-
+icStudio while exporting, but the export can be aborted by pressing Cancel.
+When exporting in Movie format it is furthermore possible to specify the Playback and Compression
+rates. The Playback rate determines how fast the movie should show the images or frames pr.
+second (fps). The Compression rate determines the quality of the movie, a high compression (close
+to 100%) gives poor quality but a small movie file, a low compression rate (close to 0%) gives high
+quality and a large movie file. Default the Frame rate is set to 10 fps. and the Compression rate to
+70 %.
+17.3 Numeric Export
+Numerical export function can be opened by right-clicking an ensemble or a collection of images
+and selecting export.
+Numerical export allows you to export datasets to the following formats:
+File extension
+File type
+.CSV
+Comma separated values.
+.TAB
+Tab delimited text file.
+.DAT
+Tecplot data file.
+.XML
+Extensible Markup Language
+Basics
+In order to export the following information must be specified:
+l Path (path to the directory to export to)
+l Base name (first part of the name of the export file)
+l
+Index (second part of the name of the export file)
+l Export type (the type of export to perform)
+A Preview button is available to see the export result of a given export setup on the first dataset.
+Includes
+When exporting numerically it is possible to add properties to the export file. The properties are as
+follows:
+l Originator (what ensemble does the export come from)
+l CameraInfo (camera name and index)
+l Custom Properties (properties that have been added by the user to the project, run and
+ensemble)
+l TimeStamp (timestamp of the data)
+Columns select
+It is possible to deselect the column data that is not needed.
+PAGE|1010
+Here it is also possible to select number of decimals for the individual values.
+Export Types
+l CSV
+l TAB
+l DAT
+l XML
+CSV
+The csv file contains a header section ">>*HEADER*<<" and a data section ">>*DATA*<<".
+These strings denote the start of each section.
+The header section will always contain a line for file id and version.
+If properties has been added to the export. Additional lines will be added to include these.
+One line pr. property.
+>>*HEADER*<<
+FileID:DSExport.CSV
+Version:1
+Originator:deleteme1.New Project.New Run.Cross 32 50%
+CameraInfo:Cam.9
+Custom Properties:AnalysisEnsemble.Coordinates.X.Double:;
+AnalysisEnsemble.Coordinates.Y.Double:;
+AnalysisEnsemble.Coordinates.Z.Double:;
+AnalysisEnsemble.Variables.Concentration.Double:;
+AcquiredImageEnsemble.Variables.pH.Double:;
+AcquiredImageEnsemble.Variables.Temperature.Double:;
+AcquiredImageEnsemble.Variables.Integrationtime.Double:;
+TimeStamp:0,0005
+>>*DATA*<<
+x;y;x (pix);y (pix);x (mm);y (mm);U pix;Length;Status
+0;0;15,5;15,5;0,1178;0,1178;0,000689571882168438;
+3,89431493223103E-05;0
+0;1;15,5;31,5;0,1178;0,2394;0,000510268292648681;
+1,06871219396756E-05;0
+.
+.
+.
+The Custom properties is actually one line in the file and the format is:
+name:value;name :value ...
+TAB
+See CSV for details on header.
+the data is arranged the same way except that they are separated by a tabulator character.
+DAT
+this format is a tecplot format that includes that columns that are selected and the properties are
+added to the DAT file as DATASETAUXDATA values.
+XML
+this format is structured as follows:
+<?xml version="1.0" encoding="UTF-8"?>
+<Export>
+<info id="DSExport.XML" version="1">
+.
+PAGE|1011
+.
+.
+</info>
+<data>
+.
+.
+.
+</data>
+</Export>
+Every property is located in the info tag.
+All data columns are located in the data tag.
+A property is constructed as follows:
+<property name="XXXXX">
+<type>XXXXX</type>
+<value>XXXXX</value>
+</property>
+The name attribute denotes the name of the property.
+Type can be any of the microsoft defined typecodes1
+Value corresponding to the type.
+The following shows how the custom properties are arranged:
+<property name="Custom Properties" array="true">
+<param recordtype="AnalysisEnsemble"
+category="Coordinates" name="X">
+<type>Double</type>
+<value>0.034</value>
+</param>
+<param recordtype="AnalysisEnsemble"
+category="Coordinates" name="Y">
+<type>Double</type>
+<value>9.455</value>
+</param>
+<param recordtype="AnalysisEnsemble"
+category="Coordinates" name="Z">
+<type>Double</type>
+<value>6.6</value>
+</param>
+.
+.
+.
+</property>
+The property has the attribute array to indicate that this property is an array of several parameters.
+The parameters are NOT necessarily the same type.
+Data are arranged in the following way.
+1Empty, Object, DBNull, Boolean, Char, SByte, Byte, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single,
+Double, Decimal, DateTime, String
+PAGE|1012
+<datacolumn title="x">
+<values type="Int32"
+seperator=";">
+95;98;98;98;98;98;98;98
+</values>
+</datacolumn>
+<datacolumn title="y">
+<values type="Int32"
+seperator=";">
+0;57;58;59;60;61;62;63;64;65
+</values>
+</datacolumn>
+<datacolumn title="x (pix)">
+<values type="Double"
+seperator=";">
+15,5;1583,5;1583,5;1583,5;1583,5;
+</values>
+</datacolumn>
+The title indicates the name of the column
+The type is specified by microsoft typecodes.
+The separator attribute indicates the character used to separate the values.

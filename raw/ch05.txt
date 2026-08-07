@@ -1,0 +1,35 @@
+PAGE|24
+PAGE|25
+5 Laser Safety
+All equipment using lasers must be labeled with the safety information. Dantec systems are using
+Class III and Class IV lasers whose beams are safety hazards. Please read the laser safety sec-
+tions of the documentation for the lasers and optics carefully. Furthermore, you must instigate
+appropriate laser safety measures and abide by local laser safety legislation. Use protective eye
+wear when the laser is running.
+Appropriate laser safety measures must be implemented when aligning and using lasers and illu-
+mination systems. You are therefore urged to follow the precautions below, which are general
+safety precautions to be observed by anyone working with illumination systems to be used with a
+laser. Again, before starting, it is recommended that you read the laser safety notices in all doc-
+uments provided by the laser manufacturer and illumination system supplier and follow these as
+well as your local safety procedures.
+Precautions
+As general precautions to avoid eye damage, carefully shield any reflections so that they do not exit
+from the measurement area.
+5.1 Danger of Laser Light
+Laser light is a safety hazard and may harm eyes and skin. Do not aim a laser beam at anybody. Do
+not stare into a laser beam. Do not wear watches, jewellery or other blank objects during alignment
+and use of the laser. Avoid reflections into eyes. Avoid accidental exposure to specular beam reflec-
+tions. Avoid all reflections when using a high-power laser. Screen laser beams and reflections
+whenever possible. Follow your local safety regulations. You must wear appropriate laser safety
+goggles during laser alignment and operation.
+During alignment, run the laser at low power whenever possible.
+Before connecting any laser(s) to the system, please consult the laser safety section of the laser
+instruction manual.
+5.2 Precautions
+As general precautions to avoid eye damage, carefully shield any reflections so that they do not exit
+from the measurement area.
+PAGE|26
+5.3 Laser Safety Poster
+Displays the essential precautions for ensuring a safe laboratory environment when using lasers in
+your experiments. (Wall poster 70 x 100 cm). Available from http://www.dantecdynamics.com, or
+through Dantec Dynamics' sales offices and representatives.

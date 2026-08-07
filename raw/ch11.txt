@@ -1,0 +1,100 @@
+PAGE|49
+11 Legacy Options
+The following Add-Ons and Options have been discontinued, merged with other options or made
+part of the main package. For technical reasons they may however still appear in DynamicStudio's
+'About'-box as enabled in the dongle:
+Advanced PIV
+80S33
+The Advanced PIV add-on includes the
+Merged with 80S58,
+(requires 2D PIV Add-
+possibility for high accuracy processing
+2D PIV
+On)
+and definition of deforming windows.
+Image Processing
+80S39
+Basic image manipulations and transforms
+Included in 80S57,
+Library
+including: rotation, shifting, scaling, high
+DynamicStudio Base
+and low pass filtering and more. Also
+Package.
+including more advanced routines like
+morphing and Fourier transforms.
+Proper Orthogonal
+80S74
+Proper Orthogonal Decomposition (POD):
+Included in 80S57,
+Decomposition
+Using the method of snapshots on a time-
+DynamicStudio Base
+series of scalar or vector maps.
+Package.
+Data Visualization
+80S69
+Using embedded graphics engine
+Discontinued
+Advanced Graphics
+80S75
+The Advanced Graphics opens up for
+Included in 80S57,
+advanced vector data processing and dis-
+DynamicStudio Base
+plays. The add-on includes vector map res-
+Package.
+ampling, rotation and mirroring. It also
+includes streamline, LIC, scalar map, spec-
+trum and vorticity displays. (formerly
+known as Vector Processing Library)
+MATLAB® Link
+80S77
+Transfer of setup information and data
+Included in 80S57,
+from DynamicStudio to MATLAB's work-
+DynamicStudio Base
+space and auto execution of a user-sup-
+Package.
+plied script.
+1 Camera Plug-in
+80S80
+The simple and flexible device handling in
+Included in 80S57,
+2 Camera Plug-in
+80S81
+DynamicStudio opens up for an infinite
+DynamicStudio Base
+3+ Camera Plug-in
+80S82
+number of camera combinations. Cameras
+Package.
+are auto detected and enabled locally or
+remote in the system. Different add-ons
+opens up for standard 1 or 2 camera com-
+binations, and for advanced use of 3 or
+more cameras can be connected any-
+where in the system.
+Analog Waveform Ana-
+80S91
+Included in 80S57,
+lysis
+DynamicStudio Base
+Package.
+Dynamic Mode Decom-
+80S90
+Dynamic Mode Decomposition extracts
+Replaced by 80S13,
+position
+modal structures based on temporal or spa-
+Oscillating Pattern
+tial linear evolution dynamics.
+Decomposition.
+Light-field Velocimetry
+80S99
+Volumetric Particle Displacement/Velocity
+Discontinued
+using a Light-Field camera
+TecPlot Data loader
+80S79
+Discontinued

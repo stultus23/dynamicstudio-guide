@@ -1,0 +1,1253 @@
+PAGE|129
+PAGE|130
+13 Acquisition
+This section describes the following operation:
+13.1 Acquisition Manager
+This control makes it possible to create a grid definition managing a series of acquisitions which
+can be performed automatically.
+In the database the grid definition is stored in the current project. For every acquisition a new run
+will be created under the project to store acquisition settings and images.
+For troubleshooting click here.
+13.1.1 Opening the Acquisition Manager
+To open the Acquisition manager either click on an acquisition grid saved in the database, or click
+Acquisition Manager Icon in Ribbon:
+In order to make the Acquisition Manager work with the Acquisition system, DynamicStudio must
+be in Acquisition Mode, and all devices must be ready for Acquisition.
+Note:
+When entering Acquisition Manager a dialog will appear stating a warning that the Laser warning
+dialog will be disabled. This dialog normally appears just before starting an acquisition and pulsing
+the laser
+When start running the steps in Acquisition Manager no Laser warning will take place!
+You can not enter Acquisition Manager without agreeing to disable the Laser warning.
+When open the Acquisition Manager Dialog look like this:
+PAGE|131
+By checking "Advanced view" Check box, extra grid manipulation buttons will apear:
+13.1.2 Description of possible settings
+Analysis sequence
+It is possible to have the data that is acquired analyzed. The way this is performed is that a selected
+Analysis sequence is applied on the acquired data. To select an analysis sequence please "Select-
+ing Analysis seqeunce" on page 139
+Start delay
+This is the delay introduced when an acquisition is started,
+It will disable the cameras during the delay but everything else will run.
+Prompt
+If checked, a dialog will appear in which you will have to click "OK" in order to continue to the next
+row.
+Traverses
+As shown in the image of Acquisition Manager traverses in the Acquisition system will be shown. In
+this case an Active Target Traverse.
+Each Traverse will be given a separate column.
+Time between pulses
+This is the time between pulses of the laser in micro seconds.
+Trigger rate
+This is the rate at which the event are happening.
+For single frame mode the rate of each laser pulse.
+For double frame mode the rate of each double laser pulse.
+this is in Hz.
+Number of images
+This is the number of images to acquire at the specific traverse position.
+PAGE|132
+13.1.3 Buttons and Check box's in the bottom of Acquisition Manager dialog
+Save for calibration
+When this Check box is checked images will be saved to calibration,
+Postpone Analysis
+When this Check box is checked selected analysis will be performed after all Acquisition has been
+done.
+Save
+Clicking Save will save the work done in Acquisition Manager to a Grid Definition record in the data-
+base in the current selected Project.
+NOTE: You can open the Grid Definition record in Acquisition Manager by double clicking the Grid
+definition record in the database.
+Run all
+Clicking Run All will start the acquisition specified in Acquisition Manager.
+Stop
+Clicking Stop while Acquisition Manager has started an Acquisition will stop the acquisition.
+Postpone Analysis until all acquisition done
+If "Postpone Analysis until all acquisition done" is checked, no analysis will take place before all
+acquisitions specified in Acquisition Manager has been performed. Otherwise analysis will be done
+right after one acquisition has been performed.
+Manage manual axis
+Acquisition Manager supports the handing of manual moved axis. These can me manual movable
+linear or rotating axis.
+Axes are added and removed by clicking "Add Axis" and "Remove Axis".
+The user can change Name, Min Value, Max Value, Type and value prefix for the axis by enter-
+ing/selecting new values directly.
+When running then just before the system moves standard targets at each step, DynamicStudio will
+show a message box asking the user to move any manual axis which needs to be moved.
+PAGE|133
+13.1.4 Grid manipulation buttons to the right of the grid
+Insert new
+Clicking Insert new, a new row will be entered.
+Delete selected
+Clicking Delete selected will delete all selected rows
+Select all
+Clicking Select all will select all rows
+Move to position
+Clicking Move to position will move all traverses to the position specified in the selected row.
+Run position
+Clicking Run position will make the acquisition system start acquisition with the settings specified in
+the selected row.
+Run from position
+Clicking Run position will make the acquisition system start acquisition with the settings specified in
+the selected row.
+The acquisition will continue to be performed with settings in next row until all acquisition has been
+done - one for each row.
+Generate Grid
+It is possible to generate rows automatically. This is done using the Grid Generator.
+Clicking Generate Grid will bring up the following dialog:
+Start by choosing the right Grid type. Here it is possible to select between 1D, 2D, or 3D systems
+meaning 1, 2, or 3 axis traverse positions.
+In the dialog above, a 1D system has been selected.
+Now select the start position, number of steps, and the size of each step.
+PAGE|134
+When clicking OK, in this example three new rows will be created.
+Run name convention
+Clicking Run name convention a dialog will be shown in where it is possible to select between three
+different naming conventions on how each run should be named:
+l Creation time (time and date of creation of the run)
+l Position (Axis position entered in the grid will be used for naming the run)
+l
+Index (the index will be used for naming the run)
+"Acquisition Manager" on page 130
+Insert param sweep
+It is possible to insert a parameter for a specific paramter.
+Select a cell in the grid (thereby selecting the parameter to work on and from where the new rows
+will be entered).
+Clicking "Insert param sweep" will now show the following dialog:
+Now select the start value, number of steps, and the size of each step.
+When clicking OK, in this example five new rows will be created in the grid with the values 2; 3; 4; 5
+and 6 in the column you selected and all other values as in the row selected to begin with.
+(Start pos and Step size can be negative values)
+Import
+It is possible to import the Acquisition Manger setup including property mapping information and all
+positions from a file create with the export functionlity.
+Clicking Import will bring up a Open file dialog from where it is possible to select the file to import.
+Export
+It is possible to export the Acquisition Manger setup including property mapping information and all
+positions to a file with can later be imported via Export.
+Clicking Export will bring up a save file dialog to select the file name and path to save the export
+information in.
+Property mapping
+Clicking Property mapping will open the dialog Property mapping:
+PAGE|135
+The Property Mapping dialog makes it possible to select which Custom Property values to save to
+the acquired Run or Calibration.
+By default X,Y and Z value is saved.
+Save
+If a check mark is present for the given value the value will be saved
+Place in Category
+Specifies in which Category in Custom Properties the given value is to be saved
+Default properties are "Info" and "Coordinates".
+It is possible to create a new Category for the given property value, this is done by clicking the value
+and select "<New category>":
+Write in the name for the category.
+Map to Property
+Specifies which name to give the value in Custom Properties
+By default the Map to Property is the name of the value.
+It is possible to create a name for the given property value, this is done by clicking the value and
+select "<New property>":
+Write in the name for the value.
+PAGE|136
+Select parameters
+Clicking the button a new dialog will be opened called “Select parameters”:
+This dialog is divided in to 4 squares:
+l
+Upper left: shows the current Acquisition System device tree.
+l
+Upper right: shows the device properties for the selected device.
+Selecting a device in the device tree will cause the device properties to be shown.
+(It is also possible to change parameter values directly from here)
+l
+Lower left: show devices for which one or more parameters has been selected
+l
+Lower right: shows the device properties for the selected device. In lower left quadrant.
+Here the selected parameters for the given device is show
+(this means that only selected parameters is shown and not all)
+To select a parameter right a parameter name in the upper right quadrant and choose “Select”:
+PAGE|137
+Having selected a parameter, the device tree in lower left quadrant is updated:
+Here it can be seen that a parameter for the “FlowSense EO 4M” has been selected.
+PAGE|138
+Clicking on the device “FlowSense EO 4M” in the device tree in the lower left quadrant will make
+the properties view update in the lower right quadrant shown the selected parameter:
+Having selected the parameters that you want to work width in Acquisition Manager (in this case
+“Exposure time” only – except of the default ones) click OK.
+Now the Acquisition Manager dialog is updated and the selected parameters is added as a column
+in the data grid view:
+It is possible to remove parameters the same way as selecting the parameters. If a parameter is
+already selected, the context menu entry will say “Deselect”:
+PAGE|139
+13.1.5 Selecting Analysis seqeunce
+To select an analysis sequence to be performed on the acquired data, just click the drop down but-
+ton in the cell. This will make a list of available analysis sequences drop down:
+Just select the analysis sequence, or if more information is needed select the "<<Browse>>" entry
+in the list. This will bring up the Analysis Sequence library dialog as shown below:
+PAGE|140
+Here you can select the analysis sequence that you want to have performed on the acquired data.
+As can be seen in the example above, an analysis sequence might have external dependencies.
+Here it is a spatial calibration for each of the cameras, to be used when analyzing the Stereo PIV
+Processing.
+NOTE:External dependencies must be marked as Input for Analysis before opening the Acquisition
+Manager.
+Removing a selected Analysis sequence from a row
+To remove a selected analysis sequence from a row in the Acquisition Manager, just select the
+empty entry in the drop down list.
+Analysis Sequence execution
+1. First it will be checked if the necessary “External dependencies” defined in the sequence (if
+any) has been marked in the database. If not, no analysis will be performed and the system will
+stop with an error.
+2.
+If the Analysis Sequence only holds one parent, each and every acquired image ensemble will
+be treated with the specified Analysis sequence.
+PAGE|141
+3.
+If the Analysis Sequence holds more parents, then it will be checked if the necessary parents
+just have been saved as part of the acquisition just done. If check is ok, only one execution of
+the sequence will be performed. If the check fails, the analysis will be skipped and the system
+stopped with an error.
+13.1.6 Troubleshooting
+Problem
+Action
+The manager hangs after first position Make sure that the camera is connected both physically
+and in the synchronization diagram. The Acquisition man-
+ager does not run preview or free run so everything needs
+to be connected.
+First try to make a single acquisition from the System Con-
+trol window. This will indicate if the system is correctly set
+up.
+The traverse does not move
+See troubleshooting under Traverse Control
+Not all steps in the selected analysis
+Check if the analysis sequence selected have external
+sequence are performed
+dependencies, if so, that these are not selected in the
+database before entering the acquisition manager, ana-
+lysis steps requiring external input will not be performed.
+13.2 Device registration
+13.2.1 Registering 3rd party devices to unlock and enable full control of them via
+DynamicStudio
+Non-original Dantec Dynamics devices - such as a camera bought from a 3rd party supplier – can-
+not by default be used under the DynamicStudio software platform. To unlock and enable full con-
+trol of the device via DynamicStudio, you can register your 3rd party device with Dantec Dynamics.
+When registration is completed, you can benefit from all advanced capabilities of DynamicStudio
+like e.g. synchronization of camera with lasers or other cameras. Registered devices will work
+under DynamicStudio with the same functionalities as original Dantec Dynamics devices of the
+same type.
+13.2.2 Requirements
+In order for registration to be possible it is required that your device is compatible with the Dynam-
+icStudio software. For precise information, please consult your Dantec Dynamics representative.
+13.2.3 How to register
+If you have a 3rd party device that you wish to use together with your Dantec Dynamics imaging sys-
+tem, simply connect it to the acquisition computer, start DynamicStudio and enter Acquisition
+mode.
+If the device is compatible, DynamicStudio will automatically recognize it and add it to the Device
+Tree as an unregistered device. The red text “Unregistered device – Please register” will be shown
+following the device name.
+PAGE|142
+To start the registration process, right click on the device and select the entry “Register devices”.
+Doing so will bring up the “Register devices” dialog.
+“Register devices” Dialog
+This dialog will list all the unregistered devices that are currently connected to the system. At each
+device there is a checkbox, and by default all devices are checked to indicate that the registration
+will be valid for all devices. If there are some devices that you do not wish to register, please
+uncheck these devices.
+The dialog will also list the dongle serial number that is currently used. You have the possibility to
+add more dongle serial numbers to this list, if you have more than one dongle for DynamicStudio.
+When you register you must make sure that all your dongle serial numbers are listed. Only dongles
+listed will enable use of the devices you are registering.
+PAGE|143
+When you have checked the devices you want to register and added all the relevant dongle num-
+bers, click “OK”. A “DeviceKeys.zip” file is created holding information on each of the devices
+checked in the dialog, as well as the dongle serial numbers listed. The file is by default placed on
+your desktop.
+Please send the file to Dantec Dynamics support: support@dantecdynamics.com
+In a few days after Dantec Dynamics support has received you application you be will contacted.
+NOTE:
+If you instead ignore the warning that you have unregistered devices connected to your system,
+and try to run the system by either Free run, Preview or Acquire, the system will not start acquis-
+ition, but a message box will appear asking to register the device. If you wish to continue with image
+acquisition without registering any device, please disable or disconnect all unregistered devices to
+proceed.
+Dantec Dynamics provides quotation for the registration
+If not all devices are purchased at Dantec Dynamics you will be contacted by our sales team with a
+quotation for the device registration. The price for the registration will vary depending on the num-
+ber of the devices you wish to register as well as the brand/model of the devices.
+If you accept the quotation, please contact the sales person who sent it to you, to officially order the
+registration.
+13.2.4 Receiving the “RegisteredDeviceKeys.zip” file
+When your order has been processed, you will receive an email including a “RegisteredDeviceKey-
+s.zip” file attached. You need to import the file into DynamicStudio on your acquisition computer.
+This is done from the File menu and then select Import->Approved Device keys…
+PAGE|144
+Selecting this menu entry will bring up a file open dialog where you can locate the
+“RegisteredDeviceKeys.zip” file to import. Having imported the file successfully, DynamicStudio
+shows the following message:
+The listed devices have now been registered to be used on the current installation of Dynam-
+icStudio and with the listed dongles.
+When you now enter Acquisition mode, the device will be available for use just like any other Dan-
+tec Dynamics device.
+13.3 Reporting acquisition settings
+From an existing database, it is possible to generate a file including all the acquisition parameters,
+and hardware description. This html file can be used to document the data acquisition.
+l From a run icon in the database tree, do a mouse right click and select "generate acquisition
+setting reports". Type in the file name and storing location.
+PAGE|145
+13.4 Storing and loading acquisition settings
+When a new database is created, DynamicStudio loads setting which are stored in the acquisition
+device (last used ones).
+To use the default configuration hardware configuration, you can reset the acquisition system
+Click the tap Acquisition and click Reset Acq-System:
+To re-use an old acquisition configuration, you need to copy it from the existing database to the
+acquisition devices:
+l open the old database which includes the settings you want to re-use.
+l
+from the system control window, press the store icon.
+l The settings are now stored in the acquisition system
+PAGE|146
+l
+If now you create a new database, it loads the settings you have just stored from the acquisition
+system
+l
+If you open an existing database, you can load the settings by right clicking from the run icon
+(select load acquisition settings)
+13.5 Imaging Setup Assistant (ISA)
+The Imaging Setup Assistant helps the user to configure, plan for and setup an imaging exper-
+iment. For e.g. a classic Stereo PIV setup several parameters are of great importance: The Image
+overlap, the depth of field, the Scheimpflug angle, the camera angle, the time between laser
+pulses, as well as the particle image diameter in pixels. Using ISA these parameters and their influ-
+ence on the planned measurements can be investigated.
+For simplicity the user can select one of 15 predefined template configurations. These include both
+air and water as medium and covers typical Planar, Stereo and Volumetric setups (1, 2 & 4 cam-
+eras respectively). The templates can be used as is or modified to match a planned experiment. By
+selecting a suitable window orientation relative to the cameras line-of-sight different water tank geo-
+metries and camera arrangement can be simulated. ISA is integrated with the Cameras and
+Lenses supported by DynamicStudio. For laser based systems light sheet properties are inserted
+manually.
+This manual contains:
+l
+ISA Step-by-Step instructions (general Imaging setup)
+l Example 1. Planar PIV, single camera setup (2D2C PIV)
+l Example 2. Stereo-PIV, two camera setup (2D3C PIV)
+l Example 3. Volumetric, four camera setup (3D3C PIV)
+13.5.1 ISA Step-by-Step instructions
+From the start page you can load a previously saved setup or create a new one by clicking "Add
+New" and picking the template that most resemble the intended experiment (see image below)
+You can select from 15 predefined configurations to be used as a starting point. Cameras can be
+removed or additional cameras added to an existing design. Once a configuration is selected the
+user can give the setup a unique Setup Name and Save the configuration for future reference.
+The selectable configurations includes both air and water as medium as well as different water tank
+geometries. Starting with a predefined water configuration the user can change the refractive index
+of the medium to match other liquids. A global coordinate system with Bounds in X, Y, Z at (-300;
+300; -200; 200; -300; 300) in mm is created by default, but this can be changed by the user. In the
+water examples the distance from the camera to the tank window can be changed to further modify
+PAGE|147
+the size of the tank to match the users’ experimental setup. The window orientation relative to the
+camera line-of-sight can also be changed.
+The complexity of the imaging setup templates increases left to right and top to bottom:
+The topmost setups describe measurements in air, where we need not worry about the effects of
+refraction. The remaining rows show measurements from air into water through a window, where
+the topmost of these setups have the camera normal to the window. This is the recommended solu-
+tion when measuring through a window, since looking through a window at an angle makes it much
+harder to focus and align camera views. If the cameras cannot be normal to the window, use a win-
+dow parallel to the lightsheet as shown in the last row. In most cases this will allow the camera(s) to
+be "almost" normal to the window, i.e. close to the recommended solution.
+ISA also offers the option to use a window that is normal to the lightsheet, but in this configuration
+the camera(s) will have a significant angle to the window and/or the lightsheet making both focus-
+ing, alignment and subsequent analysis very challenging. This kind of setup should be attempted
+only as a last resort and can only be created manually by modifying one of the setups above.
+The 3 leftmost setups are 'Planar' and have just a single camera. Here we need not worry about
+aligning the field of view of multiple cameras.
+The next two columns are 'Stereo' setups with two cameras, where it is important to align the fields
+of view so both cameras look at the same part of the experiment. The first column has both cam-
+eras on the same side of the lightsheet while in the second they are on opposite sides. Both are
+feasible, but the latter is a bit more challenging in terms of spatial camera calibration and sub-
+sequent analysis; Combining data from two (or more) cameras is easier when they are all on the
+same side of the lightsheet. It is not particularly hard when they are on opposite sides, but the odds
+of making simple mistakes increase significantly.
+The six rightmost setups are all 'Volumetric' with four cameras in 'Typical' arrangements; 'Fan',
+'Plus' or 'Cross'. The last of these require two-axis Scheimpflug mounts.
+Aligning, focusing and calibrating cameras in a Volumetric setup is often challenging so for meas-
+urements in water the templates all use windows normal to the camera/lens axis. Any other window
+orientation will only make a difficult task even harder.
+By manually modifying the setup you can use other window orientations, but if possible consider
+using wedges or prisms in front of each camera to make the "window" normal to the optical axis.
+13.5.2 The Medium Bounds and Medium Refractive Index
+Start with defining the Medium Bounds, (as default the Bounds in X, Y, Z are at (-300, 300; -200,
+200; -300, 300) in mm.
+In an imaging setup in a liquid fluid the refractive index is important as it determines how much light
+is bent, or refracted, when entering a material. By selecting one of the predefined water
+PAGE|148
+configurations the user can change the medium Refractive Index to match other liquids. At atmo-
+spheric pressure gases have a low density and a refractive index close to 1. (Refractive Index is
+defined as n = c/v; where c is the speed of light in vacuum and v is the phase velocity of light in the
+medium.)
+13.5.3 The Measurement Volume - Center and Size
+The Measurement Volume (MV) is used to define the desired size of the region/volume to be
+“imaged” inside the MV. The Volume Center is fixed at (0,0,0). A light sheet is always parallel to the
+X/Y plane with the sheet depth centered on Z=0.
+Example: In the figure below the defined Measurement Volume (MV) is represented by the white
+box within the light sheet (green). The FoV and DoF, achieved with the current camera and lens, is
+visualized in the center. By changing the lens and/or camera position, the user can find a con-
+figuration to make the FoV best match the desired Measurement Volume. You can of course also
+switch to a different camera in case the realization of the experiment is difficult with the current cam-
+era.
+PAGE|149
+13.5.4 Hardware configuration
+Camera / Sensor
+For a specific camera the Sensor Resolution (Width x Height in pixels), the Pixel Pitch (distance
+between neighbor pixels) in microns (µm) and the resulting physical Sensor Size in mm are fixed
+parameters.
+Option 1 Camera in the DynamicStudio Device Library:
+l Select a Camera from the drop-down list
+The Sensor Resolution (pixels) and Pixel Pitch (µm) is displayed together with the physical Sensor
+Size in mm.
+Option 2 Custom Camera:
+l Create your own camera by selecting the 'Custom Camera' or by modifying a camera type in
+the drop-down list
+l Specify Sensor Resolution (pixels) and the Pixel Pitch in microns (µm). The physical Sensor
+Size in mm is calculated from these two parameters and displayed.
+Lens parameters
+For lenses in the DynamicStudio Device Library specifications are provided by the lens man-
+ufacturer . Key parameters, such as Focal length and minimum f-number are always included, but
+others, such as minimum focusing distance, may not be. The Min-focus distance specifies the
+shortest Camera-Object distance possible at which the object can still be focused. This will also cor-
+respond to the maximum magnification possible of the given camera / Lens configuration. Note that
+for small field of views a macro lens is the best option.
+The Focal length of the lens and the Camera-Object distance (Zo) determine the Magnification of
+the system as M=f/(Zo-f). The user can test different settings in ISA to investigate this further before
+the measurements.
+The f-number will need to be optimized for the lighting conditions in a real measurement situation
+and is also important e.g. for the resulting Depth-of-Field (DoF) as well as for the particle image
+size in pixel.
+Option 1 Lens in the DynamicStudio Device Library:
+l Select a Lens from the drop-down list
+The Lens properties belonging to the selected Lens are displayed.
+Option 2 Custom Lens:
+l Create your own Lens by selecting the 'Custom Lens' or by modifying a lens type in the drop-
+down list
+PAGE|150
+l
+Insert the correct parameters for the Lens being used:  Focal length (f) and f-number).
+Scheimpflug Correction
+Note: When looking at a light sheet at an angle instead of head on, the lens and image plane need
+to be tilted as illustrated below. This is known as the Scheimpflug condition and ensures proper
+focusing across the light sheet and over the entire FoV. To achieve this so called Scheimpflug
+adaptors are mounted between the camera and the lens. Scheimpflug adaptors can be of two types
+1) adjustment possible in one direction (Pan angle, see image below) or 2) adjustment possible in
+two directions (Pan and Tilt angle).
+For measurements in air or in water where the camera is normal to the window the Scheimpflug
+angles are calculated by ISA:
+Scheimpflug 'Pan' & 'Tilt' angles are used in the same way as Camera Pan & Tilt describe camera
+location/orientation (See below).
+Scheimpflug angles are also shown graphically (examples below does not match the numerical val-
+ues above):
+PAGE|151
+The left figure shows a 'Top Down' view of a camera and a lens, showing clearly how the camera
+housing is tilted relative to the lens. The middle figure is the exact same camera seen from above
+and behind. In both figures the gray line shows the optical axis and remain aligned with the lens
+regardless of the Scheimpflug correction applied. The green line is aligned with the camera hous-
+ing and moves with it when Scheimpflug correction is applied. The optical axis will normally be gray
+while the camera axis follows the color of the camera. Note the 'Crosshair' that is drawn on the back
+end of the camera ; If the optical axis exits the camera on the horizontal line of the crosshair only
+Scheimpflug Pan is nonzero. In a 'Tilt only' scenario the optical axis would exit the camera on the
+vertical crosshair line and in this setup, where Scheimpflug Pan & Tilt are both nonzero, it exits in
+one of the quadrants of the crosshair. The outer circle of the crosshair corresponds to a total
+Scheimpflug angle of 15°, which is the mechanical limit allowed by most Scheimpflug adaptors. If
+the total Scheimpflug angle exceeds 15° the line representing the optical axis will turn red instead
+of the normal gray to give a visual clue about a potential problem. This is illustrated by the rightmost
+figure above.
+In the measurement region ISA will also show the Near and Far focal planes of each camera in the
+setup. If the camera is focused on the lightsheet the near and far focal planes illustrate how near/far
+to/from the camera you will still have decent focus. Depth of field is the distance between these two.
+By default the focal planes are on and shown with Scheimpflug correction applied. If you press 'T'
+you can turn off the display of focal planes and see only the field of view. Pressing 'T' once more will
+turn the focal planes on again, but shown as they will be for a camera without Scheimpflug cor-
+rection applied. Press 'T' once more to switch the Scheimpflug correction back on. Examples
+below.
+PAGE|152
+Scheimpflug correction On.
+Focal planes Off.
+Scheimpflug correction Off.
+Note: If/When the camera is looking through a window that is not normal to the optical axis Scheim-
+pflug correction is not predicted and near/far focal planes not shown.
+PAGE|153
+Camera placement/position:
+The inputs required by the user are seen below along with an example of a two camera (Stereo-
+PIV) setup.
+Insert coordinates for the Camera(s) pose
+Camera Pose describes the position and orientation of the camera (or the lens to be exact);
+The Distance [mm] is always positive and measured from the target point (0,0,0) to the lens (/pin-
+hole).
+The Pan angle [°] is from -180 to +180 and describes camera position in the x/z-plane. Positive Pan
+angles will place the camera at positive x-positions and similarly Pan<0 leads to x<0. Pan angles in
+the range from -90° to +90° will place the camera at positive z-positions providing a normal 'Front
+View' of the light sheet (x/y-plane). Pan angles outside this range will place the camera at negative
+z-positions providing a 'Back View', looking at the light sheet 'from behind'.
+The Tilt angle [°] is from -90 to +90 and describes camera position above or below the x/z plane.
+Positive Tilt angles will place the camera at positive y-positions and similarly Tilt<0 leads to y<0.
+The Roll angle [°] is from -180 to +180 and describes rotation of the camera around it's own axis.
+For cameras with a square sensor it makes little difference, but for cameras with a rectangular
+sensor a Roll of +/-90° is equivalent to switching between 'Landscape' and 'Portrait' orientation.
+With the default Roll=0° 'Up' in the camera images align with the y-axis ('Up') in the physical world.
+With multiple cameras at skew angles their fields of view can sometimes be made to overlap better
+by adjusting camera Roll angles, but this is rarely done as it turns out quite difficult to do in practice.
+Distance, Pan & Tilt define the camera position. The camera is always looking towards the target
+point (0,0,0), which together with the Roll angle defines the camera orientation.
+PAGE|154
+See the also the four images at the end of this section illustrating the camera movement in
+space.
+Window – only relevant for water/liquid applications:
+l Select “No Window”  for applications in air
+Or
+l
+If a predefined water tank setup is selected a “Window” is by default present in the light-path /
+tank wall. The default information about the window orientation and the distance between the
+Camera and the Window can be modified.
+l Window Orientation:  (Select from the drop-down list)
+1) Window orthogonal to camera axis
+2) Window parallel to X/Y plane
+3) Window parallel to X/Z plane
+4) Window parallel to Y/Z plane
+A window that is orthogonal to the camera axis is the best and recommended solution. If this is not
+possible or feasible use a window that is parallel to the lightsheet (i.e. the X/Y plane). Remaining
+window orientations are possible, but very difficult to use in practice and should thus be avoided.
+ISA does not account for refraction in the window itself, since it is normally just a small fraction of
+the total distance from camera to measuring position and thus has very little influence on the meas-
+urement.
+Short cuts / hot keys in the 3D display view
+l A - toggle axis display On/Off
+l T - toggles Depth-of-Field Visualization
+PAGE|155
+l V - toggle camera view cones On/Off (they are nice for one or two cameras, but may be con-
+fusing when there are four)
+l Space- return to default view
+l Comma - toggle viewpoint: X/Y-plane, X/Z-plane, Y/Z-plane, Isometric (but with perspective)
+l X, Y or Z - rotate around X, Y or Z axis in steps of 15° (Upper case one way, Lower case the
+other)
+In a multi camera setup:
+0, 1, 2 etc – dim all but camera ‘n’, thereby highlighting the n’th cameras FoV
+Esc – to switch all cameras FoV display back on.
+Illumination Settings
+To visualize the light sheet an estimated Height and Depth is inserted. The height should typically
+match the measurement volume height.
+Note: The light sheet is always parallel to X/Y plane with a sheet depth centered on Z=0.
+The Light sheet Depth (or thickness) is an important parameter as it, together with information
+about the estimated Out-of-plane velocity, is used to calculate upper limit of the time between laser
+pulses (Δt) to be used in the PIV acquisition. Δt_limited by out-of-plane velocity = [¼ x Light sheet Depth
+/ Out-of-plane velocity]
+The Pulse Energy (mJ) is related to the specific laser that will be used. The wavelength (nm) of the
+laser light is inserted and used for the calculation of Depth-of-Field and the Diffraction limited spot
+size.
+In later PIV acquisitions with the same setup as simulated in ISA, the Time Between Pulses should
+match the Recommended Δt given in the ISA Setup Information.
+Depending on Laser Pulse Energy (see Laser specifications), Seeding particle properties (size in
+µm, reflective index) the light budget might not allow for a desired Light sheet dimensions (Height
+and Depth). Note also that depending on the propagation direction of the light sheet the light
+scattered from the particles will be stronger in the forward direction (i.e. in the direction of the laser
+propagation) than in the backward direction.
+This means that if the laser propagates in the positive X-direction, in the images below, both cam-
+eras in the right image (cameras on opposite side of the light sheet) collects light scattered in the
+favorable forward direction – this is an ideal setup for PIV. However, this cannot always be achieved
+in a real application. To compensate for this the user can adjust the f / number settings on the cam-
+eras.
+Flow information, Seeding particle size, PIV analysis settings
+In this section the user specifies (or estimates) details of the flow to be investigated/simulated and
+the seeding particle size. Also the Interrogation Area (IA) size is added to the Analysis Settings, this
+is related to the PIV spatial resolution that can be achieved (see below).
+Input information provided by user:
+PAGE|156
+l Flow details:
+l Expected maximum In-plane velocity (m/s)
+l Out-of-plane velocity (m/s)
+l Seeding particle Size (µm)
+l PIV analysis information:
+l
+Interrogation Area (IA) size, i.e. the side of the IA in pixels
+l Only square shaped IAs are used in ISA, e.g. 32 x 32 pixels (used as default)
+Output information generated by ISA:
+l Geometrical IA size (an average over the FoV) in mm (e.g. 2 x 2 mm)
+l The IA size in mm is related to the spatial resolution that can be achieved
+l Δt_limited by in-plane velocity = [¼ x Geometrical IA size / In-plane velocity]
+l Δt_limited by out-of-plane velocity = [¼ x Light sheet Depth / Out-of-plane velocity]
+l The shortest  Δt of these two is the Recommended Δt given by ISA
+Information concerning the size and quality of Particle Images that can be achieved with the
+defined imaging setup and seeding particle size:
+l Final particle Image diameter*
+l The Final particle Image diameter is recommended to be at least 2 pixels to avoid peak (or
+pixel) locking effects. A warning is given in ISA if this criteria is not fulfilled. The user should con-
+sider to change the magnification, seeding particle size or the f/number when this warning flag
+is raised. To bypass of this effect, it is also possible to set the focus slightly “wrong” this will
+work best in case of 1-camera set-up with a perpendicular view onto the Light Sheet. However
+it becomes tricky as soon as Scheimpflug mounts are involved. For thicker volumes as used for
+Volumetric Velocimetry this is no longer feasible at all!
+*Final particle Image diameter= SQRT(DiffrationLimit2 + GeometricParticleImageSize2). The Dif-
+fraction Limited Spot Size and the Geometrical Particle Image Size is also found in the Camera
+Results in ISA.
+13.5.5 2 Examples how to use ISA to configure, plan for and setup an PIV experiment.
+Example 1.  PIV, single camera setup (2D2C PIV)
+The PIV technique in short:
+The PIV processing methods computes 2 component (2C) velocity vectors in a 2D plane (a thin
+light sheet). The light sheet, generated by a pulsed laser and sheet forming optics, is typically 0.5 -
+1 mm in depth in 2D2C PIV.  A camera with lens, provides double-frame images of the seeding
+particles, following the flow, in the light sheet. The laser pulse defines precisely the exposure time
+of the two frames.
+The time between laser pulses (Δt) should be optimized to maximize the PIV signal i.e. the cor-
+relation strength when correlating the intensity information between small regions (Interrogation
+Areas, IA) in the two frames.  As rule of thumb the particles should not move more than ¼ of the IA
+size and also not more than ¼ of the light sheet thickness.
+In a real measurement situation a spatial camera calibration is performed prior to data acquisition:
+It describes how points in object space map to points in the image plane of the camera.  The cam-
+era calibration is performed in acquisition mode, see [Link to calibration in the online help].
+However, ISA correctly calculates/simulates and displays the magnification and the size of the FoV
+PAGE|157
+at the light sheet based on the selected camera, lens and the camera position. Based on this inform-
+ation the smallest IA size in mm in the FoV can be obtained and used to calculate a suitable time
+between laser pulses (Δt).
+Setting up a PIV system in ISA and test its performance
+By selecting one of the predefined configurations above for a single camera system the following
+information (input) is displayed in the Properties in ISA and can be modified by the user:
+l Coordinate System & Bounds:
+l Medium Bounds - the dimensions of e.g. a tank or wind tunnel or section thereof
+l Measurement Volume (MV) size ( region/volume to be “imaged”)
+l Medium type:
+l air, (or other Gases)
+l water (or other liquid with different refractive index)
+l Hardware:
+l Camera selected from the device library  (Sensor details, camera position)
+l Lens  selected from the device library
+l Light sheet height and depth
+l Custom cameras and lens properties can be inserted manually
+l Flow details:
+l Expected maximum In-plane and Out-of-plane velocity
+l Seeding particle Size (µm)
+l PIV analysis:
+l
+Interrogation Area (IA) size (e.g. 32 x 32 pixels)
+Based on the input from the user the Setup Information in ISA displays the calculated “Imaging
+Parameters” such as: Magnification (M), Field of View (FoV), Depth of Field (DoF).
+From the expected maximum In-plane and out-of-plane velocity [m/s] and the geometrical IA size
+[mm] (calculated from the IA size in pixels and the magnification), ISA then calculates a suitable Δt
+(time between laser pulses) for a PIV (Double Frame) acquisition. If a high-speed (“time-resolved”)
+system is used the recommended frame rate to be use is = 1/dt.
+In the 3D view the user can get an overview of the entire setup, including the camera position, res-
+ulting FoV, DoF and light refraction.
+For a defined 2D PIV setup ISA displays the:
+l Size of the field-of-view (FoV),
+l The Interrogation Area (IA) size in mm – (related to the spatial resolution).
+l A recommended Δt (time between laser pulses) to be used in the PIV acquisition.
+l The final particle Image diameter*
+PAGE|158
+* Final particle Image diameter= SQRT( DiffrationLimit^2 + GeometricSize^2). Recommended to
+be larger than 2 pixels to avoid peak (or pixel) locking effects.
+Example 2. Stereo PIV setup (2D3C PIV)
+The Stereo PIV technique in short:
+The "Stereo-PIV" (on page 905) processing method computes 3 component (3C) velocity vectors in
+a 2D plane (a light sheet with a few mm depth) by combining data from two cameras, each provid-
+ing double-frame images of the seeding particles in the light sheet as seen from different view-
+points. The 2D plane is defined by the light sheet but it should be noted that in Stereo-PIV meas-
+urements the sheet depth (or thickness) needs to be a few mm to allow for a registration of the out-
+of-plane motion when combining the 2D information from both cameras.
+From each of the two cameras the method requires a 2D vector map and a spatial camera cal-
+ibration describing how points in object space map to points in the image plane of the camera in
+question. The camera calibration is performed in acquisition mode, see "Stereo-PIV" on page 905].
+However, ISA correctly calculates/simulates and displays the magnification and the size of the over-
+lapping FoVs at the light sheet based on the selected cameras, lenses and the camera positions.
+Based on this information the smallest IA size in mm in the overlapping FoVs can be obtained.
+In an optimal stereo PIV setup the cameras are looking at the light sheet at 30o-45o angle. To
+ensure proper focusing across the light sheet and over the entire FoV the lens and image plane
+need to be tilted as illustrated below. This is movement is achieved by the use of Scheimpflug
+adapter positioned between the camera and the lens. (See"1-Axis Scheimpflug mounts" on
+page 191)
+Setting up a Stereo-PIV system in ISA and testing its performance
+PAGE|159
+Of the eight predefined configurations above the leftmost setups are the easiest and thus recom-
+mended to be preferred over the ones further right:
+l To get started with Stereo-PIV - measure in air if you can.
+Water applications:
+l
+If possible let each camera look straight through a window.
+l
+If that’s not possible let the window be parallel to the light sheet.
+l The rightmost setup types are possible, but difficult in practice since the cameras will be look-
+ing through a window at a steep angle and/or looking at the light sheet at a steep angle. Use
+them as last resort only, avoid them if you can.
+`
+After selecting one of the predefined configurations above for a Stereo camera arrangement the fol-
+lowing information (input) is displayed in the Properties in ISA and can be modified by the user:
+l Coordinate System & Bounds:
+l Medium Bounds & Measurement Volume (MV) size
+l Medium type:
+l air, or water (or fluid with different refractive index)
+l Hardware:
+l Cameras and Lenses selected from the device library or customized items
+l Light sheet height and depth. (The sheet needs to be a few mm thick)
+l Flow details:
+l Expected maximum In-plane and Out-of-plane velocity
+l Seeding particle Size (µm)
+l PIV analysis:
+l
+Interrogation Area (IA) size (e.g. 32 x 32 pixels)
+Based on the input from the user the Setup Information in ISA displays the calculated “Imaging
+Parameters” for both cameras such as: Magnification (M), Field of View (FoV), Depth of Field
+(DoF).
+PAGE|160
+From the expected maximum In-plane and out-of-plane velocity [m/s] and the smallest geometrical
+IA size [mm] in the overlapping part of the two cameras FoVs ISA then calculates a suitable Δt (time
+between laser pulses) for a PIV (Double Frame) acquisition.
+In the 3D view the user can get an overview of the entire setup, including the two cameras position,
+the overlapping region of the two FoVs, DoFs and light refraction.
+For a defined Stereo-PIV setup ISA presents the:
+l Size of the overlapping field-of-view (FoV)
+l The average projected Interrogation Area (IA) size in mm – (related to the spatial resolution).
+l A recommended Δt (time between laser pulses) to be used in the PIV acquisition.
+l The final particle Image diameter*
+* Final particle Image diameter=SQRT(DiffractionLimit^2 + GeometricSize^2). Recommended to
+be at least 2 pixels to avoid peak (or pixel) locking effects, where measured displacements are
+biased towards integer pixel values.
+3 Illustration of the camera movement in space
+Distance (>0mm)
+PAGE|161
+Pan angle (Span: -180° to +180°)
+Note that positive Pan angles will position the camera at positive x-coordinates, while negative Pan
+angles will correspond to negative x-coordinates.
+Similarly an absolute value of the Pan angle below 90° will position the camera at positive
+z-coordinates (i.e. normal "Front View" with the camera in front of the light sheet), while absolute
+values of the Pan angle above 90° will give negative z-coordinates (i.e. "Back View" with camera
+behind the light sheet).
+Tilt angle (span: -90° to +90°)
+Positive Tilt angles will position the camera at positive y-coordinates looking down at the exper-
+iment, while negative Tilt angles will position the camera at negative y-coordinates, looking up at
+the experiment.
+PAGE|162
+Roll angle (span: -180° to +180°)
+Roll will rotate the camera around its own axis.
+If the camera sensor is rectangular the Field of View will be rectangular also. When looking at a
+light sheet with an off-axis camera the Field of View will be stretched further due to perspective. By
+rotating the camera you can make the perspective "stretch" the smallest of the sensor dimensions
+to get a less oblong Field of View than you would otherwise get.
+13.6 Remote Controlled Acquisition
+Remote Control is a special option that requires implementing a driver based on the information
+below.
+Using the DynamicStudio Remote Control interface it is possible to
+l Set Traverse position before starting Acquisition,
+l Set properties that will be saved together with the data saved during an Acquisition
+l Starting Acquisition that will end up with data saved in the database
+l Stopping Acquisition
+l Perform analysis on the acquired data
+l Deleting the just acquired data from the database
+The need for Remote Control of Acquisition is often a part of an automation process, where more
+equipment must be synchronized to work together, such as experiments in larger facilities. The
+remote control can also be used to repeat a certain measurement routine over and over again, or to
+ensure control over a fixed set up between experiments.
+There is no driver installed with the installation of dynamic studio. In order to receive a demon-
+stration driver (including source code) please contact support@dantecdynamics.com.
+PAGE|163
+13.6.1 How to start Remote Controlled Acquisition
+Remote control can only be started when in Acquisition mode by selecting Remote Controlled
+Acquisition from the Run menu. Before entering remote control it is recommended to run a preview
+to ensure proper setup of devices and connections. The dialog will look like this:
+The Close button ends the session and closes the Remote connection, the More button toggles
+between more and less information.. When expanded a log windows is displayed providing status
+information on the communication between the "Application.Remote.AKProtokol.dll" and Dynam-
+icStudio.
+The entry Session Command is a string that is passed to the "Application.Remote.AKProtokol.dll"
+when a session is started. The default string is "COM1" but the last string entered will be
+remembered by DynamicStudio. The string could be ex. "10.10.100.101:7009" instead of a com-
+PAGE|164
+port, it is up to the implantation of the "Application.Remote.AKProtokol.dll" to Handel and interprete
+the string.
+If an error occurs during remote control interaction, then in order to get out of the error state the
+user have to either click the Restart button that stats a new session or send the AK-Protocol com-
+mand End or Abort. This ends or aborts the acquisition and returns to a ready state.
+13.6.2 Information on the Remote Control Driver
+Since the remote control feature is designed to be integrated into various systems, it consists of a
+dedicated driver. The driver is a DLL that must be installed on the PC running DynamicStudio.
+To implement this DLL and integrate this into DynamicStudio software the interface described
+below must be satisfied.
+Dll Interface Methods
+The interface to the driver DLL consists of three interface calls, that must be implemented by the
+driver:
+RCStart
+int __declspec(dllexport) __RCStart( HWND hWnd,const char* psInfo)
+Starts the remote driver. Here you can connect to or start any sub routines that your driver must
+run.
+This method is called when the Remote Control dialog is opened in DynamicStudio software, with
+the last used information string. This method is also called during a request of a restart of the
+remote driver, with optional a new information string provided.
+Parameters
+[in] hWnd is a Windows Handle to the Remote Control dialog. You must use this Windows Handle
+to call the remote commands. This is also provided for use with the __RCMessage callback routine,
+see description.
+[in] psInfo is a pointer to an information string, passed from the Remote Control dialog in Dynam-
+icStudio to the driver. The string can contain any text for your driver. The information string can be
+max. 64 characters long.
+Return value
+If your remote driver starts successfully you should return 0, otherwise you can return an integer
+error code that will be displayed in the Remote Controller dialog for easy error handling.
+Example
+The information string can contain the serial COM port, or other necessary information for your
+driver to work properly. The string is saved along with BSA Flow Software.
+__RCMessage
+This is an optional interface for providing a message based callback function for the remote driver.
+If the remote driver needs a window for receiving Windows Messages, the handle passed in the __
+RCStart method can be used and the message will be passed back to this function. This simplifies
+the design of the remote driver.
+LRESULT __declspec(dllexport) __RCMessage(WPARAM wp,LPARAM lp)
+Parameters
+[in] wp is the first data holder.
+[in] lp is the second data holder.
+PAGE|165
+Return value
+Not used.
+Example
+If you receive asynchronous messages from e.g. a serial communication driver you can pass the
+hWnd received in the __RCStart method to this sub method. Inside this sub method you can then
+call the WIndows messages SendMessage or PostMessage with data:
+#define WM_REMOTEDRIVERDATA (WM_APP + 2134)
+::SendMessage(hWnd,WM_REMOTEDRIVERDATA,(WPARAM)data1,(LPARAM)data2);
+The same data will then be received in the __RCMessage method:
+LRESULT __declspec(dllexport) __RCMessage(WPARAM data1,LPARAM data2)
+{
+:
+:
+__RCStop
+int __declspec(dllexport) __RCStop()
+Stops the remote driver. In the method you can disconnect or end running sub routines in your
+driver.
+This function will be called by the Remote Control dialog when a Restart is requested and when the
+dialog is closed.
+Return value
+Not used.
+13.6.3 Commands
+Commands are send to DynamicStudio via a simple Windows Messages using WM_COPYDATA.
+This message provides a mean to copy data from one process to another in Windows. Each com-
+mand is given a unique command ID recognized in DynamicStudio, and some of the commands
+requires a command text line in a special syntax, all can be found in the list below.
+The remote driver must call the DynamicStudio with the following command set:
+#define RC_USERDATA 1
+#define RC_RUN 2
+#define RC_ABORT 3
+#define RC_STATUS 4
+#define RC_ADDANDRUN 5
+#define RC_END 6
+#define RC_SET_ANALYSIS_SEQUENCE_ID 7
+¤define RC_DELETE_RUN 8
+PAGE|166
+RC_USERDATA
+Adds user data to the current acquisition. User data is displayed in the log window of Dynam-
+icStudio and saved in the database later when saving the acquired data to the database.
+User data must be a ';' separated string with the following format:
+[Category name1;name2];[property name;property value];[property name;-
+property value]...
+Ex 1:
+"Temperature;Port1;Temp1;20.5;Temp2;Temp2;19.5"
+This will create a category named "Temperature.Port1" in properties for the Run saved later.
+In this category the following properties will be seen:
+Temp1 20.5
+Temp2 19.5
+Ex 2:
+"WindSpeed;#1;Point1;10.5;Point2;11.3;Point3;10.4;Point4;10.9"
+This will create a category named "WindSpeed.#1" in properties for the Run saved later.
+In this category the following properties will be seen:
+Point1 10.5
+Point2 11.3
+Point3 10.4
+Point4 10.9
+RC_STATUS
+Asks for status from DynamicStudio.
+The status is returned by the message call.
+0 ready
+1 busy (acquiring)
+2 error
+RC_ADDANDRUN
+Moves the Traverse to a new position, sets a new trigger delay on the synchronizer (if used) and
+starts an acquisition.
+Add and run info must be a ';' separated string with the following format:
+ignored;ignored;X;Y;Z;Trigger delay
+Ex:
+"Ignored;Ignord;0.00;0.00;10.00;100.0"
+PAGE|167
+RC_END
+Stops the acquisition.
+No command string.
+RC_SET_ANALYSIS_SEQUENCE_ID
+Specifies the analysis sequence to be performed after data has been saved to the database during
+acquisition.
+Ex: "3s2vj1v0"
+NOTE: The right sequence ID can be found in the "Analysis Sequence Library"
+RC_DELETE_RUN
+Can be called to delete the just acquired Run and all data below.
+No command string..
+13.7 PIV Simulator
+The PIV simulator is a tool that is well suited for both evaluation of PIV algorithms (accuracy,
+speed, etc.) or as an educational tool that illustrates the basic principle of PIV and let new users get
+accustomed to the work-flow of Dynamic Studio, without the complexity of real physical setup.
+Within Dynamics Studio it is possible to define a virtual PIV experiment. This virtual experiment,
+that consist of a particle simulator/engine, a light sheet and any number of observing cameras, will
+generate synthetic images, which subsequently can be used for 2D-, Stereo- or Volu-
+metric/Tomographic PIV analysis, as if the images where acquired from a physical setup. The PIV
+simulator can generate spatial calibration images as well as particle images.
+13.7.1 Running the experiment.
+Running the synthetic experiment is exactly as any other acquisition within Dynamic Studio, except
+that no hardware is involved.
+The System Control handle the setup of the general parameters and execution of the acquisition.
+The number of images to acquire, whether it is double frame or single frame and the time between
+pulses and trigger rate can be found in this section, as well as the controls for initiating and ending
+the acquisition.
+The acquisition system is described in more detail in the section "Normal Use" (on page 63)
+PAGE|168
+13.7.2 Configuring
+To create a virtual PIV experiment, a particle engine needs to be added to the acquisition system.
+This is done by right clicking the Acquisition Agent inside the device view and selecting 'Add New
+Device ...'.
+This will bring up a dialog, from which the particle engine can be selected and added to the acquis-
+ition system.
+Once the particle engine is present in the acquisition system, any number of cameras can be added
+in a similar way. By right clicking the newly created particle engine and selecting 'Add New
+Device...', cameras can be added to the particle engine one by one.
+13.7.3 Adjusting the particle engine properties
+The particle engine exposes a number of properties that controls the behavior of the virtual exper-
+iment.
+PAGE|169
+Property
+Description
+Calibration grid
+Generate calibration
+True / False: If this property is set to true the simulation will generate
+images
+calibration images instead of particle images. See the section about
+"Calibration images" (on page 171) for more information on how to
+specify the calibration grid.
+Light source
+Light sheet thickness
+Defines the thickness of the lightsheet (mm). Only particles, that lie in
+the light sheet are visible to the cameras.
+Light sheet normal
+Indicates a vector that is orthogonal to the lightsheet plane. Used to
+specify the orientation of the lightsheet.
+Light sheet position
+A point in object coordinates that lie in the center of the light sheet.
+(mm)
+Particle field
+Particle movement type
+This property can be set to either vortex or gradient. It specifies the
+simulated flow type that the particles should abide by.
+Velocity scaling factor
+A Scaling factor by which the velocity of the simulated flow is scaled.
+To achieve a reasonably particle displacement, one will have to
+adjust either the time between pulses (double frame mode), trigger
+rate (single frame mode) or the velocity scaling factor in order to
+decrease/increase the frame to frame particle movement.
+Particle size
+The range of particles sizes (mm).
+Particle density
+Defines the simulated seeding concentration, given as particles per
+cubic millimeter.
+Simulated volume
+The dimensions of the simulated volume that is seeded with
+PAGE|170
+particles. The volume origin is defined as the center of the volume.
+The simulation might bring particles outside of this volume, but ini-
+tially they are contained within the given volume.
+Simulated volume offset
+This property will offset the entire volume and the simulated flow, by
+the amount specified.
+13.7.4 Adjusting the camera
+Property
+Description
+Lens model
+Lens model
+The projection model can be
+specified as either pinhole or
+telecentric (orthogonal pro-
+jection)
+Focal Length
+Only applicable in case of a pin-
+hole projection model. Specifies
+the focal length of the lens.
+Magnification
+Only applicable in case of a tele-
+centric projection model. Spe-
+cifies the lens magnification.
+Position and orientation
+Position
+The position property defines
+where the camera and lens is
+located in the scene.
+Target position
+The target position specifies a
+point the camera is looking at.
+The viewing direction (optical
+center line) is determined by the
+PAGE|171
+camera position and the target
+point.
+Roll angle
+Defines the camera roll angle
+around the optical center line.
+13.7.5 Calibration images
+When the property 'Generate calibration images' is set to true. The particle engine exposes a dif-
+ferent set of properties which are related to the rendering of the calibration target. The calibration
+target is a plane, where markers are placed in a grid and with a well defined spacing.
+Property
+Description
+Calibration Grid
+Marker sizes
+Specifies the size of the three kind of markers (axis marker, standard
+marker and center marker)
+Grid size
+This property indicates the number of vertical and horizontal markers
+on the calibration target.
+Grid spacing
+Defines the spacing between adjacent markers in the calibration
+grid.
+Target movement
+Rotation or traverse. Specifies which movement pattern the cal-
+ibration target should perform while images are acquired.
+Angle sweep
+Only applicable when target movement is specified as 'Rotation'.
+Defines the angular sweep (per rotation axis) that the calibration tar-
+get will undergo during acquisition.
+Traverse movement
+Only applicable when target movement is specified as 'Traverse'.
+Defines the traversal along the z-axis that the calibration target will
+undergo during acquisition.
+PAGE|172
+The first image of any calibration acquisition will always be a calibration target that is aligned with
+the X and Y plane and placed at Z=0, as the first image in a calibration set will be the basis for the
+coordinate system of the calibration.
+13.8 Online Vectors
+Online Vectors is an analysis which is performed during acquisition. The analysis result is dis-
+played as a vector map.
+For purposes of performance the interrogation areas are spaced equally apart according to the
+number of areas specified by the user, as shown above.
+The online analysis is performed only during Free run and Preview . After an acquisition has take
+place the analysis method will try to calculate a result for each acquired image pair, in this way it is
+possible to examine the acquired images and have vectors map displayed before determining
+which images to save.
+13.8.1 Adding Online Vectors to be performed during Acquisition
+To add Online vectors to be performed during acquisition select "Add Online Analysis... " from the
+Context Menu of a"Image format" node in the device tree in Devices. Now in the "Add Online Ana-
+lysis" dialog select "Online vectors".
+PAGE|173
+13.8.2 Parameters for Online Vectors
+There are three parameters for Online Vectors:
+Number of interrogation areas:
+This parameter specifies the number of interrogation areas to be analyzed. The default size is 8 x 8.
+The minimum is 4 x 4 and the maximum is 40 x 40.
+Interrogation area size:
+This parameter specifies the interrogation area size. The default size is 32 x 32 pixels. The min-
+imum size is 16 x 16 and the maximum depends on image size.
+Peak Ratio
+This is a validation criteria. A vector is only valid if the first to second correlation peak height is
+higher that the number specified.
+13.9 Adding the Focus Assist online analysis function to the
+setup
+The Online Focus assist is added to the setup as a sub device to “Image Format” device in the
+device tree.
+1.To add the device right click the “Image Format” device and in the context menu that pups up
+select “Add Online Analysis”. The following dialog will appear:
+Select “Online Focus Assist” and click OK.
+2.The Online Focus assist device will be added just below the Image Format as shown below:
+PAGE|174
+3.When clicking “Free run” or “Preview” Online analysis will run. When doing a real acquisition the
+Online analysis will not run, only when all data has been collected the Online analysis will be
+enabled again so that when browsing through data the result form the Online analysis method will
+be shown.
+13.10 Understanding the resulting image from Online Focus Ass-
+ist
+The result from Online Focus assist is an image with the same size and bit depth as the original
+image.
+The image will display gradients found in the image. A bright pixel indicates a high gradient.
+Below is an example of an image captured by a FlowSense 2M camera. The camera was aimed at
+a calibration target:
+The resulting image from Online Focus Assist may look like this:
+PAGE|175
+In the example above the image is focused. If the user moves the focus away from the surface of
+the target the pattern will fade away. The more focused the original image is the higher intensities
+will be seen in the resulting image.
+In the example below the camera is aimed at white particles on a black surface:
+PAGE|176
+The resulting image from Online Focus assist is shown below.
+PAGE|177
+In this example the image is focused at its best. If the user moves the focus away the image will dim
+out and be totally black. The more focused the original image is the higher intensities will be seen in
+the resulting image.
+The highest possible value shown in the resulting image will be if a saturated pixel is next to a
+totally dark pixel. The resulting pixel value will be 255 for 8bit image and 4095 for 12 bit images.
+13.11 Using Online Focus Assist to set up a stereo PIV system
+A stereo PIV set-up requires the optical arrangement to fulfill the Scheimpflug condition: the object,
+image and lens planes have to cross each other along the same line.
+In order to fulfill this condition, the camera has to be tilted with respect to the lens as illustrated on
+the following figure :
+PAGE|178
+The use of the Online Focus Assist makes the alignment of a stereo system easier and faster. The
+following describes how to use the Online Focus Assist for such a set-up.
+o Open the lens aperture at maximum
+This reduces the depth of field for more precise alignment
+o Ensure that the illumination of the target is homogenous
+o Adjust the LUT of both the camera image and the Focus Assist displays
+Double click on both displays
+o Use grid display (Right click on the display, Options/Grid)
+Set a grid size of half the width the Camera chip.
+o Set the camera in the direction to match the desired Field of View
+PAGE|179
+o Set the Scheimpflug angle to the maximum opposite position
+Setting the Scheimpflug in the opposite direction reduces even more the part of the image that
+will be in focus:
+o Align the focused area with the middle of the image
+Use the grid as a reference
+o Set the correct Scheimpflug angle
+The histogram of the focus assist, displayed in Log scale, can be used to track the correct pos-
+ition of the Scheimpflug mount.
+The histogram is usually mainly composed of two values that represent ares with no gradient
+information (the left part of the histogram) and areas with high gradients (the right hand side
+peak in the histogram). Therefore, the correct scheimpflug angle is set when the second peak
+reaches the rightmost position, see below.
+PAGE|180
+The set up is now aligned and ready for calibration:
+13.12 Parameters for the device Online Focus Assist
+13.12.1 Pixel dilation Diameter
+Only one parameter for the Focus Assist device exists and this is Pixel dilation Diameter.
+The functionality of this parameter is to expand high intensity pixels values to neighbor pixels.
+The number that can be selected describes the diameter in pixels of this expansion.
+PAGE|181
+13.13 Synthetic image generator
+13.13.1 Introduction:
+To check setting and learn to use Dynamics Studio it is possible to simulate PIV images, even for
+multiple cameras. This allows simulation from 2D-2C PIV images up to full volumetric meas-
+urements.
+To simulate the images the “Acquisition Mode” needs to be enabled. Start with resetting the acquis-
+ition agent by clicking “> Run > Acquisition System > Reset Acquisition system”. The device list will
+know indicate, that no devices are added. By right clicking on icon of the “Acquisition Agent” in the
+device list, one can add new devises (see image below).
+To be able to simulate particles first a “Particle Engine for PIV simulations” needs to be added at
+first. Otherwise the simulated cameras will only show a test image.
+Once the particle engine is added to the device list, one or more cameras can be added to the
+device list as children of the particle engine (see next image).
+In order to simulate a measurement the System control is used as normally. Here the user can
+select whether double or single images are recorded. The DT as well as the trigger-rate and the
+number of images can be freely defined. With using the button “Acquire” the images are simulated
+and can later on be saved in the “Acquired Data Tab” ("Acquiring Images" (on page 59)
+PAGE|182
+The camera tool is based on the system of normal cameras used in real applications in the “Device
+Properties“ window. It is possible to select all kind of camera properties in the menus numbers can
+be typed in, or drop down menus are used for different pre-selections.
+The camera device Properties are described in the following section:
+l Sensor Size
+Defines the width and the height of each image in pixel. As default it is set to 1024x1024 pixel
+l Pixel Pitch
+Defines the physical size of each pixel in the given example 12µm
+l Lens Model
+The optical model determines what kind of image model will be used. A pinhole model or a tele-
+centric model can be chosen in a drop down menu
+l Principal Point
+Defines the optical axis of the camera for the pinhole model. This should be the middle point of
+the sensor in the given example 512:512
+l Lens distortion
+Defines the distortion coefficient values for the pinhole camera model
+l Position
+Defines the X-Y and Z- Position of the camera
+l Target Position
+Defines the X-Y and Z- Position of the cameras Principal point is aiming at
+l Roll angle
+Describes the angle around optical axis of the camera
+l Rotation Vector
+Gives the Rodrigues rotation vector that specifies the camera orientation. (informal cannot be
+changed)
+PAGE|183
+l Translation Vector
+Gives the cameras translation vector. (informal cannot be changed)
+l Background Noise Level
+Describes image noise that can be added over the simulated particles. This specifies the stand-
+ard deviation of the Gaussian distributed background Noise that is added to the cameras
+image. The mean for the distribution is twice the specified value.
+l Full Name
+Gives the cameras Name. (informal cannot be changed)
+The Image Format Properties are described in the following section:
+l Frame Mode
+Defines in a drop down menu if the setting from the system control should be used (recom-
+mend), single frames, double frames or double exposure on a single frame can also be selec-
+ted
+l Mirroring or Rotate
+Defines an image mirroring or rotation
+l Pixel Depth
+Defined the bit-depth of the images 8-16 bit can be selected via a dropdown menu
+l
+Image area (ROI)
+Here the region of interest can be selected, (not recommended to use this since the image
+format can be change in the camera stings menu.)
+In the Image buffer tab only a single selection can be made:
+l Delay defines a delay in µs here 1000 should be used as standard
+Important for the set-up and the simulation is also the Particle Engine, because it defines whether
+calibration images are generated or not, where the measurement volume is, what the seeding dens-
+ity will be and what kind of flow should be simulated. This is also done by editing number or making
+choices form drop down menus.
+l Particle movement type
+Defines if a vortex or a gradient flow will be simulated by a drop down menu: Please add for-
+mula for the flow
+l Max velocity (m/s)
+Defines the maximum velocity of the flow
+l Velocities have Z-Component
+Defines by a dropdown menu weather this is TRUE or NOT.
+l Particle Size
+Defines a particle diameter range of a particle distribution in mm
+l Particle density
+Specifies a particle density in particles / mm³ in the measurement domain. Note here is a lim-
+iting number of possible particles set. Hence if large volumes are simulated, this limit can be
+reached. Please add the max. NR of particles possible to be created
+l Simulated Volume
+Defines the size of the simulated volume in mm. This volume will be seeded with particles.
+PAGE|184
+Note that the particles in the volume are initialized only in the 1st time step. This means, the
+particles drift out of the measurement domain over time.
+l Simulated Volume offset
+Defines an offset of the volume in mm
+l Particle random seed
+Defines the seed used for generating the random particles. If -1 is selected, a time based seed-
+ing is forced
+In the tab Calibration grid, the user specifies if he wants to simulate target images that can later be
+used for camera calibrations.
+l Generate calibration images
+Drop down menu to select if target images should be simulated or not. If TRUE is selected the
+device property tab changes to the following and in case of recordings are generated Dantec
+dotted target will be simulated:
+l Marker Sizes
+Selects the size in mm of the target markers for the “Axis-” “Standard-” and “Centre-” markers
+l Grid Size
+Defines the number of marker points in X-and Y- direction
+l Grid Spacing
+Defines the distance in mm between the markers
+l Target Movement
+Defines the calibration method, if “Rotate” is selected, images for a freehand calibration are
+simulated that make the Pinhole model for calibration necessary. In this case the next point is:
+l Angle Sweep defines the angels of rotation around the X-Y- and Z-Axis.
+, if “Traverse” is selected, images for a 3rd order polynomial calibration are simulated, by tra-
+versing the target along the x-axis. In this case the next point is:
+l Traverse Movement specifies the starting position of the target and the spacing it moves. -
+10;2 means it will move in mm steps with -10mm being the 2nd image because the software
+will always generate a 0-Plane image at first. If now 12 recordings are made. The target will
+be positioned at the following Z-Positions: 0mm; -10mm -8mm; -6mm; …; 8mm; 10mm. After
+sorting the images, the proper Z-positions need to be added manually to the record prop-
+erties. Seed LINK to this sections:
+In case of generating particle simulations, the last part that needs to be dined is the light sheet.
+PAGE|185
+l
+Illumination Type
+Selects whether a single “light sheet” is used, or the “light sheet intersection” mode. In case of
+the intersection mode, three light sheets are generated, and only the part where all of them
+intersects, particles will be illuminated. This enables the user to simulate a larger volume than
+what is illuminated later on and thereby ensure that new particles can enter the measurement
+domain.
+l Light sheet thickness
+Is a standard light sheet has endless size in 2 axis. Here the thickness in mm is defined
+l
+Light sheet normal
+Ddefines the normal in which axis this thickness is.
+l
+Light sheet position
+Defines where the centre point of the light sheet is.
+l
+Light sheet Intersection
+In this case the user needs to specify a light sheet thickness, a light sheet normal and a
+light sheet position for the 3 light sheets that are intersected.

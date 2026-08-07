@@ -1,0 +1,83 @@
+PAGE|1088
+19 Dialogs
+You can get help on dialog by pressing the F1 button.
+19.1 Sort
+Sorting enables you to change the sorting criterions for an ensemble. The sort option is available
+through the context menu of an ensemble. The sort option will not be available if the selected
+ensemble contains sub-ensembles or is analyzed.
+By default all datasets in an ensemble are sorted after the acquired timestamp. Alternatively it is
+possible to sort after a user selected dataset or by a user-defined property value. All sorting options
+allows for descending sorting as well.
+19.1.1 Sorting by Timestamp
+By default sorting by timestamp is selected. The sort will look at the timestamps of all the included
+datasets. Using this option is useful to restore the sorting if another sorting option has been applied
+or to reorder the datasets if the ensemble was constructed by merge of two or more ensembles.
+19.1.2 Sorting by Data Column Value
+As an advanced option it is possible to sort the ensemble using an external dataset as Selection.
+The only restrictions to the external dataset is that it must be generic curve data, and that the num-
+ber of data points must match the number of datasets in the ensemble to sort. The external dataset
+must be made as a user selection prior to using the sort option. In the sort option it is possible to
+specify the generic column name to sort by.
+This sorting option is very useful for sorting an ensemble based on analyzed data. As external data-
+sets the Extract, Fit, and Profile analyzes are useful to define the sort order.
+Example
+This example shows how Analog Statistics and an Analog Transformation can be used as external
+input to the Sort option. The Analog Transformation curve is selected as external user input to the
+Sort. A duplicate is made of the original analog data, and the curve is used for sorting. As a result
+the data corresponding to the smallest values are now listed on top of the sorted list.
+PAGE|1089
+19.1.3 Sort by Property Value
+Sorting by a property value enables you to sort an ensemble based on property inputs. Custom
+Properties can be dynamically added during saving data to the database or when using the acquis-
+ition manager. The property type must be defined as a number value.
+After sorting a special sort property is added to the record properties for the sorted ensemble. The
+sort property contains the value used for the sorting, either from a timestamp, data column value, or
+property value. The Split option uses this value to perform a custom split, and the value can be read
+and used by analysis methods.
+19.2 Split
+Splitting enables you to split an ensemble into two or more ensembles. The split option is available
+through the context menu of an ensemble. The split option will not be available if the selected
+ensemble contains sub-ensembles or is analyzed.
+The splitting will split the ensemble either on indexing or based on the current sort order. The cur-
+rent ensemble will be included in the split as the first ensemble.
+19.2.1 Split at Index
+By default the ensemble is indexed starting at #1. Splitting at index defines a number of split widths
+corresponding to number of datasets.
+The table in the dialog will show where in the current ensemble the splitting will be performed.
+Table contents:
+"3: [1;4[ | 3" (meaning; the first split ensemble will hold 3 datasets. These datasets will be dataset
+index 1, 2 and 3. Index 4 is not included in this ensemble)
+"3: [4;7[ | 3" (meaning; the second split ensemble will hold 3 datasets. These datasets will dataset
+be index 4, 5 and 6. Index 7 is not included in this ensemble)
+"3: [7; 9]| 3" (meaning; the last split ensemble will hold 3 datasets. These datasets will be dataset
+index 7, 8 and 9. Index 9 is included in this ensemble)
+19.2.2 Split at Sort Property Value
+The sort property value is added to the record properties of the ensemble, when an ensemble is sor-
+ted using the sort option. Splitting at sort property value defines a number of split widths cor-
+responding to the range of the sort property values.
+The table in the dialog will show where in the current ensemble the splitting will be performed.
+Table contents:
+PAGE|1090
+"1000: [200;1000[ | 4" (meaning; the first split ensemble will hold the first dataset up to sort value
+1000. The datasets will be datasets that has the sort value 200 to 1000. Datasets that has the Sort
+value 1000 and above in not included)
+"1600: [1000;1600[| 3" (meaning; the second split ensemble will hold the first dataset up to sort
+value 1600. The datasets will be datasets that has the sort value 1000 to 1600. Datasets that has
+the Sort value 1600 and above in not included)
+2000: [1600; 2000]| 2 (meaning; the last split ensemble will hold the first dataset up to sort value
+2000 (highest sort value). The datasets will be datasets that has the sort value 1600 to 2000. )
+19.2.3 Automatic
+By default the split widths are calculated automatically defining a linear distribution of the widths
+over the range. Using this option will ensure an equidistant and valid splitting.
+19.2.4 Custom
+Using the custom split widths, you can define your individual split widths in the list. In this case you
+must ensure that the range is within the total range.
+Select each of the width values in the list to set new values, press F2 to enter new split width value.
+As a help defining the split widths the total range and the current range is automatically calculated
+and displayed. If the current split is invalid, the conflicting position will be marked with a red color in
+the list. Typically error situations are when too many splits are defined, or that some of the splits
+become empty.
+19.3 Merge
+Merging enables you to combine results from two or more ensembles into one. The merge option is
+available through the context menu of multiple selected ensembles. A number of limitations are
+applied to merging ensembles; the data in the ensembles must be of similar type and size.

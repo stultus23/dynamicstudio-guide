@@ -1,0 +1,287 @@
+PAGE|461
+15 Analysis
+After images and related data is acquired an Analysis can be applied, selecting Analyze... from the
+menu. DynamicStudio includes a wide range of common analysis for image and vector processing,
+LIF, particle sizing, spray diagnostics etc.
+Note
+The different analysis methods available are dependent on the add-on' enabled and installed on
+your system.
+15.1 Analysis Sequence
+An Analysis Sequence is a combination of different analysis steps. The sequence can be applied to
+an ensemble just like a normal individual analysis.
+All the individual steps in the sequence is executed until the end-result is achieved.
+15.1.1 "Pickup" an Analysis Sequence
+Before creating an Analysis Sequence all the individual analysis steps must be added and
+executed manually. When settings in each individual analysis is adjusted to give the expected end-
+result, the analysis Analysis sequences can be picked up for later use. This is done in the following
+way: Select all results in the sequence you just created (Hold down 'Ctrl' key and click the results).
+Right click on one of the steps in the sequence and select "Add Analysis Sequence to Sequence
+Library" from the context menu.
+When you select "Add Analysis Sequence to Sequence Library" the dialog "Add Analysis
+Sequence" will appear. Here the sequence is displayed as well as all external dependencies.
+External dependencies are other analysis results needed for the sequence to be executed. All
+internal dependencies are handled by the Analysis Sequence itself . You can view any depend-
+encies that any single analysis step has by clicking in the analysis step. You can also see which
+analysis step requires what external dependency by clicking on any of the external dependencies.
+15.2 Analysis Sequence Library
+When an Analysis Sequence is picked up it is placed in the Sequence Library. This library holds all
+previously defined Analysis Sequences. The sequence library is global and is available from all
+databases.
+When you want to apply an Analysis Sequence to your data, select Apply Analysis Sequence from
+the Context menu, and select the sequence from the library. Please note that you can only apply a
+sequence if the parent data matches, meaning f.ex. that if you have defined a sequence starting
+with a single frame, you will only be able to apply this on single frames. From the library you are
+able to manage your sequences: Each sequence can be given a name, and description, you can
+also remove unneeded sequences.
+Duplicate an Analysis Sequence
+It is possible to duplicate an analysis sequence. This is done by selecting the sequence that you
+want to duplicate and clicking the Duplicate button, alternatively click Ctrl+D or right click- the
+sequence that you want to duplicate and select "Duplicate" in the context menu that appears.
+The name of the duplicated sequence will be "copy of " + the original name.
+Import/export an Analysis Sequence
+The analysis sequence can be exported to and imported from a .sequence file .
+PAGE|462
+Rename an Analysis Sequence
+It is possible to rename an analysis sequence. This is done by selecting the sequence that you
+want to rename and Clicking the Rename button, pressing F2 or by right clicking the analysis
+sequence and selecting "Rename". The sequence name will now be editable.
+Changing the description of an Analysis Sequence
+You can change the description of an analysis sequence. This is done by clicking in the Description
+text box and editing the contents. Once the content is changed, press the Tab button, or click else-
+where in the dialog. You will be asked if you really want to change the contents or not, and if you
+click yes the changes are saved.
+Change recipe setting for a method in an Analysis Sequence
+For many Analysis Methods in an Analysis Sequence it is possible to change recipe settings.
+To change the recipe for a method in a sequence, select the method in the sequence tree. If recipe
+settings can be changed the button “Show Recipe” will be enabled, click it to see and possibly
+modify the recipe settings of the analysis method.When done, click "OK" and you will be asked if
+you really want to save the changes to the analysis sequence or not.
+15.3 Using Analysis Sequences
+When a Analysis Sequence is to be applied, select the ensemble from where the analysis is to take
+place. This ensemble is referred to as the "root node" of the sequence. If the sequence has multiple
+root nodes select these as Input to Analysis. All external dependencies must be selected as Input
+to Analysis before you right click and choose "Apply Analysis Sequence...".
+At that point you will have the dialog "Analysis Sequence Library" displayed. Here you can choose
+the Analysis sequence that you want to apply. When you select a sequence the sequence will be
+displayed in the Sequence view and all the external dependencies for the sequence will be dis-
+played in the external dependencies view.
+If some external dependencies are missing, they will be marked with ">>> MISSING <<<" and it will
+not be possible to start the execution of the sequence. You will have to leave the sequence library
+and make sure that all external dependencies are selected.
+You can examine what dependencies an Analysis step requires by clicking on an Analysis step. By
+clicking on any of the external dependencies you will have the analysis step highlighted that
+requires this external dependency. External dependencies and the root nodes will also be high-
+lighted in the database view. By clicking any of the root nodes in the sequence you can see where
+in the database the analysis will start.
+In some cases it is necessary to change the default association of external dependencies or root
+nodes with the Input for Analysis. This is done by right clicking the root node or the external depend-
+ency. A list will be shown from where you can choose the right input for analysis.
+15.4 Predefined Analysis Sequences
+A number of Predefined Analysis Sequences exists. The only difference between predefined and
+user defined analysis sequences is that the predefined sequences can not be deleted.
+The Predefined Analysis Sequences are marked with "(predefined)" at the end of the sequence
+name.
+PAGE|463
+15.4.1 Use of Analysis Sequences
+Analysis Sequences can be applied in many useful situations, for example:
+Applying the same analyses to many ensembles (Batch processing)
+You have made a lot of measurements, and saved the data in multiple ensembles. Use the first
+ensemble of data to experiment with your analysis settings until you get the result you need. Then
+save the sequence of analyses and re-apply this to all the remaining measurement ensembles.
+Batch processing is however not possible if the Sequence has multiple root nodes. Instead if you
+have the Add-on "Distributed Analysis" you can add one sequence at a time to the job queue and
+continue to the next.
+Frequently used results
+If you repeatedly is looking for the same results in your data, you can save a sequence of analyses
+that specifically finds your answer. Since the sequence can be built up using all combinations of
+existing anayses, you can adapt your sequence to return precisely the result you seek.
+15.5 Context menu
+A context menu is a menu that pups up when either right clicking an object or at the time an object
+is selected and clicking on the Application key on the keyboard. The menu offers a list of options
+which vary depending on the context of the action, and the item selected.
+15.6 Distributed Analysis
+Distributed Analysis is the default method for analyzing data by utilizing different cores of the PC.
+Additionally, PC's on the local network can be used as analysis agents and also support the ana-
+lysis. Each PC or CPU will receive a dataset and calculate a result. This means that if 4 PC's are
+used for analysis the datasets of an ensemble can in theory be calculated 4 times faster than if only
+one PC was used. There is, of course, some overhead involved in transferring datasets over the
+network. Obviously Analysis methods that process one dataset at a time benefit the most from this
+whereas methods that take multiple inputs and/or generate multiple outputs may take the same
+time to process whether or not Distributed Analysis is switched on.
+Distributed analysis has a close relation to the distributed database capabilities of DynamicStudio
+since by default results are saved locally where they have been calculated.
+15.6.1 Installing Analysis Agent software
+A PC that is to be used during distributed analysis must have DynamicStudio installed.
+It is not necessary to install a dongle on the remote agent, the system will always use the dongle
+installed on the DynamicStudio PC.
+15.6.2 Configuring Distributed Analysis.
+Distributed Analysis is the default analysis method since DynamicStudio 8 or later. The local PC
+doesn´t need to be set-up. only remote Analysis PC´s need to be configured.
+Before distributed analysis is to be used the system has to know which PC's to use during analysis.
+To tell DynamicStudio which PC's to use, start up Agent Host as described in "Installing Analysis
+Agent software" on each of the PCs. Then startup DynamicStudio and from the setup tab select
+"Configuration Wizard".
+The Configuration Wizard will guide you through the selection of Analysis Agents to be used. Note
+that it is not possible to disable the local Analysis Agent.
+PAGE|464
+Options for Distributed Analysis
+Options for Distributed analysis can be found in the Options dialog. To have the Option dialog dis-
+played select Options form the Tools menu.
+The tab Analysis of the Options dialog holds four checkboxes related to Distributed Analysis:
+l Use Distributed Analysis (default checked, enables/disables distributed analysis)
+As described in the dialog this enables you to queue up analysis jobs. If you remove the check-
+mark the analysis will be carried out locally on the PC on which DynamicStudio is running..
+Distributed Analysis can also be enabled/disabled in then Select Analysis Method dialog.
+l Close Pending Analysis Jobs dialog on all jobs done (default checked)
+This lets you decide if the 'Pending Analysis Jobs' dialog is to be close automatically when all
+jobs has been done
+l Start Analysis jobs Automatically (default checked)
+This lets you decide if the execution of the job queue is to be started automatically.
+If you uncheck this option you must manually start the execution of the analysis jobs queue in
+the Pending Analysis jobs Dialog.
+l Local Agent Only (default unchecked)
+This lets you decide if analysis is to be assigned to the local agent only.
+l Save Analyzed data in Main Database(default unchecked)
+By default all results are saved on the PC where analysis took place. This setting lets you
+decide if you want all remote agents to save results in the main database.
+(Note: It is possible to specify for each Analysis Agent if results are to be saved distributed or in
+the main database. This is done in the Pending Analysis Jobs dialog.)
+15.6.3 Analyzing using Distributed Analysis
+When distributed analysis is enabled all analysis is added to a queue of analysis jobs. This job
+queue is accessed via the "Pending Analysis Jobs" dialog. The "Pending Analysis Jobs" can be
+opened from the Analysis menu by selecting "Analysis Jobs..."
+Pending Analysis Jobs
+The dialog is divided in to three tabs:
+l Analysis Jobs
+This tab displays the content of the job queue. It is possible to start/stop the execution of the job
+queue and it is also possible to remove individual jobs as well as clearing the entire job queue.
+(Note: it is not possible to remove a job that is being analyzed).
+After having started the execution of the jobs in the queue, and after the first job is finished the
+system tries to give an estimate on how long time it will take to do the rest of the jobs in the
+queue. This estimate is presented just below the job content.
+l Job progress
+This tab displays the overall progress of the current job being analyzed. Also, after the very first
+result is saved, the system tries to estimate the remaning time.
+The job is split in to several Tasks. Each Task represent the analysis of one dataset in the
+ensemble. The progress of each Task is also displayed.
+Some methods are implemented to utilize all CPU cores found on the PC, and some are not. In
+the case a method is not implemented to utilize all CPU cores, Distributed Analysis will instan-
+tiate one analysis Task for each CPU that will run in parallel.
+Below are two examples of Distributed Analysis. The first one (on the left) is a display a single task
+running on several CPU cores. This task can run on several cores thanks to a specific imple-
+mentation in DynamicStudio. The second example (on the right) is a display of a job split in multiple
+tasks that are running in parallel.
+PAGE|465
+l Analysis Agents
+This tab holds information about the Analysis Agents connected. Each Analysis Agent has a
+PAGE|466
+row in the table shown. There are four columns :
+l Host
+The host name of the agent's PC.
+l Status
+The connection status of the agent. If for whatever reason an agent disconnects you can
+attempt to reconnect by clicking on 'Connect Agent'.
+l Save remote
+A checkmark that can change whether to save analysis results. If checked the Analysis agent
+will save the result at the PC where it is running. If not checked the result will be saved in the
+main PC.
+15.7 Analysis results
+Performing Analysis will result in one or more derived ensembles or resulting ensembles.
+If the selected analysis results in multiple derived results these are called siblings.
+One method that can generate siblings is the method "Image math". An example of how siblings
+are visualized in the database can be seen below:
+(Selecting one of the siblings will highlight the other sibling(s))
+15.8 Distributed Database
+DynamicStudio Distributed Database has the ability to manage remotely stored data. A distributed
+database is a database where part of its contents is not saved at one single PC but is spread over a
+number of PC's.
+There are two ways a database can end up holding remote data:
+l a Distributed Acquisition agent saves acquired data locally
+l a Distributed Analysis agent analysis results saves data locally
+If a database holds remote data it is visualized in the database tree. The example below shows a
+part of a database tree where one ensemble has remote content. Ensembles with remote data are
+marked with a globe.
+PAGE|467
+The globe indicates that all or parts of the ensemble is stored remotely.
+If for some reason it is not possible to get access to parts of the ensemble the globe will change
+color:
+l Yellow indicates that one ore more remote PC's are not reachable.
+l Red indicates that all remote PC's are not reachable.
+The example below show a database where all the remote PC's that hold part of a ensemble is not
+reachable.
+To get an overview of remote PC's involved in a distributed database, select the root icon of the
+database tree and examine record properties of the section Distributed information. In the example
+below the remote PC 'tst_xp' is involved. This is indicated in the 'Remote Agents' property. If one
+ore more PC's is not reachable they are be listed at 'Unreachable Agents'
+15.8.1 Collecting remotely stored data
+Remote contents can be moved to the main database. Hereby we can ensure that all data is stored
+in one location. Collecting remote data is done from the context menu of the root, a branch or a
+single ensemble in the database tree by selecting "Collect remote contents to main database".
+For example, right clicking on a project of the database tree and selecting "Collect remote contents
+to main database" will collect all remotely stored data, that is included in that specific project. "Col-
+lect remote contents to main database (Recursive)" will also collect all child records of the remotely
+stored data.
+All remote data will be copied to the main database and then deleted at the remote PC. When all
+remote data has been collected, the globe disappears from the database view.
+15.8.2 Troubleshooting Distributed Database
+There can be a number of reasons why it is not possible to get in contact whit a remote PC. Here is
+some guide lines as to how to solve some of these issues:
+l Check that AgentHost is started on the remote PC (if AgentHost is running it has a notify icon in
+the system tray). AgentHost can be started by clicking Start->All programs->Dantec Dynamics-
+>Remote Agent for DynamicStudio.
+l Network changes. Check that the PC's involved are located on the same subnet.
+l Firewall and Firewall settings on the PC's involved. During installation a number of firewall
+exception are added to the Windows Firewall exception list. If these exceptions have been
+deleted or another Firewall tool is used, it might not be possible to reach remote PC's. For
+PAGE|468
+experienced users and administrators the exceptions can manually be added. You can also
+choose to reinstall DynamicStudio. Finally you can choose to disable the firewall (not recom-
+mended).
+15.9 Custom Properties
+Every record in the database; projects, runs, ensembles and datasets contains properties. The
+Record Properties can be displayed in the Record Properties view by selecting Alt+1. The prop-
+erties are a collection of fixed properties defined and maintained by the system, and custom prop-
+erties which can be added dynamically.
+Custom Properties can be manually added by selecting Custom Properties... in the context menu
+on the record. Datasets automatically inherits the custom properties of the parent ensemble, but
+the values of the properties can be changed individually.
+15.9.1 Example
+Custom properties are used in a number of situations. During calibration of LIF images custom prop-
+erties can be used to store condition values like temperature or pressure. Another example is the
+Sort option which stores the sort value as a custom property.
+15.10 Timestamp
+Timestamp or acquisition time is an indication of when data was acquired. DynamicStudio provides
+a very precise way of determining exactly when images and analog data is acquired using hard-
+ware time stamping. The timestamp is assigned every acquired dataset, and is if possible, main-
+tained and transferred through the analyses.
+15.11 Selection (Input to Analysis)
+Selection are indicated in the database with a check icon .
+A Selection is a way to mark one or more external ensembles as additional inputs to an Analysis.
+Some analysis methods requires that not only the parent data is available, but also a reference to
+an external dataset.
+A Selection in the database tree is made by selecting "Select Toggle" in the context menu, or by
+pressing the Space bar on the ensemble.
+Un-selection is done similarly to select , but you also have the possibility to click
+Unselect in
+the tool bar.
+15.11.1 Example
+One example is applying a mask to a series of images. The mask is created using the Define Mask
+analysis method, and the later applied to the images using the Masking Image analysis method. In
+this case the ensemble containing the mask must be selected as user selection for the masking
+routine to work.
+15.12 Fixed Selection (Input to Analysis)
+Fixed Selection are indicated in the database with a check icon .
+Fixed Selection is as normal Selection(see above). The difference is how the selection and un-
+selection is performed.
+PAGE|469
+A Selection in the database tree is made by selecting "Select Fixed Toggle" in the context menu, or
+by holding down the CTRL key and pressing the Space bar on the ensemble.
+Normally when clicking
+Unselect all selected record will be unselected, but not the Fixed
+Selected records. To unselect Fixed Selected record bye clicking
+Unselect, you must hold
+down the Ctrl key.
+The advantage using Fixed Selection is (as the name described fixed) meaning that the normal
+way of clearing selection does not influence the Fixed selected records. This means that if a data-
+base holds records that are use frequently you can chose to Fix select these records, and they will
+stay selected until manually un-selecting these records.

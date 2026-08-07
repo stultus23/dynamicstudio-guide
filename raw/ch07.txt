@@ -1,0 +1,32 @@
+PAGE|29
+7 Note to Administrators
+7.0.1 Installation
+All installation scripts from Dantec Dynamics A/S contain a digital signature (code signing cer-
+tificate) issued by (CA) VeriSign, Inc. (http://www.verisign.com) ensuring correct identity.
+Installation requires administrative privileges, but running can also be done under restricted/limited
+(non-admin) user-accounts. When installing under a restricted/limited user account, the user is
+requested to run (Run As...) the installation as an administrative user.
+Installation requires disabling of User Access Control (UAC). Go to the Windows Control Panel and
+search for UAC to turn it off before installing (requires reboot). It is however highly recommended to
+turn it on again after the installation.
+To accomplish restricted/limited user account support, the following permissions are altered during
+installation:
+l All users (“Everyone”) are permitted full file access to the “All Users\Shared Documents\Dantec
+Dynamics” folder including all sub folders.
+l All XML configuration and library files are installed in the “All Users\Shared Documents\Dantec
+Dynamics\Dynamic Studio” folder, allowing shared access for all users.
+7.1 Windows Firewall
+The following ports are opened during installation in the Windows Firewall.
+l 5007 Dantec Dynamics - Multicast Agent Hosts
+l 5008 Dantec Dynamics - Agent Configuration Multicast
+l 5011 Dantec Dynamics - Agent Master
+l 5012 Dantec Dynamics - Agent Host
+l 5013 Dantec Dynamics - Acquisition Agent
+7.2 BCDEDIT.exe
+The following boot parameter is added to the Windows boot configuration information, to specifying
+physical memory that is reserved for Dynamic Studio and Windows cannot use, when the image
+buffer is changed for frame grabber cameras:
+"truncatememory".
+The parameter can be removed (and thereby freeing the allocated memory) by entering the fol-
+lowing command in a Command Prompt:
+"bcdedit.exe /deletevalue truncatememory".

@@ -1,0 +1,130 @@
+PAGE|20
+PAGE|21
+4 Software License Agreement
+This software end user license agreement ("License Agreement") is concluded between you (either
+an individual or a corporate entity) and Dantec Dynamics A/S ("Dantec Dynamics"). Please read all
+terms and conditions of this License Agreement before installing the Software. When you install the
+Software, you agree to be bound by the terms of this License Agreement. If you cannot agree to the
+terms of this License Agreement you may not install or use the software in any manner.
+Grant of License
+This License Agreement together with the Software package including eventual media, user's
+guide and documentation and the invoice constitutes your proof of license and the right to exercise
+the rights herein and must be retained by you.
+One license permits you to use one installation at a time of the Dantec Dynamics software product
+supplied to you (the "Software") including documentation in written or electronic form and solely for
+your own internal business purposes.
+You may not rent, lease, sublicense or otherwise distribute, assign, transfer or make the Software
+available to any third party without the express consent of Dantec Dynamics except to the extent
+specifically permitted by mandatory applicable law.
+Updates
+Updates, new releases, bug fixes, etc. of the Software which are supplied to you (if any), may be
+used only in conjunction with versions of the Software legally acquired and licensed by you that you
+have already installed, unless such update etc. replaces that former version in its entirety and such
+former version is destroyed.
+Copyright
+The Software (including text, illustrations and images incorporated into the Software) and all pro-
+prietary rights therein are owned by Dantec Dynamics or Dantec Dynamics' suppliers, and are pro-
+tected by the Danish Copyright Act and applicable international law. You may not reverse
+assemble, decompile, or otherwise modify the Software except to the extent specifically permitted
+by mandatory applicable law. You are not entitled to copy the Software or any part thereof except
+as otherwise expressly set out above. However you may make a copy of the Software solely for
+backup or archival purposes. You may not copy the user's guide accompanying the Software, nor
+distribute copies of any user documentation provided in “on-line” or electronic form, without Dantec
+Dynamics' prior written permission.
+License and Maintenance Fees
+You must pay any and all licensee and maintenance fees in accordance with the then-current pay-
+ment terms established by Dantec Dynamics.
+Limited Warranty
+You are obliged to examine and test the Software immediately upon your receipt thereof. Until 30
+days after delivery of the Software, Dantec Dynamics will deliver a new copy of the Software if the
+medium on which the Software was supplied is not legible.
+A defect in the Software shall be regarded as material only if it has a material effect on the proper
+functioning of the Software as a whole, or if it prevents operation of the Software in its entirety. If
+until 90 days after the delivery of the Software, it is established that there is a material defect in the
+Software, Dantec Dynamics shall, at Dantec Dynamics' discretion, either deliver a new version of
+the Software without the material defect, or remedy the defect free of charge or terminate this
+License Agreement and repay the license fee received against the return of the Software. In any of
+these events the parties shall have no further claims against each other. Dantec Dynamics shall be
+entitled to remedy any defect by indicating procedures, methods or uses ("work-arounds") which
+result in the defect not having a significant effect on the use of the Software.
+Software is inherently complex and the possibility remains that the Software contains bugs, defects
+and inexpediencies which are not covered by the warranty set out immediately above. Such bugs,
+PAGE|22
+defects and inexpediencies etc. shall not constitute due ground for termination and shall not entitle
+you to any remedial action including refund of fees or payment of damages or costs. Dantec Dyna-
+mics will endeavour to correct bugs, defects etc. in subsequent releases of the Software.
+The Software is licensed "as is" and without any warranty, obligation to take remedial action or the
+like thereof in the event of breach other than as stipulated above. It is therefore not warranted that
+the operation of the Software will be without interruptions, free of bugs or defects, or that bugs or
+defects can or will be remedied.
+Indemnification
+Dantec Dynamics will indemnify you against any claim by an unaffiliated third party that the Soft-
+ware infringes such unaffiliated third party's intellectual property rights and shall pay to you the
+amount awarded to such unaffiliated third party in a final judgment (or settlement to which Dantec
+Dynamics has consented) always subject however to the limitations and exclusions set out in this
+paragraph.
+You must notify Dantec Dynamics promptly in writing of any such claim and allow Dantec Dynamics
+to take sole control over its defense. You must provide Dantec Dynamics with all reasonable assist-
+ance in defending the claim.
+Dantec Dynamics' obligation to indemnify you shall not apply to the extent that any claim comprised
+by this paragraph is based in whole or in part on (i) any materials provided directly or indirectly by
+you; (ii) your exploitation of the Software for other purposes than those expressly contemplated in
+this License Agreement; and/or (iii) combining of the Software with third party products. You shall
+reimburse Dantec Dynamics for any costs or damages that result from such actions.
+If Dantec Dynamics receives information of an alleged infringement of third party intellectual prop-
+erty rights or a final adverse judgment is passed by a competent court or a final settlement con-
+sented to by Dantec Dynamics is reached regarding an intellectual property right infringement
+claim related to the Software, Dantec Dynamics may (but shall not under any obligation to do so),
+either (i) procure for you the right to continue to use the Software as contemplated in this License
+Agreement; or (ii) modify the Software to make the Software non infringing; (iii) replace the relevant
+portion of the Software with a non infringing functional equivalent; or (iv) terminate with immediate
+effect your right to install and use the Software against a refund of the license fees paid by you prior
+to termination. You acknowledge and agree that Dantec Dynamics is entitled to exercise either of
+the aforesaid options in Dantec Dynamics' sole discretion and that this constitutes your sole and
+exclusive remedy in the event of any infringement of third party intellectual property rights.
+Limitation of Liability
+Neither Dantec Dynamics nor its distributors shall be liable for any indirect damages including
+without limitation loss of profits and loss of data or restoration hereof, or any other incidental, spe-
+cial or other consequential damages, and even if Dantec Dynamics has been informed of their pos-
+sibility. Further, Dantec Dynamics disclaims and excludes any and all liability based on Dantec
+Dynamics' simple or gross negligent acts or omissions. In addition to any other limitations and
+exclusions of liability, Dantec Dynamics' total aggregate liability to pay any damages and costs to
+you shall in all events be limited to a total aggregated amount equal to the license fee paid by you
+for the Software.
+Product Liability
+Dantec Dynamics shall be liable for injury to persons or damage to tangible items caused by the
+Software in accordance with those rules of the Danish Product Liability Act, which cannot be con-
+tractually waived. Dantec Dynamics disclaims and excludes any liability in excess thereof.
+Assignment
+Neither party shall be entitled to assign this License Agreement or any of its rights or obligations
+pursuant this Agreement to any third party without the prior written consent of the other party. Not-
+withstanding the aforesaid, Dantec Dynamics shall be entitled to assign this License Agreement in
+whole or in part without your consent to (i) a company affiliated with Dantec Dynamics or (ii) an unaf-
+filiated third party to the extent that such assignment takes place in connection with a restructuring,
+divestiture, merger, acquisition or the like.
+PAGE|23
+Term and Termination
+Subject to and conditional upon your compliance with the terms and conditions of this License
+Agreement may install and use the Software as contemplated herein.
+We may terminate this License Agreement for breach at any time with immediate effect by serving
+notice in writing to you, if you commit any material breach of any terms and conditions set out in this
+License Agreement. Without limiting the generality of the aforesaid, any failure to pay fees and
+amounts due to Dantec Dynamics and/or any infringement of Dantec Dynamics' intellectual prop-
+erty rights shall be regarded a material breach that entitles Dantec Dynamics to terminate this
+License Agreement for breach.
+Governing Law and Proper Forum
+This License Agreement shall be governed by and construed in accordance with Danish law. The
+sole and proper forum for the settlement of disputes hereunder shall be that of the venue of Dantec
+Dynamics. Notwithstanding the aforesaid, Dantec Dynamics shall forthwith be entitled to file any
+action to enforce Dantec Dynamics' rights including intellectual property rights, in any applicable jur-
+isdiction using any applicable legal remedies.
+Questions
+Should you have any questions concerning this License Agreement, or should you have any ques-
+tions relating to the installation or operation of the Software, please contact the authorized Dantec
+Dynamics distributor serving your country. You can find a list of current Dantec Dynamics dis-
+tributors on our web site: www.dantecdynamics.com.
+Dantec Dynamics A/S
+Tonsbakken 16-18 - DK-2740 Skovlunde, Denmark
+Email: info@dantecdynamics.com
+Tel: +45 4457 8000 - Fax: + 45 4457 8001
+www.dantecdynamics.com

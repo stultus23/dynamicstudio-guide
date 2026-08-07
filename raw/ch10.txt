@@ -1,0 +1,110 @@
+PAGE|47
+10 Add-Ons and Options for DynamicStudio
+Item
+Description
+Item No
+Software platform
+DynamicStudio Base Package
+80S57
+Includes automatic device detection, distributed acquis-
+ition, distributed database, camera support, cyclic phe-
+nomena, image stitching, image processing library,
+advanced graphics, proper orthogonal decomposition
+(POD), Matlab link and much more. One license (USB
+dongle).
+Add-ons for PIV:
+2D PIV
+80S58
+Planar Particle
+Stereoscopic PIV
+80S45
+Image Velocimetry
+Optical Flow/Motion Tracking
+80S46
+Flex Grid & Flex PIV
+80S43
+Volumetric
+3D Least Squars Matching (3D LSM)
+80S21
+Velocimetry
+3D Particle Tracking Velocimetry (3D PTV)
+80S29
+3D Tomographic Particle Tracking Velocimetry (3D
+80S20
+TOMO PTV)
+Application packages
+PlanarPIVpackage(includesAdd-onslistedbelow)
+80S97
+for PIV:
+2D PIV
+80S58
+Optical Flow/Motion Tracking
+80S46
+Flex Grid & Flex PIV
+80S43
+VolumetricVelocimetrypackage(includesallbelow
+80S83
+3D LSM
+80S21
+3D PTV
+80S29
+3D TOMO PTV
+80S20
+2D PIV
+80S58
+Stereoscopic PIV
+80S45
+Optical Flow/Motion Tracking
+80S46
+Flex Grid & Flex PIV
+80S43
+Add-ons - Analysis
+PAGE|48
+Pressure calculations
+Pressure from PIV
+80S25
+Modal Analysis
+Oscilating Pattern Decomposition (OPD)
+80S13
+Multiscale Proper Orthogonal Decomposition (mPOD)
+80S140
+Fourier Mode Decomposition (FMD)
+80S102
+Masking
+Dynamic Masking
+80S47
+Add-ons other Imaging
+Techniques
+ParticleCharacteristics Spray Geometry
+80S87
+&SprayDiagnostics
+Shadow Sizing
+80S48
+IPI
+80S38
+LIEF
+80S11
+CombustionDiagnostics
+&Mixing
+Combustion Laser Induced Fluorescence (LIF)
+80S55
+Liquid & Gas LIF
+80S85
+Rayleigh Thermometry
+80S89
+LII
+80S59
+Visualization
+Background Oriented Schlieren (BOS)
+80S24
+Add-ons Other
+Distributed Analysis
+80S84
+ActiveTarget PC Screen
+80S22
+Traverse Option
+80S76
+Hardware device registration
+80S30
+Software Update Agreement
+80S161

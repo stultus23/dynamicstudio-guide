@@ -1,0 +1,1224 @@
+PAGE|1013
+18 Displays
+Displays are windows for plotting, graphing and visualizing data on the screen. Displays are shown
+in multiple windows inside DynamicStudio.
+There are multiple display-types designed to visualize different types of data. A few are dedicated
+to show results from a specific analysis, while many are general purpose displays, used to show
+results from several different analysis methods.
+Examples frequently used in DynamicStudio are: ...
+l
+Image map
+l Vector map
+l Scalar map
+Most data can also be shown numerically by right-clicking the data ensemble in the database tree
+and picking 'Open as Numeric' in the context menu, or by selecting the ensemble and clicking the
+-icon in the toolbar. The actual content of the resulting Numerical Display will of course depend
+on the parent data-set and -type.
+For most display types there are 'Display Options' allowing you to adjust or modify the visual
+appearance of the display. These are typically accessed by right-clicking somewhere in the display
+window and then picking 'Display Options...' from the context menu. For many display types you
+can also access the Display Options by simply double-clicking somewhere inside the display win-
+dow.
+18.1 General Display Interaction
+There are several ways to interact with a display.
+Quick access features for the display are zooming and moving the image around.
+Zooming is done by holding the left mouse button down while moving the mouse. This will display a
+rectangle around the area that will be zoomed to when releasing the mouse button.
+Moving the image around is useful when zooming has been done. This is done by holding the Ctrl
+key and the left mouse button down while moving the mouse.
+Right clicking the mouse makes a context menu pop up.
+The context menu makes it easy to access specific dataset display options, coloring, zooming, ruler
+settings, recipes, analysis and other general display options.
+For more details please refer to "Displays" above or to the Help Page for the Analysis Method in
+question.
+18.2 Zoom and Pan
+In most 2D displays you can zoom in on specific areas and out again to get back to the overview.
+While zoomed in you can also pan the display left, right, up and down. Examples below show
+images, but you can zoom and pan in e.g. vector and scalar maps the same way.
+18.2.1 Zooming
+There are several ways to zoom in:
+You can left-click and drag with the mouse to draw a box around the area you wish to zoom in on,
+the zooming will take place when you release the left mouse button.
+PAGE|1014
+You can also point with the mouse somewhere within the display window and then use the scroll
+wheel on the mouse while pressing Ctrl on the keyboard. This will zoom in or out around the loc-
+ation of the mouse cursor.
+Finally you can right-click the inside the display window and pick one of the zoom options from the
+context menu:
+The current zoom level is shown along with various options to change it (characters to the right are
+hotkeys):
+Taking it from the bottom and up you can zoom in or out in steps of 5% by pressing Ctrl and
+PgUp/PgDn simultaneously.
+Then there are a number of fixed zoom level you can choose from (for images 100% means that
+one pixel in the image is shown as 1 pixel on the screen, for vector and scalar maps 100% mean
+that vectors or scalars that are for example 16 pixels apart are also shown 16 pixels apart).
+'Fit content to window' will adjust the zoom level of the display to make it fit within the current dis-
+play window .
+'Fit window to content' will increase or reduce the display window size to match the size of the data-
+set at the current zoom level (limited by screen size and/or the program window in which Dynam-
+icStudio itself is running).
+If you zoom in far enough on an image numerical grayscale values will appear:
+PAGE|1015
+It happens when displayed pixels are large enough for the grayscale value to be shown inside
+them, so there is no fixed zoom level at which this occurs. It is sooner for an 8-bit image with 3 digits
+than for a 10- or 12-bit image with 4 and later still for a floating point image requiring even more
+digits. The numerical display of pixel values can be switched off (or back on) in Image Map Display
+Options if you don't want to see them.
+No similar functionality exist for Scalar Maps even if they resemble floating point images, but you
+can see the scalar value that the mouse is over in the info bar at the bottom left-hand corner of the
+DynamicStudio program window.
+Pleasenote:Forimagedisplayshorizontaland/orverticalartifactsmayappearfor'odd'zoom
+levelsevenifnosuchartifactsarepresentintheactualimagedata.Ifanimagelooks'strange'
+pleasetrychangingthezoomfactor(ideallyto100%)toseeifit'sjustadisplayissueorinthe
+actualdata.
+18.2.2 Panning
+If you're zoomed in so far that the data cannot fit inside the display window, scrollbars will appear in
+the bottom and/or right-hand side of the display (See the figure above).
+The recommended way to pan left, right, up or down is to click and drag with the mouse somewhere
+inside the display window while pressing Ctrl on the keyboard.
+You can also pan by clicking and dragging the scrollbar handles, click the scrollbar arrows (small
+steps) or click in the bright area between arrow and handle (large steps).
+Finally you can pan using the scroll-wheel on the mouse: If you do it while pressing Shift the display
+will pan left or right and if you do it without pressing any keys it will pan up or down.
+18.3 Display Rulers
+For most 2D displays you can switch on rulers at the bottom and left hand side of the Display win-
+dow.
+Simply right-click inside the display and pick the Ruler option that you want from the context menu:
+PAGE|1016
+There are two types of rulers: Rulers the show the index of the data in the display (pixel index, vec-
+tor inedx etc.) end metric positions. The metric positions are resolved either by dewarping the data
+to metric positions using a calibration or by defining the origin and scale using the Origin and Scale
+node in the database for the given camera "Measure scale & define origin" on page 92.
+Examples below show Pixel rulers on an image display and Metric rulers on a vector map derived
+from it:
+PAGE|1017
+In these examples the origin (0,0) are in the default lower left corner of the image / vector map, but it
+is possible for it to move to somewhere inside or even completely outside of the image.
+Especially when performing Stereo PIV or dewarping an Image, Vector or Scalar Map it is quite nor-
+mal for the origin to move to somewhere inside the display window (See "Image Dewarping" on
+page 610, "Vector Dewarping" on page 944 or "Stereo-PIV" on page 905, that rely on dewarping
+two image or vector maps to a common grid).
+Results from these analysis methods can no longer be related directly to specific pixels on a spe-
+cific camera and 'Pixel Rulers' are thus no longer an option.
+18.4 Using the display from within an analysis method
+The view of an image can be controlled through the context menu that appears when right clicking
+inside the image. In this popup menu the zoom level, the active frame (for a double frame expos-
+ure) and visual appearance (Color map and histogram) can be adjusted. This functionality is not
+implemented for the main display component
+PAGE|1018
+18.4.1 Zoom
+The zoom level can also be adjusted by scrolling the mouse wheel button or by dragging a rect-
+angle around the desired area to view. The context menu provides some fixed zoom levels as well
+as an option to fit the image to the available window area.
+18.4.2 Pan
+If holding the <Ctrl> key while dragging inside the image the view area can be moved (panned)
+around. The window scrollbars can also be used to pan the view of the image.
+18.4.3 Magnifying glass
+If holding down the <Alt> button while moving the mouse over the image, a "magnifying glass" is
+shown. The magnifying glass can be used to quickly inspect details, without changing the zoom
+level. The image below is showing the magnifying glass. Grayscale pixel values are shown in each
+pixel, if zoom level is sufficiently high.
+18.4.4 Color map
+The color table used to display an image onto the screen can be adjusted by selecting the menu
+item "Color map and histogram" from the context menu. The Color map dialog is described in
+"Color map and Histogram " on page 1026.
+PAGE|1019
+18.4.5 Adjusting the ellipse
+The position, size and rotation of the ellipse can be changed by mouse interaction. The entire
+ellipse is moved by using the left mouse button to drag the ellipse to its new location. When the
+ellipse is selected or while hovering the mouse over the ellipse its adjustments handles is displayed
+as illustrated in the image below.
+By using the mouse to drag these handles to a new location it is possible to change the ellipse size
+and rotation. If the <Shift> key is pressed while dragging a corner handle, the center of the ellipse is
+kept at its current location. If the <Shift> key is pressed while dragging the rotation handle (the right
+circle in the image below) the rotation angle is kept to a multiple of 45°.
+When rotating the ellipse, the center of the rotation is the pivot handle seen in the middle of the
+ellipse. The pivot handle can be moved to an other location to change the point around which the
+ellipse is rotated.
+If the <Shift> key is pressed while moving the pivot handle the pivot handle will return to the ellipse
+center.
+Setting the ellipse properties using the property dialog.
+If right clicking the ellipse its context menu will be shown (left image below). When selecting the
+‘Properties…’ menu item the property dialog is shown (right image below):
+In the property dialog entering the desired values of the position, rotation and size will adjust the
+ellipse accordingly.
+PAGE|1020
+18.4.6 Adjusting the polygon
+The position, size, rotation and shape of the polygon can be changed by mouse interaction. The
+entire polygon is moved by using the left mouse button to drag the polygon to its new location.
+When the polygon is selected or while hovering the mouse over the polygon its adjustment handles
+are displayed as illustrated in the image below.
+The polygon adjustment handles can be categorized in two groups.
+1. Handles connected to the bounding box of the polygon:
+Adjusting these handles will affect the entire polygon, by changing the location, size or rotation.
+2. Handles connected to polygon itself:
+These handles are point/vertex handles and line segment handles. Adjusting these handles will
+only change part of the polygon.
+By using the mouse to drag these handles to a new location it is possible to change the polygon
+shape, location, size and rotation. If the <Shift> key is pressed while dragging a corner handle (on
+the polygons bounding box), the center of the polygon is kept at its current location. If the <Shift>
+key is pressed while dragging the rotation handle (the right circle on the bounding box in the image
+below) the rotation angle is restricted to a multiple of 45°.
+The center of rotation (the pivot handle) is represented by two concentric circles (as shown in the
+center of the image below). The pivot handle can be moved to another location to change the point
+around which the polygon is rotated.
+If the <Shift> key is pressed while moving the pivot handle, it will return to the center of the poly-
+gon's bounding box.
+Deleting a point
+When right clicking on a polygon point/vertex a context menu is displayed as shown in the screen
+shot below.
+Selecting the menu item "Delete point" will delete the actual polygon point.
+PAGE|1021
+Inserting a point in the polygon
+When right clicking on a polygon line segment (the line connecting two polygon points) a context
+menu is displayed as shown in the screen shot below.
+Selecting the menu item "Split line segment" will create a new polygon point midway between the
+line segments start and end points.
+18.4.7 Adjusting the rectangle
+The position, size and rotation of the rectangle can be changed by mouse interaction. The entire
+rectangle is moved by using the left mouse button to drag the rectangle to its new location. When
+the rectangle is selected or while hovering the mouse over the rectangle its adjustments handles is
+displayed as illustrated in the image below.
+By using the mouse to drag these handles to a new location it is possible to change the rectangle
+size and rotation. If the <Shift> key is pressed while dragging a corner handle, the center of the rect-
+angle is kept at its current location. If the <Shift> key is pressed while dragging the rotation handle
+(the right circle in the image below) the rotation angle is kept to a multiple of 45°.
+When rotating the rectangle, the center of the rotation is the pivot handle seen in the center of the
+rectangle. The pivot handle can be moved to another location to change the point around which the
+rectangle is rotated.
+If the <Shift> key is pressed while moving the pivot handle the pivot handle will return to the rect-
+angle center.
+PAGE|1022
+Setting the rectangle properties using the property dialog.
+If right clicking the rectangle its context menu will be shown (left image below). When selecting the
+‘Properties…’ menu item the property dialog is shown (right image below):
+In the property dialog entering the desired values of the position, rotation and size will adjust the
+rectangle accordingly.
+18.5 Image Map Display
+The Image Map Display is used to show images acquired, imported and/or processed by Dynam-
+icStudio.
+Acquired (or imported) images are typically 8-, 10- or 12-bit integer with pixel values ≥0, while pro-
+cessed images may be floating point with arbitrary pixel values.
+DynamicStudio supports monochrome grayscale images only, but you can use various colormaps
+to assign pseudo-colors to the onscreen display (See "Color map and Histogram " on page 1026). It
+is possible to import color images (See "Image Import" on page 1002), but they will be converted to
+grayscale in the process.
+PAGE|1023
+GrayscaleandPseudoColorrepresentationofthesameimage
+For Double-Frame images you can press 'A' to see frame 1, 'B' to see frame 2 and 'T' to toggle
+between the two. For a Single-Frame image these keys have no effect.
+The Info box below the image display shows various details about the image shown:
+In this case the image is 616 pixels wide and 628 pixels high, the lower left corner has pixel coordin-
+ate (0,0), the image has a grayscale depth of 8 bit and we're presently looking at frame 2 of a
+double-frame. The second line locates the image in time, relative to the other images in the current
+ensemble; It is the second image in the ensemble and also the second image acquired (the two
+index numbers may differ if you did not store all images after acquiring them). The Time-stamp
+shown is relative to the start of the acquisition.
+PAGE|1024
+For floating point images the info box will also contain a legend illustrating which colors represent
+which floating point grayscale values:
+Note that the grayscale depth in the first line is now 32-bits, a single precision floating point with 24-
+bit mantissa and 8-bit exponent (both signed). Double precision 64-bit floating point would have
+been possible, but takes up twice as much storage space and is rarely justified with the limited 8-,
+10- or 12-bit resolution of the acquired images.
+The info box can be turned off (or back on) via the Context menu (right-click somewhere in the dis-
+play window). This can be useful when multiple display windows are open and you wish to use
+more of the screen to display actual data.
+From the context menu you can also switch on or off various rulers at the bottom and/or left-hand
+edge of the display window (See "Display Rulers" on page 1015 for details).
+The context menu also offer a number of predefined zoom levels, please refer to "Zoom and Pan"
+on page 1013 for further details.
+Other tools accessible from the context menu are: ...
+l
+"Color map and Histogram " on page 1026 to see grayscale histograms and adjust how pixel
+values are shown on screen.
+l
+"Correlation Map Display" on page 1034 to see Auto- or Cross-Correlation maps (Single- or
+Double-Frame images respectively).
+l
+"Particle Density Probe" on page 1030 to estimate particle image size, seeding density and sim-
+ilar.
+Follow the links above for further details on each of these topics.
+Double-clicking inside an image display is a shortcut to the Color Map. In most other displays
+double-clicking will open the Display Options dialog, but for images the Color Map is more fre-
+quently used.
+From the context menu you can also change the Background Color of the display window and
+switch on/off the display of a grid on top of the image:
+PAGE|1025
+Background Color and Grid details are both accessible also from the Image Map Display Options,
+the topmost entry in the context menu:
+Background Color is common to all display windows and for Image displays it is the color above
+and/or to the right of the image if height and/or width of the image shown is smaller than the display
+window. By default the background is white, but if the image itself is very bright it can be difficult to
+see where the image ends and the background begins. In that case using a different background
+color can be useful.
+The next three control the display of a grid that can be shown on top of the image;
+With the checkbox you can turn the grid on and off the same as described above for the context
+menu item 'Show Grid'.
+PAGE|1026
+'Grid Color' obviously allow you to change the color of the grid-lines, while 'Grid Spacing' determine
+how far apart the lines are. Default spacing of 64 pixels correspond to a typical PIV Interrogation
+Area (IA) and gives you an indication of the number of particles/IA. Reducing Grid spacing to e.g.
+32 pixel will help you estimate whether seeding density is high enough to justify a smaller
+PIV Interrogation Area.
+When the grid is turned on there will always be a horizontal and vertical line through the center of
+the image and from there further lines are drawn above, below left and right, using the chosen Grid
+Spacing. If you make the grid spacing large enough the lines through the middle will be the only
+ones. This can be useful for example when lining up a multi-camera system to ensure overlap
+between Field of View from each of the cameras involved. In such setups spatial camera cal-
+ibrations are often required anyway, so the calibration target is commonly used to focus each cam-
+era and line up their Fields of View. (See "Multi Camera Calibration" on page 765 for details about
+camera calibration).
+The last checkbox in the Image Map Display Options allow you to switch on or off the numerical dis-
+play of grayscale values inside each pixel when zoomed in far enough. Example and details about
+this can be found on the Help page about "Zoom and Pan" on page 1013.
+Apart from 'Copy to Clipboard' the remaining items in the context menu are 'Transparent' and 'List
+of Layers'.
+These are both related to "Overlays" on page 1048 and are described there (follow the link for fur-
+ther details).
+18.5.1 Color map and Histogram
+The colormap determines the color and intensity with which a particular pixel value is dis-
+played. It does not affect the actual greyscale values in the image, only the way they are
+shown on the screen. The Color map and histogram dialog is used to manipulate the
+colormap and thus the on-screen appearance of images.
+To bring up the Color map and histogram double-click anywhere within the "Image Map Dis-
+play" on page 1022 or right-click and pick 'Color map and histogram' from the context
+menu:
+This will open Color map and histogram dialog as shown in the example below:.
+PAGE|1027
+l The x-axis represents all possible pixel values in the image.
+l For regular greyscale images X goes from 0 to the maximum value supported (i.e.
+255/1023/4095 for an image with 8/10/12 bits per pixel).
+l For floating point images X goes from the minimum to the maximum greyscale value
+present in the current image.
+l The colors on the x-axis shows how a particular pixel value will be displayed. In this
+case pixel value 156 will be shown black, 866 will be shown white and values in
+between will be shown with shades of blue or purple.
+l You can change the upper and/or lower limits by clicking on a value and enter a new
+one or by clicking and dragging the square blue handles.
+l The colors on the y-axis show all 256 available colors in the colormap used.
+l You can change the upper and/or lower limit by clicking the number and enter a new
+one or by clicking and dragging the square blue handles. This allows you to use only
+part of the colormap. Setting the upper and lower limit to 170 and 85 in the example
+above would for example show colors in the range from blue to magenta, and never
+use black or white.
+l The histogram in the background shows the distribution of greyvalues in the image
+l The Histogram is scaled so the maximum value is at the top of the y-axis.
+l By default the y-axis is linear, if you want it to be logarithmic check the "Logarithmic
+histogram" checkbox.
+PAGE|1028
+l Statistical info shows information about the image:
+l Minimum: The minimum pixel value found in the image.
+l Maximum: the maximum pixel value found in the image
+l Number of different values: The number of different pixel values found in the display
+l Mean: The mean pixel value
+l RMS: The Root Mean Square of the different pixel values found in the image
+l Peak index: Indicates the pixel value that has the highest pin in the histogram, and
+the number of pixel found with this pixel value.
+Use Global Color map
+Each camera in the database has its own unique Colormap settings used when first open-
+ing an image from that camera. By default all images from the same camera share this com-
+mon colormap and changes to one specific image will thus affect all other images from the
+same camera. It is however possible to assign specific colormap settings to each
+(ensemble of) image(s). To do so simply unselect 'Use global Color map' at the top of the
+Colormap and histogram display.
+Color coding
+It is possible to select what color is to be displayed when the pixel value falls above or
+below the limits.
+This functionality is enabled using the check box color coding. The colors can be selected
+in the color coding section.
+Palette selection
+It is possible to chose between a number of different color palettes. To select a color
+palette click on the selection box in the bottom right corner and choose a palette:
+Mapping functions
+Upper and lower limits on the x- and y-axes determine limit values and corresponding dis-
+play colors, while a mapping function determine the color of intermediate values.
+The default is a linear mapping , but two nonlinear alternatives are available via the context
+menu (right-click anywhere in the histogram window):
+PAGE|1029
+Selecting either Hyperbolic or Sigmoid mapping a slider will appear to the right of the
+colormap display. With the slider in the middle position the mapping remains linear, but
+moving it up or down will make the mapping nonlinear.
+Hyperbolic mapping can be useful if/when the histogram peaks near the left or right edge of
+the range and has a single-sided 'tail':
+Sigmoid mapping can be useful if/when the histogram has a peak in the center and 'tails'
+on both sides:
+PAGE|1030
+Taking the slider to the top can simulate the effect of a hard threshold and taking it to the
+bottom can help identify where the brightest and darkest pixels are by turning all other
+pixels gray (or whatever is in the middle of the colormap used):
+Invert
+Clicking 'Invert' in the context menu will swap the upper and lower limits on the y-axis,
+effectively reversing the order of colors in the colormap.
+If you have bright particle images on a dark background 'Invert' will show a 'Negative'
+image with dark particles on a bright background, which may be useful if for example you
+wish to overlay display of other data.
+Fit/AutoFit to Histogram
+The colormap can be auto-adjusted to adapt to grayscale distribution of the image. The
+adjustment sets the colormap limits so 0.1% of all pixels are below the lower limit and 0.1%
+are above the upper limit, while the remaining 99,8% of all pixels are between the upper
+and lower limit. 'Fit to Histogram' will adapt colormap to the current image only, while turn-
+ing on 'Autofit to Histogram' will adapt to each new image when browsing through an image
+ensemble and/or toggling between images in a doubleframe.
+Shortcut: AutoFit can be turned on or off by simply double-clicking in the histogram area.
+Auto-Hide
+By default the Colormap and Histogram display will remain open until actively closed or
+until the corresponding parent image is closed. If you have multiple images and cor-
+responding Colormap/Histograms open at the same time you may however loose track of
+which belong together. In that case you may choose to hide a Colormap/Histogram when
+the corresponding parent image is unselected (by clicking one of the other image displays).
+To do so right-click somewhere in the gray area of a Colormap/Histogram display and turn
+on 'Auto-Hide'. (Right-click again to turn it off).
+18.5.2 Particle Density Probe
+Particle Density belongs to a group of image 'Probing Tools' alongside the "Correlation
+Map Display" on page 1034 (=Auto-Correlation Map for Single Frame parent images) .
+PAGE|1031
+These probing tools all analyze subsections of the full parent image, provide live feedback
+in response to mouse movements etc, but do not store any results in the DynamicStudio
+database.
+As the name implies the 'Particle Density' probe tries to identify seeding particles within the
+probing area, show the ones found and compute local particle density.
+It aims at finding bright particles on a dark background and will thus not work for shadow
+images. Nor will it work for floating point images, where output will be a blank screen.
+To access this tool right-click anywhere within the parent "Image Map Display" on
+page 1022 to bring up a context menu and select 'Particle Density':
+This will open the Particle Density Display and overlay a white square on the parent image
+to indicate the region currently being probed:
+PAGE|1032
+The Particle Density output window will show the probing area and overlay small circles
+(Ø5 pixel) where particles have been found. The circles are saturated (=255 for an 8-bit
+image, 1023 for a 10-bit image and so on), while the parent image is thresholded at one
+grayvalue lower. This allows you to have the circles shown in a different color, by manip-
+ulating the Color-Map for the Particle Density display. Right-click it and select 'Color map
+and histogram':
+The color map settings used in the example above are:
+PAGE|1033
+Above the probing area display there are two tabs, named 'Output' and 'Settings':
+'Output' shows the number of particles found within the current probing area as well as the
+corresponding average 'Seeding Density'.
+The 'Source Density' indicate the fraction of pixels above the detection threshold, and
+assuming particles are round we get the 'Mean Diameter' of each particle image by com-
+bining Seeding and Source Density. Finally 'Mean Spacing' describe the average distance
+between neighboring particles based on the Seeding Density.
+The 'Settings' tab allow the user to influence the processing, by specifying the 'Probe Area
+Size' and the 'S/N Threshold':
+Probe Area Size defaults to 64x64 pixel, but may be set to 32x32, 48x48, 96x96, 128x128,
+192x192 or 256x256 instead. Processing time increases with the size of the probing area
+PAGE|1034
+and with the grayscale depth of the parent image, so the largest probing area, 256x256,
+may respond slowly especially for images with grayscale depth of more than 8. For the
+smallest probing areas you risk finding very few particles (or none at all), meaning that f.ex.
+estimated 'Average Size' may not be representative as it describes a few distinct particles
+more than an actual 'Average'.
+The S/N Threshold defaults to 2.5, but can be set to any value in the range 1.0 to 9.0.
+Working principle…
+Internally Particle Density Probe uses grayscale normalization as described in "Image Pro-
+cessing Library (IPL)" (on page 635) as 'Pixel Normalization':
+where gIn and gOut are Input and Output grayscale values of the pixel in question and
+MEDW and MADW are the Median and Median Absolute Deviation in the spatial neigh-
+borhood W around this pixel. The minimum noise level e
+is included to avoid division by
+(almost) zero in areas with more or less constant grayscale values and Kis a scale factor
+converting Median Absolute Deviation to Standard deviation s
+(assuming background
+noise is Gaussian).
+Both the MED (Median) and the MAD (Median Absolute Deviation) are computed by apply-
+ing a 13x13 median filter twice. Applying it once with a rectangular neighborhood may
+leave horizontal and/or vertical artifacts, which the second pass then removes. The size,
+13x13 pixel, has been chosen as a suitable compromise between robustness and pro-
+cessing speed. Theoretically the conversion factor K should be 1.4826 if the background is
+Gaussian, but we use 1.5, which is good enough for practical purposes.
+The minimum noise level e
+is chosen as roughly 1/4 of the bits available:
+Grayscale depth
+Noise bits
+Epsilon
+8-9
+2
+4
+10-13
+3
+8
+14-16
+4
+16
+The number of pixels that exceed the user defined S/N Threshold leads to Source Density
+and greyscale peaks above the same threshold identify particles, which in turn leads to
+Seeding Density.
+For display purposes we return to the parent image, threshold it at one grayvalue below sat-
+uration and superimpose saturated Ø5 circles around each particle found. The particles
+are identified for counting purposes only, no attempt is made to locate them with subpixel
+accuracy, but we strive to ensure that each particle is counted only once.
+18.5.3 Correlation Map Display
+Right-clicking anywhere within a "Image Map Display" on page 1022 will bring up a context
+menu.
+PAGE|1035
+From this menu it is possible to select the menu-item Cross-Correlation Map (-or Auto-
+Correlation Map in the case of a single frame image). This will bring up a window that dis-
+plays a surface plot of the normalized cross-/auto-correlation of a given interrogation area
+within the image (the window is shown in the picture below).
+A white rectangle in the image display is used to indicate where the correlation is cal-
+culated. By moving the mouse inside the image display the interrogation area will follow the
+mouse position and the surface plot will constantly be updated to reflect the correlation at
+that current position.
+Manipulating the view of the correlation map.
+The view of the correlation map can be altered in different ways.
+By clicking inside the window and dragging the mouse, the surface is rotated around the
+transparent green ball seen in the center on the display above.
+The surface can also be zoomed in and out by using the mouse wheel button. Finally the
+position of the surface can be changed by holding CTRL button while dragging inside the
+window.
+The context menu
+Right clicking the mouse inside the correlation window will display the context menu shown
+below.
+PAGE|1036
+From this menu various settings can be adjusted.
+A brief description of each setting is given below.
+l Auto-hide - will hide the surface plot if the parent display loses focus.
+l
+Interrogation Area Width and Interrogation Area Height is used to specify how large
+the interrogation area will be.
+l Set View - will change the angle at which the surface is viewed. (options: default, top
+down view)
+l Colors - can change the look of the surface or the background by applying different
+color tables.
+l Coordinate Axes - shows or hides the coordinate axes.
+l Zero Level - shows or hides a transparent plane perpendicular to the z-axis at z=0.
+l Surface as Wires - toggle whether surface is drawn as solid or as wires.
+l Shiny Surface - toggle whether a shiny look is applied on the surface.
+l Animate - starts rotating the surface plot around the Z-axis of the eye-coordinate sys-
+tem. The rotation speed and direction can be changed by using the mouse.
+l Close will close the window.
+Normalized Cross Correlation formula
+F1() and F2() are the interrogation areas from frame 1 and 2 in the image.
+F1 and F2 are the mean value of the interrogation area.
+s
+F1 and s
+F2 are the standard deviation of the interrogation area.
+N is the number of pixels.
+The resulting correlation map will have values in the range [-1, 1], where 1 mean a perfect cor-
+relation/match
+PAGE|1037
+18.6 Vector Map Display
+The Vector Map Display is used to display the results obtained via a standard 2D-2C PIV or a ste-
+reo 2D-3C stereo PIV.
+18.6.1 Vector Map display options
+Options menu for the vector map display is opened by double clicking the vector map, or via the
+context menu entry "Display Options..."( opened by right clicking on the vector map).
+Display Options for the Vector Map consists of several different tabs, that will be described in the fol-
+lowing.
+Scaling / Subtraction
+Scaling is necessary to display vectors from the selected variables. Scaling of the vectors can be
+done in two different ways:
+l Auto-Scaling
+l Fixed scaling
+It is possible to subtract values from the two components of the vectors. For example, convective
+motion velocity can be removed from display in order to highlight existing vortices in the vector
+map. The spatial mean value of the vector map can also be used, by checking the corresponding or
+clicking the "Mean" button, as a specific value to be removed form the display.
+PAGE|1038
+Colors
+Different colors for the vectors can be chosen. It is possible to select to have Rejected, Substituted,
+Outside, and Disabled vectors drawn in special colors.
+It is also possible to have the vectors drawn with a color representing the length of the vector
+Color Vectors
+The selection of "Color vectors" will color vectors by its length, thus all other coloring of vectors will
+be disabled. Different color maps are proposed to color the vectors with.
+It is important to notice that the color is set by the length on the displayed vector, for example, if one
+desires to plot only one component then the color is set in agreement with the length of the dis-
+played vector. This feature is very useful especially when the selected variables for the vector plot
+differs from the usual U and V components. ("Examples of realizable displays" on page 1043).
+To set a range for the coloring of the vectors there are three different possibilities :
+l Use fixed min & max found during browsing the ensemble
+Here the minimum and maximum for the range is found during browsing the ensemble. When
+ever a larger or a lower value is found compared to min and max, the value will be used as min
+or max for the range. Outlier vectors will have an influence on the finding of min and max, and
+will properly make the range to wide.
+l Use individual Vector map min max
+Each individual vector map will de displayed with its own range found in the dataset.
+As above Outlier vectors will have an influence on the finding of min and max, and will properly
+make the range to wide.
+l
+Manual
+PAGE|1039
+The entries Minimum and Maximum will be used for the range. Vectors length outside
+the range will either be given the color of the minimum or the maximum value.
+Vector map
+By default U vs. V is displayed in the vector map, but it is possible to select other variables for the
+vector components. This is done in the Vector map tab.
+The number of different variables available will vary depending on the type of vector map displayed
+(e.g.Standard 2D-2C PIV or Stereo 3D-3C PIV).
+From this tab it is also possible to suppress one or more components by checking the cor-
+responding box.. This results in a pseudo profile plot.
+The vector's anchor can also be changed to Tail point or Mid point using the dedicated radio box.
+Finally, it is possible to not display all the vectors by using "Index skipping". If optimized Auto-
+skipping is enabled, vectors will be automatically be hidden in order to keep the frame rate high
+when showing more than 50,000 vectors.
+Reference Vector
+A reference vector can be shown in the display. The vector length can either be set manually or set
+to the average vector of the vector dataset.
+PAGE|1040
+Scalar Map
+A background scalar map can be enabled by selecting a Variable from a list of available variables
+in the vector map. The list can vary depending on the recipe used to calculate the velocity field. For
+example the 2D LSM directly evaluates gradients from the grayscale particle images, thus gradi-
+ents will also be available for display.
+PAGE|1041
+When selecting a variable different from None it becomes possible to set a number of different
+levels for coloring.
+Range for coloring the background scalar can be fixed to individual dataset maximum and min-
+imum values, by checking the check box “Use full range”.
+Un-checking “Use full range” makes possible to manually specify a minimum and a maximum value
+that will be used for the entire dataset.
+Scalar Map Style
+Selecting a Variable different from None in the Scalar Map tap will enable settings in the tap Scalar
+Map Style
+PAGE|1042
+In Scalar map Style it is possible to select how the Scalar map in the background is displayed.
+The following possibilities are available:
+l Discrete
+l Follow contours
+l Only contour lines
+Several different color maps are available for the display of the background scalar map, and can be
+changed in "Color use".
+Streamlines
+Streamlines can be activated in Display settings. Streamline display settings is divided into four sec-
+tions. in the first section a grid for seed points is defined where the number of points in x-, and y-dir-
+ection are specified. In the "Streamline integration" section the direction of the integration is
+specified, which determine if streamlines go upstream, downstream or both from the seed points. In
+"Streamline Colors" the visualization properties are defined.
+PAGE|1043
+18.6.2 Examples of realizable displays
+Vectors only displays
+A pseudo profile plot of a measurement in boundary layer is shown in the figure below.
+Only one velocity component is displayed and colored by its length ("Colors" on page 1038 and
+"Vector map" on page 1039 ). Note that for a better visualization, all the measured vectors are not
+plotted using the "Index skipping" feature.
+PAGE|1044
+The figure below represents a pseudo profile plots of RMS values of the main velocity component
+in a boundary layer.
+The first component of the displayed vector has been set to "Std dev (U)" and no second com-
+ponent is used ("Vector map" on page 1039). The color is displayed according to the length of the
+displayed vector (in that case the RMS value of U), thus highlighting the location of the maximum
+turbulence intensity locations.
+Super Imposed Vectors and Scalar Map
+The examples below shows Vector plots of mean velocity values super-imposed on Scalar Maps of
+RMS values of velocity, in a boundary layer and in a subsonic jet.
+PAGE|1045
+18.7 Scalar Map Display
+18.7.1 More visualization methods…
+Spatial coordinates system and scale bar for the scalar values can be added to the
+mean/RMS maps. With the mouse, click on the map and select 'Info box' to get the scalar
+bar.
+Scaling properties are accessed via the 'Display option' or by double-click with the mouse
+(Left button) on the scalar map. Adjust the range and the number of levels according to
+needs.
+Any variable that is present in the ensemble can be displayed by selecting it the drop down
+list.
+PAGE|1046
+Additional drawing methods are also available in the 'Style' section, where drawing style
+'Follow Contours' is the default. The 'Discrete' style will typically show a pattern of rect-
+angular tiles of uniform color corresponding to the scalar value in each point. The other
+styles interpolate between discrete scalar values to produce a smoother display, where
+contour lines can be used instead or added to the contour plot.
+A number of different color schemes are available for showing the scalar map on the
+screen.
+PAGE|1047
+Except with the discrete display style, the scalar map display will interpolate between
+scalar values to produce a display that varies smoothly. This is accomplished by averaging
+over a neighborhood around each and every point in the display. The neighborhood size is
+defined by the so-called integration step size, where large values will produce smoother dis-
+plays than small ones. The software can determine a suitable step size automatically, or let
+the user select one. The user defined step size can be entered directly or relative to the
+average spacing between neighboring values in the scalar map.
+PAGE|1048
+18.8 Overlays
+Overlay is a way to show multiple datasets in the same display window. A classic example is to
+show a vector map on top of (one of) the particle image(s) from which it was derived:
++
+=
+PAGE|1049
+In practice it is done by opening a display of one of the datasets (e.g. the image) and then click,
+drag and drop the other dataset (the vector map) from the database into the newly opened image
+display.
+A 'List of Layers' will be opened in the right hand side of the display window:
+The topmost entry in the Layer List is drawn on top of the datasets below. In this case the vector
+map (Adaptive PIV) is drawn on top of the image map (Cam 1). In the gaps between the vectors
+you can "see through" to the image underneath.
+If you had dragged the image on top of the vector map the vectors would initially be hidden under-
+neath the image so you would not be able to see them. In such a case the arrows at the top of the
+PAGE|1050
+Layer List can be used to move layers up or down in the list: If the vectors are hidden underneath
+the image, click the Vector Map in the Layer List and then click
+to move it up, or click the Image
+Map in the Layer List and then click
+to move it down.
+Any of the display layers can be hidden by selecting it in the list and then clicking
+at the top of
+the Layer List. Clicking it once more will show the corresponding dataset again.
+With the
+at the top of the Layer List datasets can be removed from the list completely (except the
+parent dataset onto which the other(s) have been drag/dropped, it can be hidden, but not removed).
+Please Note: When a dataset is first overlaid on top of another, the overlaid dataset will always be
+the first dataset from its ensemble, regardless if the parent dataset onto which it is overlaid is not
+the first in its ensemble. As soon as you browse forward or back in the parent ensemble the system
+will however try to synchronize the overlaid dataset(s).
+You can overlay datasets that have no relationship to one another, it is your own responsibility that
+the overlays performed make any sense.
+You can drag and drop further datasets into the display, they will be shown on top of what is already
+there and be added at the top of the Layer List.
+The example below shows 3 datasets overlaid:
+In this example the master/parent dataset is a scalar map of Vorticity, derived from the vector map
+at the top of the Layer List, which in turn is derived from the image in the middle of the list. Initially
+the vorticity map will be hidden underneath the Image map, so we've had to modify the image map
+display in two ways in order to see the vorticity again.
+PAGE|1051
+First the "Color map and Histogram " on page 1026 of the image display was inverted so we see
+dark particles on a bright background instead of bright particles on a dark background.
+Secondly the image is made 'Transparent' meaning that white pixels become completely trans-
+parent and 'bright' pixels partially transparent so we can see what's underneath; Click 'Transparent'
+in the context menu.
+PAGE|1052
+Double-Clicking in a display window with overlaid datasets is ambiguous, so DynamicStudio asks
+which dataset you intended:
+Pick the dataset you wanted to access and click OK.
+Similarly the context menu (right-click) is slightly different:
+All common things are displayed as usual (not all shown above), but near the top of the context
+menu there is an entry for each of the layers, from where you can access the context menu entries
+that are specific for that dataset. In the example above the image map entry has been chosen.
+You can also overlay two (or more) images on top of one another, which can be useful to check e.g.
+overlap;
+In the example below two cameras have acquired simultaneous images of the same calibration tar-
+get. Based on those a spatial calibration )see "Multi Camera Calibration" on page 765) has been
+made and finally used to dewarp the two images to a common grid. Making both images 'Trans-
+parent' and picking two distinctly different colormaps (a blue and a red) we can overlay them and
+check that they align:
+PAGE|1053
+In this particular case we are already looking at dark dots on a bright background so we need not
+invert the "Color map and Histogram " on page 1026, but we do need to adjust them so the back-
+ground becomes truly white (and thus transparent) instead of just pale red or pale blue:
+Zooming in on the edges we can see small regions where the red and blue dots do not overlap per-
+fectly, possibly due to lens distortion, but in most of the area they align nicely.
+PAGE|1054
+When you are satisfied with the overlap display the 'List of Layers' can be hidden via the context
+menu (right-click inside display window), thereby releasing screen area for other displays. To
+release even more space you can also hide the info box at the bottom. Via the context menu both
+info box and Layer List can of course also be turned on again.
+So far examples have overlaid datasets that were spatially aligned, but you can in fact overlay data-
+sets that are not, thereby stitching together neighboring displays:
+PAGE|1055
+Pleasenote:Thereisnostitchingofdatainthisexample,datasetsremainseparate!Itisonlythe
+displaysthatareshownsidebysidetoachievevisual"Stitching".
+This example shows PIV measurements in a nozzle; Velocities are fairly small in the inlet, quite
+high in the throat and somewhat lower in the outlet, so three separate experiments were performed
+with varying time between the laser pulses, adapting to the local velocities; 100m s for the inlet, 10m s
+for the throat and 50m s for the outlet. In all cases full DoubleFrame images were acquired, but sub-
+sequent PIV analysis was set to produce vectors only in the region where laser pulse separation
+was suitable for local conditions. Since the datasets were not acquired simultaneously it makes no
+sense to show instantaneous vector maps side by side, but we can show the mean flows, so above
+results from vector Statistics are overlaid on a background image showing the nozzle (Masking was
+used to remove vectors outside the nozzle).
+For the purpose of this example vector colors have been modified to visualize the three regions;
+Inlet vectors are Light blue, vectors in the throat are purple and finally outlet vectors are yellow. In
+this particular example it is tricky to ensure comparable scaling of the mean vectors from each of
+the three experiments, but it can be done.
+With a similar approach it is possible to show images and/or vector maps from two (or more) cam-
+eras side by side; If the upstream and downstream cameras Field of View are lined up and the cam-
+eras synchronized to acquire images simultaneously it will again make sense to show
+instantaneous datasets side by side. Assuming they share a common laser to illuminate the flow all
+cameras will necessarily have the same time between pulses, so getting comparable vectr scaling
+also become easier.
+Butagain:Overlayisavisualizationtechniqueonly,itdoesnotaffecttheactualdatainanyway.
+18.9 Group Displays
+Group Displays is a way to have multiple displays of the same data open (and close) at the same
+time. It can be different display types, such as XY Plots or Numerical displays, but you can also
+have multiple displays of e.g. a vector map open at the same time. Each of those displays can then
+have different display settings or you can have an overview in one display while zooming in on
+details in another. You can also zoom in on different regions in the different displays.
+Every display in the group refers to the same data, so browsing datasets in an ensemble will update
+all displays. The grouped displays will also open and close together, so once a group has been cre-
+ated closing one of the displays in the group will close the others as well and reopening a grouped
+display will open all displays in the group.
+Apart from this the displays in a group are completely independent with separate display options,
+pan, zoom etc.
+Please see "Ensemble Linking" on page 111 if you wish to synchronize displays of datasets from dif-
+ferent ensembles, such as parent images and data derived from them.
+18.9.1 Create and edit a group display
+To create a group display you start by opening a normal display of the data in question (Image,
+Scalar or Vector Map for example).
+On that display you click the icon in the top left corner to open a menu such as this one:
+PAGE|1056
+-from here you create a grouped display by clicking one of the four options at the bottom and open
+either a New (default) Display, a Numeric display, a XY plot or a 3D view of the data. A new display
+window of the requested type will be opened and the title bars will now identify the displays as part
+of a group:
+You can add more displays to the group by clicking the icon in the top left once more from any of the
+current displays. For all but the Default display the menu will also include the option to Remove a
+display from the group:
+Clicking this will obviously remove the current display from the group, close it and leave remaining
+displays as they are.
+Once a display group has been established closing one display will close all displays in the group
+and opening a dataset from the database browser will reopen all displays from the group.
+Each of the displays in the group has its own display settings that can be changed independently.
+PAGE|1057
+In this example the Group Display contain two vector map displays and a numerical display of the
+same data. The default display shows an overview of the entire vector map with colorcoded vectors
+showing velocity magnitude. The second vector map display is zoomed in on a region in the bottom
+right, shows ordinary vectors as black and substituted vectors highlighted with magenta color. Back-
+ground scalar map has been set to visualize correlation peak heights.
+18.10 3D Display
+The 3D Display is used to display 3D datasets and certain 2D dataset with 3D capabilities. The 3D
+data can be probed, animated, exported to other windows applications, and viewed in different ste-
+reo rendering modes, depending on the dataset being displayed.
+The 3D displays can generally display three different results:
+l 3D velocities (resulting from 3D LSM or Volume Grid)
+l 3D voxel spaces (resulting from the Voxel Reconstruction technique or Volume Math)
+l 3D trajectories (resulting from "3D Particle Tracking Velocimetry" on page 478 or 3D TOMO
+PTV)
+l 2D and 2.5D velocities (resulting from Adaptive PIV and Stereo PIV)
+l Shadow data (resulting from "Adaptive Shadow Tracking" on page 495, Z estimation necessary
+for better positioning in 3D space)
+l
+Images (Either dewarped or with proper origin and scale defined)
+PAGE|1058
+TwoVisualisationsofaJetflow,left:Threecontourslicesareaddedatdifferentplanenormals,
+whilevectorsaredisplayedbutinyaxisonlyevery15thisshown.Right:Vectors,iso-surfaces
+usingdifferentcolormaps.
+Multiple volumetric datasets can be added as layers to the "master" dataset by dragging dataset
+from the database onto the active display window. All datasets will use the same coordinate sys-
+tem, but each dataset will have separate display options.
+By using the Display Options for each display (layer) respectively, visual properties can be
+changed:
+18.10.1 3D Voxel Display
+The voxel volume display shows the extent of the voxel volume using a semi transparent box rep-
+resenting the volume or a slice of it. With a right click you can go to the Display Options and define
+the sub-volume. The volume be moved freely, scaled and rotated to fit a desired frame.
+18.10.2 Interacting with the voxel volume display
+The volume slicer can be moved freely by pressing the Shift key while dragging the volume with the
+left mouse button. The widget can be rotated around the normal of a selected face of the widget by
+PAGE|1059
+pressing the Ctrl key while dragging the mouse up or downwards on the face of the widget. The
+faces of the slice volume can be moved by pressing the Altkey and dragging a selected face of the
+widget. Pressing the Shift key while doing this will drag the entire volume in the direction of the face
+normal.
+18.10.3 The display options for voxel volumes
+The display options for the voxel volume enables the user to adjust the settings for the display for
+better visualization of the dataset.
+The “Display option” opens the voxel volume setup. Here you can set whether you want to show a
+portion, a probe, set a slice or show the whole volume, and define if the grey values should be inter-
+polated or not, if activated the display is more responsive but slightly simplifies the actual volume
+display.
+The “Z-plane Intensity” plots the average intensity of all grey values in the volume along the z-axis.
+This helps to judge about the reconstruction quality since in the non-illuminated parts of the voxel
+space the grey values shall be 0. Note that they will rarely really show 0 because ghost values are
+always introduced during the reconstruction. By a right mouse click the numerical values of the z-
+intensity profile, or the diagram can be exported
+The “Show probe” hides the voxels in the volume, and can also be selected from the displays right
+click menu.
+PAGE|1060
+The “Use transparency” makes voxels more and more transparent the small the value is. Un-
+checking the Use transparency makes all voxels solid.
+The “Slice” widget can be reset to a known state from the drop down menu, the thickness of the
+slice can be set in the text box to the left of the drop down menu. It is possible to choose to align the
+slice widget with any plane spanned by the coordinate axies, or to have the widget fit the whole
+volume. It is also possible to select the same option from the displays right click menu.
+In the “View” tab different fixed views can be selected and the perspective projection can be
+switched on or off.
+In the “Axis and Grid” you can switch on and of a coordinate system and define a grid to it
+In the “Background color” tab a color for the background can be set.
+The “Animate Camera” animates the a circular camera path around the display
+The “Stereo Rendering” switches between different stereo rendering views (not that depending on
+your hardware some might not work)
+The “Camera” lets you select for a input method how to rotate and view the volume
+With “Export” the image or the animation can be saved as image or video.
+“Copy to clipboard” generates a print screen of the 3D display
+“List of Layers” opens or closes the view of different layers. This automatically activates if multiple
+3D displays are overlapped
+It is possible to switch between the two frames of a double frame voxel volume using the "t" button,
+while having the voxel volume display selected.
+Selecting "Color map and histogram" from the right click menu brings up the color map dialog that
+is similar to the color map dialog used for images
+It is also possible to set the color look up table to a given palette or change the range of values to
+display. Any value under the minimum value will be set to transparent and any value above the max-
+imum value will be clamped to the maximum palette color
+PAGE|1061
+It is possible to switch between the two frames of a double frame voxel volume using the "t" button,
+while having the voxel volume display selected.
+PAGE|1062
+18.10.4 Images
+Images can be show in the 3D view by either right clicking on the image and choosing 3D view or
+dragging the image into an existing 3D display window.
+The image will be represented to scale.
+PAGE|1063
+18.10.5 Vectors
+The 3D display can show both true 3D vectors and vectors derived from stereo PIV.
+The default display for stereo PIV vectors is the 2D view, but right clicking on the stereo PIV dataset
+and choosing 3D view will show the data using the 3D view. Alternatively the stereo PIV dataset
+can be dragged onto an existing 3D display.
+By default volumetric data is displayed as vectors, and the length of the vectors are normalized and
+adjusted to the size of the display. By using the Vector page in the Display Options dialog the look
+and representation of the vectors can be changed.
+Rejected and substituted vectors can be removed form the display by unchecking the cor-
+responding boxes.
+By changing the size of vectors by using the Vector size slider, they become more visible.
+PAGE|1064
+Left:Atypicaldefaultvectordisplaywhenanew3DDisplayisopened.Right:Bysizingthevectors
+theybecomemorevisible.
+The Index skipping option can be used to trim down the number of displayed vectors to get a better
+look of the data. The display can be translated (rotated, moved and zoomed) by dragging the
+mouse inside the display window.
+PAGE|1065
+Left:Theindexingoptionreducesthenumberofvisiblevectorsallowingotherdisplaystobecome
+morevisible.Right:Byusingthemousethedisplaycanbeinteractivelyrotated,zoomedetc.based
+onthecameramode.
+The length of the vector will always represent the actually size of the velocity, but the color can be
+changed to represent any scalar available in the dataset. By default the color represent the length
+of the vectors, but by changing the Scalar vector data property it can e.g the U, V or W-component
+along with a number of derivatives. By changing the color map from the default Rainbow style, the
+interpretation of the vectors can be made more clear.
+PAGE|1066
+Leftandright:Bychangingthecolormap,informationandstructuresinthedatacanbemademore
+visible.
+For comparing vectors from multiple volumetric datasets both the vector color, size and size can be
+set to fixed. The fixed vector scale factor maps the size of the vector in mm relative to the axes to a
+velocity of 1 m/s.
+PAGE|1067
+18.10.6 Iso-surfaces
+As an alternative (or supplement) to the vectors, the volumetric dataset can be displayed using iso-
+surfaces. As for the vectors the color and the color map of the iso-surfaces can be changed to rep-
+resent any scalar value available in the volumetric dataset. The number and range of iso-levels can
+be specified, and the iso-surfaces can be combined using the smoothing and transparency options.
+PAGE|1068
+Iso-surfacesfromtheq-cirterafromajetflowshowingtherollupfromtheshearlayerandthe
+breakupoftheverticalstructures.Left:rawdata:right:bythesmoothingfeature,thesurfacesblend
+intoeachotherbetterandshowlesnoise.
+PAGE|1069
+18.10.7 Contours
+As an third display option planar contour slices can be added to the display. The easiest way to add
+contours slices is to use the probing feature. The probe is an interactive contour plane that can be
+positioned (moved and resized) by using the mouse within the display window. When the probe is
+in the correct position, it can be added as a contour slice, either by using the display options dialog
+or directly from the context menu. The probe can optionally be restricted to move in a fixed plane, or
+it can be moved freely. The probing feature is also available directly from the context menu of the
+display window.
+PAGE|1070
+Left:Theprobeisdisplayedwithresizinghandlesineachcornerandarotationandtilthandleinthe
+centeroftheplane.Right:Whenconvertingtheprobetoacontourslice,thehandlesareremoved.
+Contour slices can also be added or updated manually by selecting a fixed plane perpendicular to
+one of the 3 axes, or arbitrary by typing in the coordinates of 3 of the corners defining the plane in
+the display options dialog. Like the other displays the color and the color map of the contour slices
+can be changed to represent any scalar value available in the volumetric dataset. The color map
+used by the probe will follow the color map for contours.
+Any number of contour slices can be added to the display, and vectors, iso-surfaces and contour
+slices can be displayed separately or combined for advanced displays. During investigation of your
+data you may need to reset the camera using the context menu, to bring all data into the display.
+PAGE|1071
+18.10.8 Streamlines
+The Streamline property tab is divided into four different parts. In the first you define the number of
+seed points along the x-, y-, and z-axis, from these points the streamline integration starts. in the
+integration type, it is defined if the streamlines are integrated in positive or negative vector direction
+or in both directions. in the "Streamline colors" sections the color option is defined. here you can
+select the variable to use for the color coding, also the color scheme and if needed a manual data
+range can be selected. in the last tab, you can switch on or of "Arrows" as well as define their size
+and amount along the streamline.
+PAGE|1072
+Exampleofasteamlinevisualizationoftheflowvelocityfromajetflow.
+18.10.9 Legends
+It is possible to add legends to a 3D view from any of the datasets shown in the 3D view.
+A legend can be assigned to either, top, bottom, left or right.
+If multiple datasets of the same type is shown in the 3D view, the name of the specific dataset is
+appended to the name in the selection list.
+The properties of the depicted legend (such as min, max values and color scheme of the legend)
+are handled by the display layer for the specific dataset and can be changed by using the Display
+Options dialog for a given layer.
+PAGE|1073
+18.10.10 Stereo Rendering
+The 3D Display supports displaying the data in stereo rendering on the screen. There are 3 dif-
+ferent modes supported:
+l Red-Blue is supported for legacy use. This format can be used for displaying stereo on a stand-
+ard monitor, but the effect is limited and the color spectrum is limited.
+l Checkerboard requires active glasses synchronized to the monitor. Select this if your hardware
+driver runs in checkerboard 3D mode.
+l Shutterglasses requires active glasses synchronized to the monitor. Select this if your hard-
+ware driver runs the shutterglasses mode. This mode gives the best effect and is fully color
+neutral.
+18.10.11 Animation
+The 3D Display can be animated, automatically rotating the display to view the data from all sides.
+This feature is especially informative when used together with the stereo rending feature.
+18.10.12 Camera
+Data can be viewed interactively using different camera modes:
+l Trackball is a motion sensitive mode where motion occurs when the mouse button is pressed
+while the mouse pointer is moved. This is the default mode.
+l Joystick is a position sensitive mode where motion occurs continuously as long as the mouse
+button is pressed.
+l Flight is an animated mode where you interactively fly through you data.
+Use Reset view to place your data in the center of the display window.
+PAGE|1074
+18.10.13 Export
+The default export as image and display from the main menu of DynamicStudio is extended with a
+local export option. This allows for more advanced export formats besides the standard bitmap
+formats. The following formats are supported:
+PNG
+Portable Network Graphics (PNG) bitmap format. Provides lossless
+data compression, popular for Web contents.
+BMP
+Bitmap Image File (BMP) bitmap format. Includes all pixels uncom-
+pressed. This is probably the most compatible format, but generates
+large files.
+JPEG
+JPEG (JPG, JPEG) bitmap format. Provides lossy compression gen-
+erating very small images only suitable for e.g. E-mail and Web.
+TIFF
+Tagged Image File Format (TIF, TIFF) bitmap format. Used for scientific
+imaging mainly.
+EMF
+Enhanced Meta File (EMF) vector and bitmap graphics format. Used
+under Windows as the file containing calls directly to the GDI.
+EPS
+Encapsulated PostScript (EPS) text and vector graphics format. Widely
+used and compatible with any dtp program.
+VRML
+Virtual Reality Modeling Language (VRML) 3D interactive vector graph-
+ics format. This format is suitable for the Web and for backward com-
+patibility.
+X3D
+X3D (X3D) 3D computer graphics XML-based file format. This format is
+part of international ISO- and Open standards.
+18.11 XY-Plot
+The XY-Plot is used to show column based datasets using line, scatter or bar plot representation in
+a 2D display
+To open a XY-Plot of a dataset select the ensemble in the database and click 'Open XY-Plot' in the
+'Home' Ribbon:
+If XY-Plot is not an option for the selected data the 'Open XY-Plot' will be grayed out.
+The default contents of a XY-Plot depends on the type of data plotted and/or the analysis method
+creating the data.
+Once a XY-Plot has been opened there are several options, all described below.
+18.11.1 Graphical user interface
+Right-clicking inside the XY-Plot opens a context menu like the one shown here:
+PAGE|1075
+The following possibilities are available from the context menu shown when right-clicking inside the
+display:
+l Display Options can also be accessed directly by double-clicking within the display window and
+is described in details below.
+l Analyze, Show Recipe and Perform Analysis Again refer to the data and not to the display,
+which this help section is about.
+l Reset Zoom will zoom out to either default or user defined range on all axes. The latter can be
+set in “Display Options…” (see below)
+l Show Legend can be toggled to show or hide a legend next to the plot. The legend is useful
+when there are multiple curves in the same display.
+l Probe is used to show numerical values close to where the mouse cursor is. It defaults to show-
+ing values from the curve, but other options may be available depending on the type of data dis-
+played.
+l Show Grid can be toggled on or off to have a grid of dotted lines shown in the plot.
+l Show Markers is a toggle option to show or hide markers defined by the dataset (can for
+example be mean value). Not all data types have markers to show.
+l
+Info Box shows various dataset key information and statistics below the display and can be
+toggled on or off.
+l Copy to Clipboard will copy the current display to the Windows Clipboard to be pasted in else-
+where.
+18.11.2 Legend
+When the legend is shown it is possible to highlight a curve in the display by clicking on it in the
+legend. This can be useful if multiple curves are shown, to distinguish between them. To disable
+highlighting click once more or right click on the legend and select “Deselect data”. The selected
+dataset will be in red.
+PAGE|1076
+18.11.3 Info Box
+The info box will show key information from the dataset. If this is of no interest or not available the
+Info box can be switched off to make room for a larger plot.
+18.11.4 Zooming
+There are several ways of zooming in the XY-Plot. The mouse can be used, by pressing shift and
+using the mouse to mark a rectangular area in the display, or by scrolling the mouse wheel. By
+default the scroll wheel will zoom on all axes, but if Ctrl is pressed while scrolling it will zoom in/out
+on the horizontal axis only and if Shift is pressed it will zoom on the vertical only. This kind of zoom
+is temporary and can be undone by choosing 'Reset Zoom' in the context menu or simply by reopen-
+ing the XY-Plot.. For a permanent zoom go to display options and specify user defined ranges on
+all axes used. This zooming is permanent and will remain even when closing and reopening the
+XY-Plot until the user actively switches back to 'Use full range' in the Display Options (see below)
+The image below shows the rectangle being drawn when zooming with the mouse (the actual zoom-
+ing takes place when the mouse button is released).
+PAGE|1077
+18.11.5 Probe
+The Probe tool is used to show numerical values for data points in the plot. If one among several
+curves have been selected in the legend the Probe tool will pick nearest point on the highlighted
+curve, otherwise it will just snap to the nearest point on any of the curves. It defaults to showing
+'Value', which is simply the x- and y-values of the data point chosen, but other values can be
+chosen via the context menu. The values available to choose fro m depend on the dataset in ques-
+tion, but can even be data not currently shown in the plot. For a histogram with percentage on the y-
+axis the probe can for example be set to show the corresponding count or vice versa.
+18.11.6 Default setup
+For a newly created XY Plot the contents will depend on the data and the analysis method that cre-
+ated it. It may look something like this, but it can always be modified in various ways:
+PAGE|1078
+18.11.7 Display Options
+The display options have 4 tabs in order to simplify the user interface.
+l Data selection
+l Plot setup
+l Axis setup
+l Line style
+Note, all settings can be applied without closing the display options dialog.
+18.11.8 Data Selection
+The data selection determines which curves are shown in the plot. Several sets of Y-values can be
+chosen, but they must share one common set of X-values.
+What exact values are available depends on the dataset in question, the figure below is just an
+example:
+Each of the curves can be set to display as 'Bar', 'Line' or 'Line2' by clicking the text in the right hand
+side and choosing one in the resulting drop-down menu. 'Bar' means, that the corresponding data
+will be displayed as a bar plot, while the default 'Line' means it will be shown as a curve. 'Line 2' is
+also shown as a curve, but with a secondary y-axis that will appear in the right-hand side of the plot.
+This can be useful when showing multiple curves with different value-ranges.
+It is also possible to fit the data to a chosen distribution model and have the corresponding fit plot-
+ted as well. To do so choose a distribution model in the bottom left of the Display setup and in the
+bottom right choose which data to fit the model to. The resulting model fit will always be plotted with
+a secondary y-axis in the right hand side of the XY-Plot.
+Changes will take effect and the display be updated when 'OK' or 'Apply' is clicked.
+PAGE|1079
+18.11.9 Plot Setup
+The plot setup is for setting general plot properties. A title can be written, some datasets supply
+their own title, but can be overwritten if needed. The default title (if any) is available via the drop-
+down arrow on the right.
+The editable colors are axis color which include axis lines, numbers and labels. The title & legend
+color applies to the title and the legend text. The plot back color applies to the background color of
+the entire display. The legend back color applies to the background color of the legend area. Font
+type applies to all text in the display except the info window. The currently selected type is shown
+as an example beside the drop-down. The font sizes used in title, legend, probe text and axis labels
+can be set individually.
+18.11.10 Axis Setup
+The axis setup provides the possibility to edit the axis labels the same way as the title. It is always
+possible to get the default axis label from the drop-down.
+PAGE|1080
+It is possible to edit the range of values to be shown on all of the axes in the plot. If Full Range is
+checked then all axis ranges will adapt to the data shown, otherwise the user must specify desired
+minimum and maximum values for each of them.
+All axes defaults to linear, but the user may switch to logarithmic for each of them by using the
+check-boxes in the right hand side. For a logarithmic scale both min and max must be positive num-
+bers.
+When a secondary y-axis is used it can be forced to align with the primary y-axis by using the
+check-box 'Map Y2- to Y-axis'.
+All axes will by default be shown at the left, right or bottom of the display, but they can be forced to
+go through zero on the other axis by 'Set axis origin to zero'.
+Finally 'Transpose display' allows the user to plot the x-axis vertically and the y-axes horizontally if
+so desired.
+18.11.11 Line Style
+The appearance of each curve can be changed with the following parameters:
+l Line style
+l Line color
+l Line thickness
+l Point symbol
+l Symbol color
+l Symbol size
+PAGE|1081
+Click either of these for any of the curves and a drop down will appear, where a different style,
+color, thickness or size can be chosen. Line style can be set to 'No Line' to get a scatter plot show-
+ing only data point markers. Similarly data markers can be set to 'No Symbol' to see curves only
+with no markers. If both line and symbol style is set to none the corresponding curve will still be
+there, but invisible.
+18.12 Numeric Display
+The Numeric display is a view of the raw data in the dataset. Unlike the more visual displays that
+interpret the data in the dataset for visualization purposes, the numeric view shows the numeric val-
+ues associated with the data points in the dataset. This could for example be the positions and
+associated U, V and W values of a vector map. The numeric view shows the representation as the
+data is exported if the dataset is exported as numeric values.
+To see numerical values from a dataset select it in the database and then pick 'Open as Numeric'
+from the Toolbar, in the Context Menu or in the File Menu:
+PAGE|1082
+The Numeric Display will show the numbers from a dataset in a spreadsheet style display with rows
+and columns of cells, each with a number (or short text) in it. The exact content and layout of this
+spreadsheet display will depend on the type of data shown. It is beyond the scope of this text to
+describe them all, but a few examples and highlights will be shown here to show features that are
+typical for the Numeric Display regardless of the data shown. Features that are specific for a spe-
+cific datatype will normally be described in the Help page for the Analysis Method generating that
+data.
+The Numerical Display has a header explaining the content of each column.
+For example Numeric Display of an image will by default look something like this (right half of the
+figure below):
+The leftmost (grey) column with the header # is simply a continuous number providing a unique ID
+for each row. The next two columns with headers x & y are integer grid numbers, identifying each
+vector's location as the x'th column and the y'th row. The next two columns are x & y again, but this
+time floating point coordinates, describing the metric location of each pixel. In this example neigh-
+bor pixels are 0.1mm apart. The grid indices for both x & y will always increase in steps of one, but
+the metric positions may change if you move the origin or change the Scale Factor (See "Define
+Axes" on page 105 for details about this).
+The last column with the header 'Pixel' contain the actual grayscale values for each pixel. In the fig-
+ure above some of the grayscale values have been highlighted in the Numeric Display and a
+zoomed in Image Display, so you can see how the Numeric Display simply lists grayscale values
+one row at a time starting in the bottom left corner of the image.
+Specifically for images you can have the Numeric Display 'Show as Grid'; Right click somewhere in
+the Numeric Display and pick 'Show as Grid' from the Context Menu:
+PAGE|1083
+Numeric Display changes to this view:
+Rows and column of the numeric display in grid view match rows and columns of the image.
+For vector maps the Numeric Display typically looks something like this (again showed side by side
+with a zoomed in graphical display of the same data):
+Each row corresponds to a specific vector and the Numeric Display lists vectors row by row starting
+in the top left corner. In the figure above some of the vectors have been highlighted along with the
+corresponding line in the Numeric Display to illustrate this row-by-row approach.
+Again the leftmost (grey) column with the header # is simply a continuous number providing a
+unique ID for each row in the table (i.e. each vector).
+The next two columns are grid Indexes identifying vector location as the x'th column and the y'th
+row in the vector map.
+As implied by the names/headers x(pix) and y(pix) identify vector locations in pixel. Vectors are loc-
+ated at the center of an Interrogation Area (IA), the size of which (Width & Height) is always an even
+number of pixels. The center of the IA will thus always be at the corner of a pixel and not at the cen-
+ter, which is why the vector pixel coordinates always ends on '.5'.
+The next two columns x(mm) and y(mm) provide metric coordinates for each vector. These depend
+on "Define Axes" on page 105 settings.
+The remaining columns refer to the vector components;
+PAGE|1084
+Upix and Vpix specify the average particle image displacements in pixels as measured on the cam-
+era sensor.
+U and V are the same, but converted to metric velocities based on known scaling and time between
+the two laser pulses that illuminated frame 1 & 2 respectively. Length is the Euclidian (metric)
+length of the vector, i.e. the square root of the sum of squared vector components.
+The Status Code is a binary coded integer with each bit having its own distinct meaning:
+l 0: Vector is valid and derived from a specific peak in a correlation map
+l 1: Vector is Rejected automatically (by software)
+l 2: Vector is Rejected manually (by user; -legacy option)
+l 4: Vector is Outside (by masking)
+l 8: Vector is Disabled (by masking)
+l 16: Vector is Substituted
+The first and the last are considered valid vectors the others are not. Code 1 (Rejected by
+software) is assigned by a validation routine if for example a vector differs too much from its nearest
+neighbors. Code 2 (Rejected by user) is a legacy option from a time when the user could manually
+click a specific vector and manually reject it. This is no longer supported and code 2 should never
+be on. Status codes 4 & 8 can be assigned by applying a mask, where the definition of the mask
+determine which of the codes to assign. 'Outside' is intended to deal with walls and objects in the
+Field of View, while 'Disabled' is intended for areas such as shadows behind objects, where the
+laser light does not reach and the flow present thus cannot be measured.
+In practice it makes little difference if a vector is 'Outside' or 'Disabled', it is considered invalid in
+both cases. In fact most analysis methods that check the Status Code care only if a vector is valid
+or not and do not distinguish between different types of 'Invalid'. Code 16 is used to identify a vector
+that is considered valid, but is not derived from a specific peak in a correlation map. Validation
+routines that compare each vector to its neighbors can for example replace (/substitute) an invalid
+vector with the average of its valid neighbors.
+Status codes add up so a vector can for example have status code 17=1+16, meaning that it was
+first rejected by a validation routine (1) and then replaced/substituted with a more likely vector (16).
+Status codes can be inherited by derived data such as scalar map of e.g. Vorticity or they can be
+assigned directly to various datasets by various Analysis Methods. They are used the same way
+and mean the same in all contexts.
+From the (right-click) context menu of a Numeric display you may choose to show the status codes
+as text:
+The result is that the numeric Status code is replaced by text such as this:
+PAGE|1085
+In case multiple codes are 'on' at the same time the one with the highest number is shown (which is
+typically also the most important one).
+Display Options for the Numeric Display depends on the data, but resembles this one:
+Each row in the Table Setup above refers to a column in the corresponding Numeric Display. 'Unit'
+and 'Description' are for information only, while the user can interact with 'Quantity' and 'Decimals'.
+Adding or removing checks from the check boxes you can add or remove columns from the
+Numeric Display. By default they are all selected, but you can for example remove grid and pixel
+position and see only metric vector information (Press OK or Apply to see the effect):
+PAGE|1086
+Under the heading 'Decimals' in the right hand side there is an option to modify how floating point
+values are shown in the Numeric Display. Default is 'Auto'. Clicking either of them shows a small
+drop-down menu with possible alternatives:
+'0 decimals' mean that the number will be rounded to the nearest integer and shown as such. The
+options 1-6 decimals show the number with that exact number of decimals, 'Exponential' will switch
+to exponential notation. 'Engineering' is also exponential notation, but with the 10-exponent always
+a multiple of 3 and the mantissa fixed at 5 significant digits. The example below is the same dataset
+with 'Length' set to 0, 2, 4, 6 decimals and then to 'Exponential' and 'Engineering' at the far right:
+PAGE|1087
+It is possible to sort the Numeric Display by the values in a specific column: This is done by double
+clicking the header of the column to use as the sorting key. Double-clicking the column header
+once more reverses the sorting order. Right-clicking inside the view and picking 'No sorting' in the
+context menu returns the Numeric Display to the original row-order .

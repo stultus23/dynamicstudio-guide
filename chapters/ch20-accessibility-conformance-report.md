@@ -1,0 +1,251 @@
+# Chapter 20: Accessibility Conformance Report（无障碍一致性报告）
+
+> 完整原文：`raw/ch20.txt`（1732 行）· 各小节均标注打印页码，可据此在原文中定位。
+
+## 核心概念
+
+Product Release Date: October 31, 2023
+Name of Product: DynamicStudio
+Description of Product: DynamicStudio is an acquisition and analysis software for PIV, LIF, PTV
+Spray and shadow flow and particle measurements. Data can be acquired, saved, analyzed and
+presented in Displays, lists and reports.
+Platform: Microsoft Windows - Win32 Desktop Application
+Product Build: 8.5.0058
+Conformance to accessibility standards has been evaluated by senior software developers and
+application specialists at Dantec Dynamics, using manual and automated build and test methods.
+For assistance with this report, please email us.
+
+## 操作步骤（关键操作）
+
+### 查看无障碍功能
+- **说明**：DynamicStudio 遵循 WCAG 2.0 标准
+- **支持功能**：
+  - 键盘导航
+  - 高 DPI 支持
+  - 颜色对比度
+  - 文本调整大小
+
+### 获取无障碍支持
+- **联系方式**：email Dantec Dynamics
+- **说明**：如有无障碍问题，请联系技术支持
+
+## 章节目录（含页码）
+
+- `20` Accessibility Conformance Report … p.1091
+- `20.1` Product Information … p.1091
+- `20.2` Applicable Standards/Guidelines … p.1091
+- `20.3` Terms … p.1091
+- `20.4` Web Content Accessibility Guidelines (WCAG) 2.0 … p.1091
+  - `20.4.1` Principle 1: Perceivable … p.1092
+  - `1.1.1` Non-text Content: All non-text Supported with Most Non-text images and icons in … p.1092
+  - `1.2.1` Audio-only and Video-only Not Applicable DynamicStudio does not contain … p.1092
+  - `1.2.2` Captions (Prerecorded): Cap- Not Applicable DynamicStudio does not contain … p.1092
+  - `1.2.3` Audio Description or Media Altern- Not Applicable DynamicStudio does not contain … p.1092
+  - `1.2.4` Captions (Live): Captions are Not Applicable DynamicStudio does not contain live … p.1093
+  - `1.2.5` Audio Description (Prerecorded): Not supported DynamicStudio does contain … p.1093
+  - `1.3.1` Info and Relationships: Inform- Supported With 1.Most visual structure and relaation, structure, and relationships con- Exceptions tionship information in DynamicStudio … p.1093
+  - `1.3.2` Meaningful Sequence: When the Supported DynamicStudio presents content in a … p.1093
+  - `1.3.3` Sensory Characteristics: Instruc- Supported With In general all commands are done … p.1093
+  - `1.4.1` Use of Color: Color is not used as Supported DynamicStudio does not rely on the … p.1094
+  - `1.4.2` Audio Control: If any audio on a Not Applicable DynamicStudio does not contain … p.1094
+  - `1.4.3` Contrast (Minimum): The visual Supported The 3 standard Color Themes in … p.1094
+- `2.0` 1.4.3. 1.The user can change colors in Displays and Table that may not comply. … p.1094
+  - `1.4.4` Re size text: Except for captions Supported DynamicStudio supports high DPI … p.1094
+  - `1.4.5` Images of Text: If the tech- Supported DynamicStudio uses text instead of … p.1095
+  - `20.4.2` Principle 2: Operable … p.1095
+  - `2.1.1` Keyboard: All functionality of the Supported With Most DynamicStudio functionality can … p.1095
+  - `2.1.2` No Keyboard Trap: If keyboard Supported No functions in DynamicStudio will … p.1095
+  - `2.2.1` Timing Adjustable: For each time Supported DynamicStudio does not contain conlimit that is set by the content, at least trols or forms which require precise or … p.1096
+  - `2.2.1` is true. Note: … p.1096
+  - `2.2.2` Pause, Stop, Hide: For moving, Supported DynamicStudio does not include any … p.1096
+  - `2.3.1` Three Flashes or Below Supported DynamicStudio does not contain … p.1096
+  - `2.4.1` Bypass Blocks: A mechanism is Not Applicable This criterion does not apply to nonavailable to bypass blocks of content web software. … p.1096
+  - `2.4.2` Page Titled: Web pages have Supported The titlesofareas and caption of … p.1097
+  - `2.4.3` Focus Order: Ifa Web page can Supported All components in Dynamic Studio … p.1097
+  - `2.4.4` Link Purpose (In Context): The pur- Not Applicable The purpose of link text can be … p.1097
+  - `2.4.5` Multiple Ways: More than one way Not Applicable This criterion does not apply to nonisavailable to locate a Web page within web software. … p.1097
+  - `2.4.6` Headings and Labels: Headings Supported All headings and labels in Dynamand labels describe topic or purpose. ic Studio are descriptive. … p.1097
+  - `2.4.7` Focus Visible: Any keyboard oper- Supported With Most focusable elements in Dynamable user interface has a mode of oper- Exceptions ic Studio have a visiblekeyboard … p.1097
+  - `20.4.3` Principle 3: Understandable … p.1097
+  - `3.1.1` Language of Page: The default Supported US English is used as language in … p.1097
+  - `3.1.2` Language of Parts: The human lan- Not Applicable This criterion does not apply to nonguage of each passage or phrase in the web software. … p.1097
+  - `3.2.1` On Focus: When any component Supported InDynamicStudio no components … p.1098
+  - `3.2.2` On Input: Changing the setting of Supported Changes of context that occur auto any user interface component does not matically in Dynamic Studio on user … p.1098
+  - `3.2.3` Consistent Navigation: Nav- Not Applicable This criterion does not apply tononigational mechanisms that are web software. … p.1098
+  - `3.2.4` Consistent Identification: Com- Not Applicable This criterion does not apply tononponents that have the same func- web software. … p.1098
+  - `3.3.1` Error Identification: If an input Supported InDynamicStudio errors are autoerror is automatically detected, the matically detected. … p.1098
+  - `3.3.2` Labels or Instructions: Labels or Supported All dialog controls have appropriate … p.1098
+  - `3.3.3` Error Suggestion: If an input error Supported In DynamicStudio error dialogs are … p.1098
+  - `3.3.4` Error Prevention (Legal, Fin- Not Applicable DynamicStudio does not process … p.1099
+  - `20.4.4` Principle 4: Robust … p.1099
+  - `4.1.1` Parsing: In content implemented Supported DynamicStudio is not implemented … p.1099
+  - `4.1.2` Name, Role, Value: For all user Supported With Most controls and commands in … p.1099
+- `20.5` Revised Section 508 Report … p.1100
+  - `20.5.1` Chapter 3 Functional Performance Criteria … p.1100
+- `301` General … p.1100
+- `301.1` Scope The requirements of Chapter 3 shall apply to ICT where required by 508 Chapter 2 … p.1100
+- `302` Functional Performance Criteria … p.1100
+- `302.1` Without Vision Supported With The basic workflows in Dynamic Studio … p.1100
+- `302.2` With Limited Vision Supported With Most content in DynamicStudio is easy … p.1100
+- `302.3` Without Perception of Color Supported With Most content in DynamicStudio will be … p.1100
+- `302.4` Without Hearing Supported No functionality within DynamicStudio … p.1100
+- `302.5` With Limited Hearing Supported No functionality within DynamicStudio … p.1100
+- `302.6` Without Speech Supported DynamicStudio does not require user … p.1100
+- `302.7` With Limited Manipulation Supported With Most functions in Dynamic Studio are … p.1101
+- `302.8` With Limited Reach and Supported With Most functions in Dynamic Studio are … p.1101
+- `302.9` With Limited Language, Cog- Supported DynamicStudio provides features for … p.1101
+  - `20.5.2` Chapter 4 Hardware … p.1101
+  - `20.5.3` Chapter 5 Software … p.1101
+- `501` General … p.1101
+- `501.1` Scope. The requirements of Chapter 5 shall apply to software where required by 508 Chapter … p.1101
+- `2` (Scoping Requirements), 255 Chapter 2 (Scoping Requirements), and where otherwise referenced in any other chapter of the Revised 508 Standards or Revised 255 Guidelines. … p.1091
+- `502` Interoperability with Assistive Technology … p.1101
+- `502.1` General. Software shall interoperate with assistive technology and shall conform to 502. … p.1101
+- `502.2` Documented Accessibility Features. Software with platform features defined in platform documentation as accessibility features shall conform to 502.2. … p.1101
+  - `502.2.1` User Control of Accessibility Supported DynamicStudio integrates with the … p.1101
+  - `502.2.2` No Disruption of Accessibility Supported With In high contrast modes, some tool tips … p.1103
+- `502.3` Accessibility Services. Platform Not Applicable … p.1102
+  - `502.3.1` Object Information. The object Supported With DynamicStudio attempts to allow … p.1102
+  - `502.3.2` Modification of Object Inform- Supported With DynamicStudio attempts to allow … p.1102
+  - `502.3.3` Row, Column, and Headers. If Supported DynamicStudio attempts to provide … p.1102
+  - `502.3.4` Values. Any current value(s), Supported DynamicStudio attempts to provide … p.1102
+  - `502.3.5` Modification of Values. Values Supported Dynamic Studioattempts to allow for … p.1102
+  - `502.3.6` Label Relationships. Any rel a- Supported With DynamicStudio attempts to provide … p.1103
+  - `502.3.7` Hierarchical Relationships. Supported With DynamicStudio attempts to provide … p.1103
+  - `502.3.8` Text. The content of text Supported With Dynamic Studioprovides the content … p.1103
+  - `502.3.9` Modification of Text. Text that Supported DynamicStudio allows for the proc an be set by the user shall be capable grammatic editing of text, but at times … p.1103
+  - `502.3.10` List of Actions. A listofall Supported DynamicStudio attempts to provide … p.1103
+  - `502.3.11` Actions on Objects. Applic- Supported DynamicStudio attempts to allow all … p.1103
+  - `502.3.12` Focus Cursor. Applications Supported With DynamicStudio attempts to expose … p.1103
+  - `502.3.13` Modification of Focus Cursor. Supported DynamicStudio attempts to allow … p.1104
+  - `502.3.14` Event Notification. Not i- Supported With Whenever there is an event relevant … p.1104
+- `502.4` Platform Accessibility Features. Not Applicable DynamicStudio does not impede with … p.1104
+- `503` Applications … p.1104
+- `503.1` General. Applications shall conform to503. … p.1104
+- `503.2` User Preferences. Applications Supported DynamicStudio uses 3 different Color … p.1104
+- `503.3` Alternative User Interfaces. Not Applicable … p.1104
+- `503.4` User Controls for Captions and Supported … p.1104
+  - `503.4.1` Caption Controls. Where user Supported … p.1105
+  - `503.4.2` Audio Description Controls. Supported … p.1105
+- `504` Authoring Tools … p.1105
+- `504.1` General. Where an application is an authoring tool, the application shall conform to504 to … p.1105
+- `504.2` Content Creation or Editing. Not Applicable DynamicStudio does not provide … p.1091
+  - `504.2.1` Preservation of Information Not Applicable … p.1105
+  - `504.2.2` PDF Export. Authoring tools cap- Supported With DynamicStudio provides export of … p.1105
+- `504.3` Prompts. Authoring tools shall Not Applicable … p.1105
+- `504.4` Templates. Where templates are Not Applicable … p.1106
+  - `20.5.4` Chapter 6 Support Documentation and Services … p.1106
+- `602` Support Documentation … p.1106
+- `602.1` General. Documentation that supports the use of ICT shall conform to602. … p.1106
+- `602.2` Accessibility and Compatibility Supported This document is available in the … p.1106
+- `602.3` Electronic Support Docu- Supported This document is available in the … p.1091
+- `602.4` Alternate Formats for Non-Elec- Supported This document is available in hardtronic Support Documentation. Where copy from Dantec Dynamics A/S sup- … p.1106
+- `603` Support Services … p.1106
+- `603.1` General. ICT support services including, but not limited to,help desks, callcenters, training … p.1107
+- `603.2` Information on Accessibility and Supported This document is available in the … p.1107
+- `603.3` Accommodation of Com- Supported Support service options are available … p.1107
+- `20.6` EN 301 549 Report … p.1107
+  - `20.6.1` Chapter 4: 4.2 Functional Performance Statements (FPS) … p.1107
+  - `4.2.1` Usage without vision Supported With See Revised Section 508 Report 302.1 … p.1107
+  - `4.2.2` Usage with limited vision Supported With See Revised Section 508 Report 302.2 … p.1107
+  - `4.2.3` Usage without perception of Supported With See Revised Section 508 Report 302.3 … p.1107
+  - `4.2.4` Usage without hearing Supported See Revised Section 508 Report 302.4 … p.1107
+  - `4.2.5` Usage with limited hearing Supported See Revised Section 508 Report 302.5 … p.1107
+  - `4.2.6` Usage without vocal capability Supported See Revised Section 508 Report 302.6 … p.1107
+  - `4.2.7` Usage with limited manip- Supported With See Revised Section 508 Report 302.7 … p.1107
+  - `4.2.8` Usage with limited reach Supported With See Revised Section 508 Report 302.8 … p.1107
+  - `4.2.9` Minimize photosensitive Supported DynamicStudio does not contain flashseizure triggers ing or blinking animated content. … p.1107
+  - `4.2.10` Usage with limited cognition Supported See Revised Section 508 Report 302.9 … p.1107
+  - `4.2.11` Privacy Not Applicable DynamicStudio does not contain … p.1108
+  - `20.6.2` Chapter 5: Generic Requirements … p.1108
+    - `5.1.3.1` General See "Web Content See information in WCAG section. … p.1108
+    - `5.1.3.2` Auditory output delivery Not Applicable Auditory output is not included in … p.1108
+    - `5.1.3.3` Auditory output correlation Not Applicable Auditory output is not included in … p.1108
+    - `5.1.3.4` Speech output user control Not Applicable Speech output is not included in … p.1108
+    - `5.1.3.5` Speech output automatic Not Applicable Speech output is not included in … p.1108
+    - `5.1.3.6` Speech output for non-text Not Applicable Speech output is not included in … p.1108
+    - `5.1.3.7` Speech output for video Not Applicable Speech output is not included in … p.1108
+    - `5.1.3.8` Masked entry Not Applicable DynamicStudio does not include … p.1108
+    - `5.1.3.9` Private access to personal Not Applicable DynamicStudio does not include per data so nal data. … p.1108
+    - `5.1.3.10` Non-interfering audio out- Not Applicable Audio output is not used by Dynamput ic Studio. … p.1108
+    - `5.1.3.11` Private listening Not Applicable Audio output is not used by Dynamic Studio. … p.1108
+    - `5.1.3.12` Speaker volume Not Applicable Audio output is not used by Dynamic Studio. … p.1108
+    - `5.1.3.13` Volume reset Not Applicable Audio output is not used by Dynamic Studio. … p.1108
+    - `5.1.3.14` Spoken languages Not Applicable Audio output is not used by Dynamic Studio. … p.1108
+    - `5.1.3.15` Non-visual error i den- Supported Errors in DynamicStudio are identified … p.1108
+    - `5.1.3.16` Receipts, tickets, and trans- Not Applicable No transactions are included in … p.1108
+  - `5.1.4` Functionality closed to text Supported See WCAG 2.0 1.4.4 Re size text. … p.1109
+  - `5.1.5` Visual output for auditory Not Applicable Audio output is not used by Dynaminformation ic Studio. … p.1109
+    - `5.1.6.1` Closed functionality See 5.1.3.1 through See information in 5.1.3.1 through … p.1109
+    - `5.1.3.16` 5.1.3.16 … p.1108
+    - `5.1.6.2` Input focus Supported Focus of input elements is shown as … p.1109
+- `5.2` Activation of accessibility fea- Supported DynamicStudio allows preferences to … p.1109
+- `5.3` Biometrics Not Applicable … p.1109
+- `5.4` Preservation of accessibility Not Applicable … p.1109
+  - `5.5.1` Means of operation Supported With Most functions of the product are oper- … p.1109
+  - `5.5.2` Operable parts discernibility Supported With Most operable parts are shown as … p.1109
+  - `5.6.1` Tactile or auditory status Not Applicable … p.1109
+  - `5.6.2` Visual status Supported Input fields are using standard … p.1109
+- `5.7` Key repeat Supported Input fields are using standard … p.1109
+- `5.8` Double-strike key acceptance Not Applicable No double-strike key acceptance is … p.1109
+- `5.9` Simultaneous user actions Not Applicable Simultaneous user actions are not supported by DynamicStudio, but Dynam- … p.1110
+  - `20.6.3` Chapter 6: ICT with Two-Way Voice Communication … p.1110
+  - `20.6.4` Chapter 7: ICT with Video Capabilities … p.1110
+  - `20.6.5` Chapter 8: Hardware … p.1110
+  - `20.6.6` Chapter 9: Web … p.1110
+  - `20.6.7` Chapter 10: Non-web Documents … p.1110
+  - `10.2.1` through 10.2.38 See "Web Content See information in WCAG section. … p.1110
+  - `10.2.39` Caption positioning Not Applicable … p.1110
+  - `10.2.40` Audio description timing Not Applicable … p.1110
+  - `20.6.8` Chapter 11: Software … p.1110
+  - `11.2.1` Software success criteria See "Web Content See information in the WCAG section. … p.1110
+  - `11.2.2` Software success criteria See "Web Content See information in the WCAG section. … p.1110
+    - `11.3.2.1` Platform accessibility ser- See 11.3.2.5 See information in11.3.2.5 through … p.1110
+    - `11.3.2.2` Platform accessibility ser- See 11.3.2.5 See information in 11.3.2.5 through … p.1111
+    - `11.3.2.3` Use of accessibility ser- Not Applicable The accessibility services are not in … p.1111
+    - `11.3.2.4` Assistive technology Not Applicable The ICT is not assistive technology. … p.1111
+    - `11.3.2.5` Object information Supported With Most objects within DynamicStudio are … p.1111
+    - `11.3.2.6` Row, column, and headers Supported Tables are defined in an accessible … p.1111
+    - `11.3.2.7` Values Supported Values have a meaningful description. … p.1111
+    - `11.3.2.8` Label relationships Supported With Most elements are associated with … p.1111
+    - `11.3.2.9` Parent-child relationships Supported With Basic workflows in the product are func- … p.1111
+  - `3.3.2` Labels or Instructions and 4.1.2 … p.1098
+    - `11.3.2.10` Text Supported With Text is used throughout DynamicStudio … p.1111
+    - `11.3.2.11` List of available actions Supported Men us will provide all available actions … p.1111
+    - `11.3.2.12` Execution of available Supported With Most product functionality in Dynamactions Exceptions ic Studio can be operated with a mouse … p.1111
+    - `11.3.2.13` Tracking of focus and Supported With Most items in DynamicStudio will show … p.1111
+    - `11.3.2.14` Modification of focus and Supported Itispossible to change focus and selecselection attributes tion preferences in the application. … p.1111
+    - `11.3.2.15` Change notification Supported With Visually notifications are catered for in … p.1112
+    - `11.3.2.16` Modifications of states Supported With DynamicStudio is supporting Microsoft … p.1112
+    - `11.3.2.17` Modifications of values Supported With DynamicStudio is supporting Microsoft … p.1112
+  - `11.4.1` User control of accessibility Supported The accessibility features can be … p.1112
+  - `11.4.2` No disruption of accessibility Supported DynamicStudio does not have any keyfeatures board shortcuts that conflicts with … p.1112
+- `11.5` User preferences Supported Users can change build-in preferences … p.1112
+  - `11.6.2` Accessible content creation See "Web Content See information in the WCAG section … p.1112
+  - `11.6.3` Preservation of accessibility Supported With DynamicStudio uses visual and audio … p.1112
+  - `11.6.4` Repair assistance Supported Support service options are available … p.1112
+  - `11.6.5` Templates Not Applicable … p.1113
+  - `20.6.9` Chapter 12: Documentation and Support Services … p.1113
+- `12.1` Product documentation … p.1113
+  - `12.1.1` Accessibility and com- Supported This document is available in the … p.1113
+  - `12.1.2` Accessible documentation See "Web Content See information in WCAG section. … p.1113
+- `12.2` Support Services … p.1113
+  - `12.2.2` Information on accessibility Supported Support service options are available … p.1113
+  - `12.2.3` Effective communication Supported Support service options are available … p.1113
+  - `12.2.4` Accessible documentation See "Web Content See information in WCAG section. … p.1113
+  - `20.6.10` Chapter 13: ICT Providing Relay or Emergency Service Access … p.1113
+- `20.7` Disclaimer … p.1113
+
+## 注意事项 / 警告
+
+- except for situations listed in WCAG Note:
+- Note: 1.The user can also change text size in the operating system and it will reflectwithout issues in Dynamic Studio.
+- 2.2.1 is true. Note: If the user have selected this option. During acquisition, if an error occur in a position, a dialog will be displayed
+- user, unless it would jeopardize the Note: security or purpose of the content. Input errors or input data validation is automatically corrected in the Property Editor, clearly as signing an alternative valid value.
+- conforms to Level A and Level AA Suc- Note: cess Criteria and Conformance Require- Script editors can be launched from me nts in WCAG 2.0 (incorporated by DynamicStudio, but the editors are reference, see 702.10.1) for alls up- the choice of the user.
+- Note: 1. The active Display or Table is indicated using a focus frame. 2. Active window can be identified in change of caption color as part of
+- Note: 1. The Traverse Controller dialog supports constant button press for moving traverse axes. 2. Scroll bars uses standard Microsoft
+
+## 关联章节
+
+- ch13 数据采集 · ch14 设备 · ch16 分析模块 · ch18 显示
