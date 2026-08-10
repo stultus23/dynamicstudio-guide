@@ -9,6 +9,13 @@ import re
 import sys
 from pathlib import Path
 
+# Force UTF-8 stdout on Windows
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8")
+    except (AttributeError, ValueError):
+        pass
+
 class DynamicStudioSearch:
     def __init__(self, skill_dir):
         self.skill_dir = Path(skill_dir)
@@ -161,7 +168,8 @@ def main():
         results = search.search_keyword("PIV")
         print(f"  找到 {len(results)} 个结果")
         for r in results[:3]:
-            print(f"  [{r['source']}] Line {r['line']}: {r['content'][:60]}...")
+            content = r['content'][:60].encode('utf-8', errors='replace').decode('utf-8')
+            print(f"  [{r['source']}] Line {r['line']}: {content}...")
         
         # 测试2：搜索页码
         print("\n2. 搜索页码 130：")
@@ -169,7 +177,8 @@ def main():
         results = search.search_page(130)
         print(f"  找到 {len(results)} 个结果")
         for r in results:
-            print(f"  [{r['source']}] {r['content'][:80]}...")
+            content = r['content'][:80].encode('utf-8', errors='replace').decode('utf-8')
+            print(f"  [{r['source']}] {content}...")
         
         # 测试3：查看章节信息
         print("\n3. 章节 13 信息：")
@@ -193,9 +202,10 @@ def main():
         print(f"找到 {len(results)} 个结果")
         
         for r in results:
+            content = r['content'][:500].encode('utf-8', errors='replace').decode('utf-8')
             print(f"\n[{r['source']}]")
             print("-" * 40)
-            print(r['content'][:500])
+            print(content)
     
     elif sys.argv[1] == "-c" and len(sys.argv) > 2:
         # 查看章节信息
@@ -218,10 +228,11 @@ def main():
         print(f"找到 {len(results)} 个结果")
         
         for i, r in enumerate(results[:10]):
+            content = r['content'][:100].encode('utf-8', errors='replace').decode('utf-8')
             print(f"\n{i+1}. [{r['source']}] Line {r['line']}")
             if r['page']:
                 print(f"   页码: {r['page']}")
-            print(f"   内容: {r['content'][:100]}...")
+            print(f"   内容: {content}...")
 
 if __name__ == "__main__":
     main()
