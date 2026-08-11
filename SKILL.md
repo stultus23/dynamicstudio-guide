@@ -83,7 +83,6 @@ description: "DynamicStudio Users Guide 8.5（Dantec Dynamics 官方用户手册
 - [patterns.md](patterns.md) — 技术模式
 - [cheatsheet.md](cheatsheet.md) — 决策表
 - [troubleshooting.md](troubleshooting.md) — 故障排查指南（常见问题→原因→处置）
-- [troubleshooting.md](troubleshooting.md) — 故障排除指南
 - [search_tool.py](search_tool.py) — 搜索工具（支持关键词、页码、章节搜索）
 - `raw/ch01.txt … ch20.txt` — 每章完整原文（按 PAGE|N 页码定位）
 - `full_text.txt` — 全文兜底（1.5 MB）

@@ -4,8 +4,6 @@ DynamicStudio Skill 搜索工具
 支持在 raw 目录和章节文件中搜索关键词
 """
 
-import os
-import re
 import sys
 from pathlib import Path
 
@@ -145,7 +143,7 @@ class DynamicStudioSearch:
 
 def main():
     """主函数"""
-    skill_dir = r"C:\Users\wsh\.config\opencode\skills\dynamicstudio-guide"
+    skill_dir = Path(__file__).resolve().parent
     search = DynamicStudioSearch(skill_dir)
     
     if len(sys.argv) < 2:

@@ -4,16 +4,7 @@
 
 ## 核心概念
 
-l 64-bit PC with a modern multi-core Intel processor
-l 64-bit Microsoft® Windows 10™ with latest service packs and Windows updates
-l Microsoft® Windows© Installer v3.5 or later
-l Microsoft® .NET 4.8
-l 8 GB of RAM
-l FHD (1920x1080 pixels) or higher-resolution monitor with millions of colors
-l Mouse or compatible pointing device
-l For GPU processing:
-l NVIDIA GPU with Compute Capability 5.2 or higher and at least 2 GB memory
-l NVIDIA Driver >=516.94
+系统最低要求：64 位 PC，现代多核 Intel 处理器；64 位 Windows 10（含最新服务包与更新）；Windows Installer v3.5 或更高；.NET 4.8；8 GB 内存；FHD（1920×1080）或更高分辨率、数百万色显示器；鼠标或兼容指点设备。GPU 加速处理要求：NVIDIA GPU（Compute Capability 5.2 及以上，显存至少 2 GB），NVIDIA 驱动 ≥ 516.94。
 
 ## 操作步骤（关键操作）
 

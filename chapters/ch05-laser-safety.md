@@ -4,20 +4,7 @@
 
 ## 核心概念
 
-All equipment using lasers must be labeled with the safety information. Dantec systems are using
-Class III and Class IV lasers whose beams are safety hazards. Please read the laser safety sec-
-tions of the documentation for the lasers and optics carefully. Furthermore, you must instigate
-appropriate laser safety measures and abide by local laser safety legislation. Use protective eye
-wear when the laser is running.
-Appropriate laser safety measures must be implemented when aligning and using lasers and illu-
-mination systems. You are therefore urged to follow the precautions below, which are general
-safety precautions to be observed by anyone working with illumination systems to be used with a
-laser. Again, before starting, it is recommended that you read the laser safety notices in all doc-
-uments provided by the laser manufacturer and illumination system supplier and follow these as
-well as your local safety procedures.
-Precautions
-As general precautions to avoid eye damage, carefully shield any reflections so that they do not exit
-from the measurement area.
+所有使用激光的设备必须标注安全信息。Dantec 系统采用 Class III 与 Class IV 级激光，光束具有危险性，操作前务必阅读激光与光学器件文档中的安全章节，采取适当的激光安全措施并遵守当地法规，激光运行时须佩戴防护眼镜。在光路对准与使用照明系统时必须落实安全措施：作为通用防护，应仔细遮挡反射光，防止其逸出测量区域，避免对眼睛造成伤害。
 
 ## 操作步骤（关键操作）
 

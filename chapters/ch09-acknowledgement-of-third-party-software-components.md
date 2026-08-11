@@ -4,18 +4,7 @@
 
 ## 核心概念
 
-ponents
-DynamicStudio uses the following third part software components:
-"IPP and MKL from Intel" below
-"OpenCV" on the next page
-"ANN University of Maryland, Sunil Arya and David Mount" on page 35
-"Boost C++ libraries" on page 43
-"NVIDIA CUDA Toolkit" on page 43
-"muParser from Ingo Berg" on page 43
-"Tiflib" on page 45
-"VTK" on page 45
-"Math.net Numerics" on page 46
-"OpenFOAM " on page 46
+DynamicStudio 使用了以下第三方软件组件（各组件许可条款详见本章后续章节）：Intel IPP 与 MKL、OpenCV、马里兰大学 ANN（Sunil Arya 与 David Mount）、Boost C++ 库、NVIDIA CUDA Toolkit、Ingo Berg 的 muParser、Tiflib、VTK、Math.net Numerics、OpenFOAM。
 
 ## 操作步骤（关键操作）
 

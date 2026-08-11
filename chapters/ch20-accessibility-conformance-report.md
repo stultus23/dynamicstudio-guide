@@ -4,16 +4,7 @@
 
 ## 核心概念
 
-Product Release Date: October 31, 2023
-Name of Product: DynamicStudio
-Description of Product: DynamicStudio is an acquisition and analysis software for PIV, LIF, PTV
-Spray and shadow flow and particle measurements. Data can be acquired, saved, analyzed and
-presented in Displays, lists and reports.
-Platform: Microsoft Windows - Win32 Desktop Application
-Product Build: 8.5.0058
-Conformance to accessibility standards has been evaluated by senior software developers and
-application specialists at Dantec Dynamics, using manual and automated build and test methods.
-For assistance with this report, please email us.
+本报告为 DynamicStudio（产品版本 8.5.0058，发布于 2023-10-31）的无障碍一致性报告：DynamicStudio 是面向 PIV、LIF、PTV、喷雾与阴影流场/粒子测量的采集与分析软件，数据可采集、保存、分析并在显示窗口、列表和报告中呈现；平台为 Microsoft Windows（Win32 桌面应用）。无障碍标准符合性由 Dantec Dynamics 资深软件开发与应用专家通过手工与自动化构建/测试方法评估；有关本报告的协助可发邮件咨询。
 
 ## 操作步骤（关键操作）
 

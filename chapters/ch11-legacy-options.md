@@ -4,22 +4,7 @@
 
 ## 核心概念
 
-The following Add-Ons and Options have been discontinued, merged with other options or made
-part of the main package. For technical reasons they may however still appear in DynamicStudio's
-'About'-box as enabled in the dongle:
-Advanced PIV
-80S33
-The Advanced PIV add-on includes the
-Merged with 80S58,
-(requires 2D PIV Add-
-possibility for high accuracy processing
-2D PIV
-On)
-and definition of deforming windows.
-Image Processing
-80S39
-Basic image manipulations and transforms
-Included in 80S57,
+以下附加项与选件已停产、并入其他选件或成为基础包的一部分，但因技术原因可能仍会显示在 DynamicStudio 的 "About" 框中（在加密锁中标记为启用）：Advanced PIV（80S33，提供高精度处理与变形窗口定义，已并入 80S58 2D PIV）、Image Processing（80S39，基础图像操作与变换，已并入 80S57 基础包）等。
 Library
 including: rotation, shifting, scaling, high
 DynamicStudio Base

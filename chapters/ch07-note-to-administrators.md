@@ -4,20 +4,7 @@
 
 ## 核心概念
 
-All installation scripts from Dantec Dynamics A/S contain a digital signature (code signing cer-
-tificate) issued by (CA) VeriSign, Inc. (http://www.verisign.com) ensuring correct identity.
-Installation requires administrative privileges, but running can also be done under restricted/limited
-(non-admin) user-accounts. When installing under a restricted/limited user account, the user is
-requested to run (Run As...) the installation as an administrative user.
-Installation requires disabling of User Access Control (UAC). Go to the Windows Control Panel and
-search for UAC to turn it off before installing (requires reboot). It is however highly recommended to
-turn it on again after the installation.
-To accomplish restricted/limited user account support, the following permissions are altered during
-installation:
-l All users ("Everyone") are permitted full file access to the "All Users\Shared Documents\Dantec
-Dynamics" folder including all sub folders.
-l All XML configuration and library files are installed in the "All Users\Shared Documents\Dantec
-Dynamics\Dynamic Studio" folder, allowing shared access for all users.
+Dantec Dynamics 的所有安装脚本均带数字签名（VeriSign 代码签名证书）以确保来源正确。安装需要管理员权限，但也可在受限/非管理员账户下运行（需以管理员身份 "Run As..." 执行安装）。安装前须禁用 Windows 用户账户控制（UAC，需重启），强烈建议安装后重新启用。为支持受限账户，安装过程会修改权限：所有用户（Everyone）对 "All Users\Shared Documents\Dantec Dynamics" 及其子文件夹拥有完全文件访问权；所有 XML 配置与库文件安装到 "All Users\Shared Documents\Dantec Dynamics\Dynamic Studio" 文件夹，供所有用户共享访问。
 
 ## 操作步骤（关键操作）
 

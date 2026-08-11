@@ -4,7 +4,7 @@
 
 ## 核心概念
 
-This section describes the following operation:
+本章描述数据采集相关操作：在 Acquisition Mode 下使用 Acquisition Manager 进行单次或网格化（Grid）采集、通过 Imaging Setup Assistant (ISA) 完成采集设置、远程采集（Remote Controller）以及数据模拟器（Simulator）等。
 
 ## 操作步骤（关键操作）
 

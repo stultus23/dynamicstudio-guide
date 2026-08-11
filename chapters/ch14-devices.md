@@ -4,8 +4,7 @@
 
 ## 核心概念
 
-Devices are the terms for all external hardware connected to DynamicStudio. This includes cam-
-eras, lasers, synchronizers, AD boards etc.
+Devices（设备）指所有连接到 DynamicStudio 的外部硬件，包括相机、激光器、同步器、AD 板等，通过设备树注册与管理。
 
 ## 操作步骤（关键操作）
 

@@ -4,21 +4,7 @@
 
 ## 核心概念
 
-The following printed manuals, user guides and documents contain information that you might find
-helpful as you use this online help file. Some of these manuals are only delivered for specific applic-
-ations and systems
-l 2DPIVReferenceManual- 9040U1752 This manual describes the fundamental techniques of
-PIV. Including seeding, light sources, cameras, the mathematics of PIV data processing and
-using the software.
-l StereoscopicPIVReferenceManual- 9040U4115 This manual describes the fundamental
-techniques of Stereoscopic PIV. Including laser safety, principles in Stereoscopic PIV, cal-
-ibrations, system components, and using the software.
-l Planar-LIFSoftwareInstallation&User'sGuide- 9040U3652 This manual describes the fun-
-damental techniques of liquid LIF. Including theory and practice with planar LIF, using the soft-
-ware for calibration, re-sampling and the quality of planar LIF data.
-l LIFApplicationGuide- 9040U3041 This manual describes the fundamental techniques of gas
-and combustion LIF processes. Including how to handle gas LIF tracers, using the software,
-and the quality of gas and combustion LIF data.
+除本手册外，Dantec 还提供以下配套文档（部分仅随特定应用/系统交付）：2D PIV 参考手册（9040U1752，涵盖示踪粒子、光源、相机、PIV 数据处理数学与软件使用）、体视 PIV 参考手册（9040U4115，涵盖激光安全、体视 PIV 原理、标定与系统组件）、平面 LIF 软件安装与用户指南（9040U3652，涵盖液体 LIF 理论与实践、标定与重采样）、LIF 应用指南（9040U3041，涵盖气体与燃烧 LIF 工艺、示踪剂处理与数据质量）。
 
 ## 操作步骤（关键操作）
 

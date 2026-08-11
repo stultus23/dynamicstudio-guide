@@ -4,21 +4,7 @@
 
 ## 核心概念
 
-This software end user license agreement ("License Agreement") is concluded between you (either
-an individual or a corporate entity) and Dantec Dynamics A/S ("Dantec Dynamics"). Please read all
-terms and conditions of this License Agreement before installing the Software. When you install the
-Software, you agree to be bound by the terms of this License Agreement. If you cannot agree to the
-terms of this License Agreement you may not install or use the software in any manner.
-Grant of License
-This License Agreement together with the Software package including eventual media, user's
-guide and documentation and the invoice constitutes your proof of license and the right to exercise
-the rights herein and must be retained by you.
-One license permits you to use one installation at a time of the Dantec Dynamics software product
-supplied to you (the "Software") including documentation in written or electronic form and solely for
-your own internal business purposes.
-You may not rent, lease, sublicense or otherwise distribute, assign, transfer or make the Software
-available to any third party without the express consent of Dantec Dynamics except to the extent
-specifically permitted by mandatory applicable law.
+本软件最终用户许可协议（License Agreement）由用户（个人或法人）与 Dantec Dynamics A/S 签订。安装软件即表示同意全部条款；不同意则不得以任何方式安装或使用。许可协议连同软件包（含介质、用户指南、文档）与发票构成许可凭证，须妥善保留。每份许可仅允许同时使用一份安装，且仅限内部业务用途；未经 Dantec Dynamics 明确同意，不得出租、租赁、再许可、分发、转让或向第三方提供软件（强制性法律允许的除外）。
 
 ## 操作步骤（关键操作）
 

@@ -4,22 +4,7 @@
 
 ## 核心概念
 
-Item
-Description
-Item No
-Software platform
-DynamicStudio Base Package
-80S57
-Includes automatic device detection, distributed acquis-
-ition, distributed database, camera support, cyclic phe-
-nomena, image stitching, image processing library,
-advanced graphics, proper orthogonal decomposition
-(POD), Matlab link and much more. One license (USB
-dongle).
-Add-ons for PIV:
-2D PIV
-80S58
-Planar Particle
+DynamicStudio 软件平台采用按附加项（Add-On）授权的模式，每个附加项对应一个物料号（Item No）并在加密锁（dongle）中启用。基础包（Base Package, 80S57）已包含设备自动检测、分布式采集、分布式数据库、相机支持、周期现象、图像拼接、图像处理库、高级图形、POD、MATLAB 链接等功能（单许可，USB 加密锁）。PIV 等测量技术通过独立附加项（如 2D PIV 80S58、Planar Particle 等）另行授权。
 Stereoscopic PIV
 80S45
 Image Velocimetry

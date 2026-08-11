@@ -4,10 +4,7 @@
 
 ## 核心概念
 
-We encourage you to sign up for a Software Update Agreement (SUA)
-Please consider registering your product and signing up for a Software Update Agreement, giving
-you accesses to free software updates, manuals and tools. For more information see: Software
-Registration.
+Dantec 建议注册产品并签署软件更新协议（Software Update Agreement, SUA），以获得免费软件更新、手册与工具。更多信息参见软件注册（Software Registration）相关说明。
 
 ## 操作步骤（关键操作）
 

@@ -4,12 +4,7 @@
 
 ## 核心概念
 
-After images and related data is acquired an Analysis can be applied, selecting Analyze... from the
-menu. DynamicStudio includes a wide range of common analysis for image and vector processing,
-LIF, particle sizing, spray diagnostics etc.
-Note
-The different analysis methods available are dependent on the add-on' enabled and installed on
-your system.
+图像及相关数据采集完成后，可通过菜单选择 Analyze... 对数据应用分析。DynamicStudio 内置丰富的图像与矢量处理、LIF、粒子测量、喷雾诊断等常用分析模块。注意：可选分析方法的种类取决于系统上启用并安装的附加项（Add-On）。
 
 ## 操作步骤（关键操作）
 

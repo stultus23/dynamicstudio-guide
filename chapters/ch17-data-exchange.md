@@ -4,18 +4,7 @@
 
 ## 核心概念
 
-You can import images into DynamicStudio using the Image Import option from the File Menu.
-Data can be exported from DynamicStudio to disk through different methods:
-l
-Image export: The dataset is exported as an image that can be viewed and processed by
-external programs
-l Numeric data: The data is exported as a numeric representation to a file. The data rep-
-resentation is similar to that shown in the numeric view.
-l Ensemble zip export: The selected ensembles can be zipped into zip file representing a sub set
-of the existing database.
-l Dataset export: Specific datasets can be selected from the content list to a zip file.
-l Dataset export with dependencies: The selected dataset and its dependencies are com-
-pressed in a zip file.
+可通过 File 菜单的 Image Import 选项将图像导入 DynamicStudio；导出数据到磁盘有多种方式：图像导出（输出为可被外部程序查看/处理的图像）、数值数据导出（以类似数值视图的数值表示写入文件）、Ensemble zip 导出（将选中的 ensemble 打包为 zip，表示数据库的一个子集）、数据集导出（从内容列表选择特定数据集打包为 zip）、带依赖的数据集导出（选中的数据集及其依赖一起压缩为 zip）。
 
 ## 操作步骤（关键操作）
 

@@ -4,11 +4,7 @@
 
 ## 核心概念
 
-The Python integration in DynamicStudio allows the creation of custom analysis methods for
-DynamicStudio in Python.
-The documentation is separate from this manual and is accessed by either clicking the "Help" but-
-ton in "File->Python" or clicking the help icon for the method in the method selection or the method
-itself, as indicated by the green box in the screenshots below:
+Python 集成允许用户在 DynamicStudio 中用 Python 创建自定义分析方法。Python 文档独立于本手册：可通过 "File->Python" 中的 "Help" 按钮，或在方法选择/方法自身的帮助图标（绿色方框所示）打开。
 
 ## 操作步骤（关键操作）
 

@@ -4,20 +4,7 @@
 
 ## 核心概念
 
-The DynamicStudio Image Acquisition System comprises the DynamicStudio software including
-on-line image acquisition. The acquisition system can be configured with the desired parameter set-
-tings and data can be acquired, pre-viewed and saved to disk at the operator needs.
-A comprehensive number of data processing methods are available for analyzing the data after the
-acquisition has been made and the data are saved to disk.
-Normally the acquisition hardware used to control the camera and illumination system (typically a
-laser), hardware synchronization and data acquisition/transfer are installed in the same PC as the
-DynamicStudio software.
-The system supports a multitude of different cameras and can be configured for one or more cam-
-eras (typically using multiple cameras of the same type).
-A synchronization unit is used to generate trigger pulses for all cameras, light sources and/or a shut-
-ter devices.
-For more information about supported devices please see "Cameras" on page 210, "Syn-
-chronizers" on page 315, and "Illumination Systems" on page 405.
+DynamicStudio 图像采集系统由软件及在线图像采集功能构成，可按需配置参数集进行数据采集、预览与存盘；采集完成后可调用大量数据处理方法进行后续分析。控制相机与照明系统（通常为激光）、硬件同步及数据采集/传输的采集硬件通常与软件安装在同一台 PC 上。系统支持多种相机，可配置单台或多台相机（通常为多台同型号），并由同步单元为所有相机、光源及/或快门设备产生触发脉冲。支持的设备参见 "Cameras"（p.210）、"Synchronizers"（p.315）、"Illumination Systems"（p.405）。
 
 ## 操作步骤（关键操作）
 

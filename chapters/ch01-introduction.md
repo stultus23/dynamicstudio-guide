@@ -4,20 +4,7 @@
 
 ## 核心概念
 
-DynamicStudio is the main software solution for image acquisition and analysis in for example the
-PIV, LIF, LII, and Particle Sizing areas. It contains tools for configuration, acquisition, calibration,
-pre-processing, analysis, post-processing of acquired data:
-l The acquisition system includes auto-detection of devices, cable connection diagrams and sup-
-ports distributed acquisition over networks.
-l The innovative and secure ensemble database gives a simple intuitive display of large
-amounts of data.
-l The built-in presentation and analysis modules give you several possibilities and combinations
-of processing and display of data.
-Please read and accept our "Software License Agreement" (on page 21) before using this product!
-We encourage you to sign up for a Software Update Agreement, so that you can download new ver-
-sions of the software.
-Please do not hesitate to contact Dantec Dynamics if you run in to issues with this product, and
-please visit our homepage www.dantecdynamics.com for new information on products and events.
+DynamicStudio 是面向 PIV、LIF、LII、粒子测量等领域的图像采集与分析软件，涵盖设备配置、采集、标定、预处理、分析与后处理的完整工具链：采集系统支持设备自动检测、线缆连接图与网络分布式采集；创新且安全的 ensemble 数据库可直观显示大量数据；内置丰富的展示与分析模块支持多种处理与显示组合。使用前需阅读并接受软件许可协议，建议签署软件更新协议（SUA）以获取新版本，遇到问题可联系 Dantec Dynamics 或访问 www.dantecdynamics.com。
 
 ## 操作步骤（关键操作）
 

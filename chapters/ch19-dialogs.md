@@ -4,7 +4,7 @@
 
 ## 核心概念
 
-You can get help on dialog by pressing the F1 button.
+在任何对话框中按 F1 键即可获取该对话框的帮助。
 
 ## 操作步骤（关键操作）
 

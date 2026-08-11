@@ -4,21 +4,7 @@
 
 ## 核心概念
 
-Please contact Dantec Dynamics' sales staff for information about these products. Feel free to com-
-ment on the application and send ideas and suggestions to your local Dantec Dynamics rep-
-resentative, so we can help improve your work with the Dantec Dynamics products. Also, visit our
-web site at http://www.dantecdynamics.com for support and information regarding hardware and
-software products. As always, we thank you for your continued interest in our products. If you ever
-have any questions or comments, please feel free to contact us.
-Address Information
-Dantec Dynamics A/S
-Tonsbakken 16-18
-P.O. Box 121
-DK-2740 Skovlunde
-Denmark
-Telephone: +45 44 57 80 00
-Fax: +45 44 57 80 01
-For international contacts and sales representatives please visit: Contact Us.
+如需产品信息、应用建议或技术咨询，请联系 Dantec Dynamics 销售团队或本地代表，也可访问官网 www.dantecdynamics.com 获取硬件/软件支持。公司地址：Dantec Dynamics A/S, Tonsbakken 16-18, P.O. Box 121, DK-2740 Skovlunde, Denmark；电话 +45 44 57 80 00，传真 +45 44 57 80 01；国际联系方式与销售代表见官网 "Contact Us" 页面。
 
 ## 操作步骤（关键操作）
 

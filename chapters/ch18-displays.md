@@ -4,20 +4,7 @@
 
 ## 核心概念
 
-Displays are windows for plotting, graphing and visualizing data on the screen. Displays are shown
-in multiple windows inside DynamicStudio.
-There are multiple display-types designed to visualize different types of data. A few are dedicated
-to show results from a specific analysis, while many are general purpose displays, used to show
-results from several different analysis methods.
-Examples frequently used in DynamicStudio are: ...
-l
-Image map
-l Vector map
-l Scalar map
-Most data can also be shown numerically by right-clicking the data ensemble in the database tree
-and picking 'Open as Numeric' in the context menu, or by selecting the ensemble and clicking the
--icon in the toolbar. The actual content of the resulting Numerical Display will of course depend
-on the parent data-set and -type.
+Displays（显示窗口）用于在屏幕上绘制、制图与可视化数据，在 DynamicStudio 内以多个窗口呈现。显示类型有多种，分别针对不同类型的数据：少数专用于展示特定分析结果，多数为通用显示，可展示多种分析方法的结果，常用类型如 Image map（图像图）、Vector map（矢量图）、Scalar map（标量图）。大多数数据也可数值化显示：在数据库树中右键数据 ensemble 选择 "Open as Numeric"，或选中 ensemble 后点击工具栏对应图标；数值显示的实际内容取决于父数据集与数据类型。
 
 ## 操作步骤（关键操作）
 
