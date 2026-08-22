@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "purpose": "High-frequency task routing only. Every final answer must still verify the cited raw text.",
+  "tasks": [
+    { "id": "laser-safety", "title": "激光安全", "intent": "确认 Class III/IV 激光操作前的安全前提与警告", "source": { "chapter": 5, "section": "5.1 Danger of Laser Light", "page": 25 }, "context_to_collect": ["激光类别与型号", "当前操作阶段（对准/采集/维护）", "现场安全规程"], "risk": "high" },
+    { "id": "acquisition-manager", "title": "打开 Acquisition Manager", "intent": "进入采集管理器并确认设备就绪条件", "source": { "chapter": 13, "section": "13.1.1 Opening the Acquisition Manager", "page": 130 }, "context_to_collect": ["Acquisition Mode 状态", "全部设备 Ready 状态", "是否会触发激光"], "risk": "high" },
+    { "id": "grid-generation", "title": "网格化采集", "intent": "创建和编辑 1D/2D/3D Acquisition Grid", "source": { "chapter": 13, "section": "13.1.4", "page": 133 }, "context_to_collect": ["遍历轴数量", "起点/步长/步数", "每个位置的采集参数"], "risk": "medium" },
+    { "id": "device-registration", "title": "设备注册", "intent": "注册受支持的第三方设备并恢复采集能力", "source": { "chapter": 13, "section": "13.2 Device registration", "page": 141 }, "context_to_collect": ["设备型号", "未注册提示", "RegisteredDeviceKeys.zip 可用性"], "risk": "medium" },
+    { "id": "imaging-setup-assistant", "title": "Imaging Setup Assistant", "intent": "建立测量体积、光学几何和相机/镜头配置", "source": { "chapter": 13, "section": "13.5 Imaging Setup Assistant (ISA)", "page": 146 }, "context_to_collect": ["测量技术与介质", "测量体积和 FoV", "相机/镜头与窗口几何"], "risk": "medium" },
+    { "id": "piv-synchronizer", "title": "PIV 同步器接线", "intent": "配置相机、激光和同步器的 PIV 连接", "source": { "chapter": 14, "section": "14.6.2 Setting up the Synchronizer for PIV", "page": 345 }, "context_to_collect": ["相机和激光型号", "单帧/双帧模式", "目标 Trigger rate"], "risk": "high" },
+    { "id": "unequal-camera-trigger-rate", "title": "双相机不同触发率", "intent": "使不同帧率的两台相机同步采集", "source": { "chapter": 14, "section": "14.6.4 Running two cameras synchronized but at different trigger rate", "page": 351 }, "context_to_collect": ["每台相机最大帧率", "Reference time", "每台相机的 Image Buffer 数"], "risk": "high" },
+    { "id": "adaptive-piv", "title": "Adaptive PIV", "intent": "配置自适应互相关速度场分析", "source": { "chapter": 16, "section": "16.6 Adaptive PIV", "page": 485 }, "context_to_collect": ["粒子图像质量和密度", "速度梯度", "ROI、IA 和 Grid Step Size"], "risk": "medium" },
+    { "id": "camera-calibration", "title": "Camera Calibration", "intent": "执行特殊相机标定并建立成像模型", "source": { "chapter": 16, "section": "16.15 Camera Calibration", "page": 541 }, "context_to_collect": ["相机数量", "标定靶类型和图像质量", "目标标定模型"], "risk": "high" },
+    { "id": "calibration-refinement", "title": "Calibration refinement", "intent": "通过粒子图像精化既有相机标定", "source": { "chapter": 16, "section": "16.16 Calibration refinement", "page": 551 }, "context_to_collect": ["既有 IMF", "标定图像与粒子图像", "精化区域和 IA 尺寸"], "risk": "high" },
+    { "id": "dic", "title": "Digital Image Correlation", "intent": "处理散斑图像以获得位移和应变", "source": { "chapter": 16, "section": "16.24 Digital Image Correlation (DIC)", "page": 577 }, "context_to_collect": ["相机配置", "散斑质量", "参考帧与变形帧"], "risk": "medium" },
+    { "id": "modal-analysis", "title": "Modal Analysis", "intent": "执行 POD、sPOD、mPOD 或 FMD", "source": { "chapter": 16, "section": "16.59 Modal Analysis (POD, sPOD, mPOD & FMD)", "page": 722 }, "context_to_collect": ["数据集类型和样本数", "均值/掩模/离群值处理", "分析目标与模态数"], "risk": "medium" },
+    { "id": "moving-average-validation", "title": "Moving Average Validation", "intent": "按邻域一致性识别并替换异常矢量", "source": { "chapter": 16, "section": "16.62 Moving Average Validation", "page": 763 }, "context_to_collect": ["矢量网格尺寸", "邻域 M×N", "接受因子 Ap 与迭代数"], "risk": "medium" },
+    { "id": "multi-camera-calibration", "title": "Multi Camera Calibration", "intent": "为多相机系统生成 IMF", "source": { "chapter": 16, "section": "16.63 Multi Camera Calibration", "page": 765 }, "context_to_collect": ["相机数与几何布局", "标定靶类型", "各相机对应的靶标姿态"], "risk": "high" },
+    { "id": "n-sigma-validation", "title": "N-Sigma Validation", "intent": "用统计分布识别离群样本", "source": { "chapter": 16, "section": "16.64 N-Sigma Validation", "page": 774 }, "context_to_collect": ["样本数量", "变量维数", "接受限 N"], "risk": "medium" },
+    { "id": "peak-validation", "title": "Peak Validation", "intent": "按相关峰特征验证 PIV 位移", "source": { "chapter": 16, "section": "16.67 Peak Validation", "page": 792 }, "context_to_collect": ["相关方法", "Peak Height Ratio 或 S/N-Ratio", "目标相位/图像质量"], "risk": "medium" },
+    { "id": "piv-uncertainty", "title": "PIV Uncertainty", "intent": "估计单个矢量的测量不确定度", "source": { "chapter": 16, "section": "16.70 PIV Uncertainty", "page": 797 }, "context_to_collect": ["父 Vector Map", "所选不确定度方法", "粒子匹配质量"], "risk": "medium" },
+    { "id": "python-link", "title": "Python Link", "intent": "在 DynamicStudio 中调用自定义 Python 分析方法", "source": { "chapter": 16, "section": "16.74 Python Link", "page": 824 }, "context_to_collect": ["DynamicStudio 版本", "Python 环境", "输入/输出数据类型"], "risk": "medium" },
+    { "id": "data-export", "title": "Data Export", "intent": "将数据导出为外部文件格式", "source": { "chapter": 17, "section": "17.2.4 How to Export Data", "page": 1008 }, "context_to_collect": ["数据类型", "目标格式", "是否需要保留单位、坐标和状态码"], "risk": "low" },
+    { "id": "numeric-display", "title": "Numeric Display", "intent": "检查数值表列、单位和矢量状态码", "source": { "chapter": 19, "section": "19.1 Sort", "page": 1088 }, "context_to_collect": ["数据类型", "要检查的列", "状态码或坐标单位"], "risk": "low" }
+  ]
+}

@@ -12,19 +12,21 @@ description: "DynamicStudio Users Guide 8.5（Dantec Dynamics 官方用户手册
 - **操作类问题**（"如何/怎么实现 XX"）→ 先查 `procedures.md`（任务索引，含小节编号+页码），再按页码去 `raw/chXX.txt` 读取完整步骤
 - **功能/参数详情**（"XX 是什么/参数怎么调"）→ 查 `dialogs.md`（参数速查表），需要细节时读对应 raw 章节
 - **章节概览** → 读 `chapters/chXX.md`（每章含完整小节目录+页码+注意事项）
-- **没有命中** → 在 `raw/chXX.txt`（每章完整原文）中用 grep 搜索关键词，最后兜底搜索 `full_text.txt`（全文，含 PAGE|N 页码标记）
+- **检索辅助** → `python search_tool.py "关键词"` 先查索引；确定章节后用 `--source raw --chapter NN` 核验原文；仅在前述来源无命中时用 `--source full` 搜全文
+- **高频任务** → 当问题属于采集、同步、标定、PIV、验证、DIC、模态、导出或数值显示时，读取 [references/high-frequency-tasks.json](references/high-frequency-tasks.json)；其中的任务 ID、前提和风险用于路由，结论仍须由 raw 原文核验
+- **没有命中** → 使用 `rg` 或 `search_tool.py` 在 `raw/chXX.txt` 搜索关键词，最后兜底搜索 `full_text.txt`（全文，含 `PAGE|N` 页码标记）
 
-## 回答协议（How-to 问答强制要求）
+提问中优先识别：**软件版本 + 测量方法 + 硬件/模块 + 目标 + 当前异常或数据条件**。信息不足时，明确说明答案采用的前提；不要把未知的设备型号、授权模块或实验条件填补为事实。
 
-回答操作类问题时，输出必须包含：
+## 回答协议（证据优先）
 
-1. **UI 路径**：在哪个 Ribbon/菜单/面板/对话框中操作（如 "System Control" 面板、"Device properties" 面板）
-2. **编号步骤**：按顺序给出可执行步骤
-3. **关键参数**：涉及参数名（英文原名）+ 含义 + 典型值/建议
-4. **注意事项**：从原文 Note/Warning 提取的坑与警告
-5. **来源引用**：小节编号 + 打印页码（如 `ch16.6 Adaptive PIV, p.485`），便于用户查原手册
+1. 先从 `raw/chXX.txt` 确认与结论直接相关的原文；索引和章节摘要只用于定位，不单独作为操作细节、参数值或警告的依据。每个基于手册的结论均附小节编号和打印页码。
+2. 操作类回答按原文提供**适用条件/前提**、可执行步骤、以及小节编号和打印页码。仅当原文明确给出时，才提供 UI 路径、默认值、典型值或推荐值。
+3. 参数类回答说明参数的原文定义、单位/约束和相互关系（若有）；不得把推断值表述为手册推荐值。
+4. 将手册事实与补充工程判断明确区分：分别标注“手册明确”与“工程建议”。原文缺失时，应说明“未在本手册中定位到”，而不是补造 UI 路径、步骤或数值。
+5. 对激光、同步器接线或可能影响设备安全的操作，先呈现原文中的 Note/Warning 和必要前提；本 skill 不替代现场安全规程、设备手册或 Dantec 技术支持。
 
-搜索降级链：`procedures.md / dialogs.md` → `chapters/chXX.md` → `raw/chXX.txt`（章节完整原文）→ `full_text.txt`（全文 grep）。回答前至少确认一次原文，不要凭手册之外的知识作答；原文缺失时才补充常识并注明。
+搜索降级链：`procedures.md / dialogs.md` → `chapters/chXX.md` → `raw/chXX.txt`（章节完整原文）→ `full_text.txt`（全文）。回答前必须完成原文核验；若补充手册外常识，必须单独标为工程建议。
 
 ## 问答示例
 
@@ -83,6 +85,7 @@ description: "DynamicStudio Users Guide 8.5（Dantec Dynamics 官方用户手册
 - [patterns.md](patterns.md) — 技术模式
 - [cheatsheet.md](cheatsheet.md) — 决策表
 - [troubleshooting.md](troubleshooting.md) — 故障排查指南（常见问题→原因→处置）
+- [references/high-frequency-tasks.json](references/high-frequency-tasks.json) — 20 个高频任务的原文定位、回答前提与风险等级；仅在问题命中相应任务时读取
 - [search_tool.py](search_tool.py) — 搜索工具（支持关键词、页码、章节搜索）
 - `raw/ch01.txt … ch20.txt` — 每章完整原文（按 PAGE|N 页码定位）
 - `full_text.txt` — 全文兜底（1.5 MB）
