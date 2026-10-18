@@ -49,35 +49,41 @@ DynamicStudio 的问题分三种，检索要求完全不同。**分型判断错�
 DynamicStudio 的界面、参数默认值、模块命名在训练数据里零散且容易张冠李戴（尤其"分析模块"在不同大版本间有增删）。所以凡属 A 型，或 C 型/B 型里的**事实点**，必须先运行检索入口取回官方手册原文：
 
 ```powershell
-# --- 解释器与目录解析（三级回退，勿写死单一路径） ---
+# --- 解释器与目录解析（全部走环境变量 + 自动探测，不写死本机路径） ---
 # Python：本技能脚本为纯标准库零依赖，任何 Python 3.8+ 均可运行。
-# 优先级：① 环境变量 DYNAMICSTUDIO_SKILL_PYTHON  ② .dsh runtime  ③ PATH 上的 python
+# 优先级：① 环境变量 DYNAMICSTUDIO_SKILL_PYTHON  ② PATH 上的 python/python3  ③ py 启动器
 $py = $null
-foreach ($c in @($env:DYNAMICSTUDIO_SKILL_PYTHON,
-                 "C:\Users\wsh\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\python\python.exe",
-                 "python")) {
+foreach ($c in @($env:DYNAMICSTUDIO_SKILL_PYTHON, "python", "python3", "py")) {
     if (-not $c) { continue }
-    $cmd = if ($c -eq "python") { (Get-Command python -ErrorAction SilentlyContinue).Source } else { $c }
+    $cmd = if ($c -match '[\\/]') { $c } else { (Get-Command $c -ErrorAction SilentlyContinue).Source }
     if ($cmd -and (Test-Path $cmd)) { $py = $cmd; break }
 }
 if (-not $py) { throw "未找到可用 Python：请设置 DYNAMICSTUDIO_SKILL_PYTHON 或将 python 加入 PATH" }
 $env:PYTHONIOENCODING = "utf-8"   # 防 PowerShell 管道把 UTF-8 输出按 GBK 解码出乱码
 
-# 技能目录：优先环境变量 DYNAMICSTUDIO_SKILL_DIR，其次 opencode 部署副本，再次 .dsh 部署副本
-$S = @($env:DYNAMICSTUDIO_SKILL_DIR,
-       "C:\Users\wsh\.config\opencode\skills\dynamicstudio-guide",
-       "C:\Users\wsh\.dsh\skills\dynamicstudio-guide") |
-     Where-Object { $_ -and (Test-Path "$_\tools\ask.py") } |
-     Select-Object -First 1
+# 技能目录：优先环境变量 DYNAMICSTUDIO_SKILL_DIR（可用它强制指定某个副本）；
+# 未设置时，从各 Agent 约定的 skills 根目录自动探测含 tools/ask.py 的 dynamicstudio-guide 副本。
+$S = $env:DYNAMICSTUDIO_SKILL_DIR
+if (-not ($S -and (Test-Path (Join-Path $S "tools\ask.py")))) {
+    $S = @(
+        "$HOME\.config\opencode\skills\dynamicstudio-guide",   # opencode（用户级）
+        "$HOME\.dsh\skills\dynamicstudio-guide",               # DSH（用户级）
+        "$HOME\.claude\skills\dynamicstudio-guide",            # Claude Code（用户级）
+        ".opencode\skills\dynamicstudio-guide",                # opencode（项目级）
+        ".claude\skills\dynamicstudio-guide"                   # Claude Code（项目级）
+    ) | Where-Object { Test-Path (Join-Path $_ "tools\ask.py") } | Select-Object -First 1
+}
+if (-not $S) { throw "未找到技能目录：请设置 DYNAMICSTUDIO_SKILL_DIR 指向含 tools/ask.py 的 dynamicstudio-guide 目录" }
 
-& $py "$S\tools\ask.py" "<用户的原问题，中文原样照抄>" --top-pages 6
+& $py (Join-Path $S "tools\ask.py") "<用户的原问题，中文原样照抄>" --top-pages 6
 ```
 
-> bash / 其它 shell 下直接用这一行（ask.py 会按自身位置自动定位技能目录）：
+> **更省事的方式**：`ask.py` 会按自身位置（`Path(__file__).parents[1]`）自动定位技能根目录，
+> 所以只要能定位到脚本本身，就不用管技能装在哪、也不必设环境变量。bash / zsh / 其它 shell：
 >
 > ```bash
 > python "<技能根目录>/tools/ask.py" "<用户的原问题，中文原样照抄>" --top-pages 6
-> # 例：python "C:/Users/wsh/.config/opencode/skills/dynamicstudio-guide/tools/ask.py" "怎么设置自适应PIV的查询窗口" --top-pages 6
+> # <技能根目录> 换成你实际的 dynamicstudio-guide 路径即可
 > ```
 
 它会自动完成四件事并把**原始页面全文**交给你：
