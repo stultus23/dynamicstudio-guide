@@ -1,0 +1,33 @@
+{
+  "note": "语料缺口台账（corpus-gaps）。记录三类情况：(1) 用户提到但本手册检索不到的“能力/术语”（corpus-missing）；(2) 手册自身编排缺陷，如印刷目录漏列小节（manual-toc-omission）；(3) 明确不属于本手册范围的内容（out-of-scope）。作用：把“查不到”升级为结论性判断，避免在同一问题上反复换词死循环。新增条目必须写明证据与版本，并标注处置口径。补词条/补小节请用 tools/merge_terms.py、tools/check_tasks.py 自动核对 raw 原文。",
+  "corpus_version": "DynamicStudio 8.5.0058（full_text.txt 扉页 Build no.: 8.5.0058, Publication no.: 9040U1874）",
+  "gaps": [
+    {
+      "term": "13.2.1 Registering 3rd party devices",
+      "aliases": "设备注册 device registration 注册第三方设备 解锁第三方设备",
+      "kind": "manual-toc-omission",
+      "status": "manual-incomplete",
+      "inferred_version": "8.5（正文已含，印刷目录漏列）",
+      "evidence": "正文 raw/ch13.txt 第 141 页存在小节标题“13.2.1 Registering 3rd party devices to unlock and enable full control …”，但 full_text.txt 中官方印刷目录（Table of Content）未列出该小节。tools/build_toc.py 抽取时已自动从正文补录。",
+      "action": "引用该小节时页码以正文 PAGE|141 为准（与 13.2 Device registration p.141 同页起）。references/toc_full.json 已包含此条目：印刷目录 721 条 + 正文补录 1 条 = 722 条。"
+    },
+    {
+      "term": "非 8.5 版本的界面/参数差异",
+      "aliases": "旧版本 版本不同 2021 2023 之前版本 界面不一样",
+      "kind": "version-scope",
+      "status": "out-of-scope",
+      "inferred_version": "语料仅覆盖 8.5.0058",
+      "evidence": "本技能语料为 DynamicStudio 8.5.0058 官方 Users Guide；对“其他版本差异”检索不到任何说明。",
+      "action": "若用户版本 ≠ 8.5，界面命名、对话框位置、参数默认值可能不同：回答须标注 [未覆盖·判断]，并提示以本机版本的 Help / Release Notes 为准，不要凭记忆断言菜单路径。"
+    },
+    {
+      "term": "相机/激光/同步器等硬件规格",
+      "aliases": "硬件手册 相机参数 激光功率 镜头选型 接线 datasheet",
+      "kind": "hardware-scope",
+      "status": "out-of-scope",
+      "inferred_version": "8.5",
+      "evidence": "本 Users Guide 覆盖软件操作（含设备注册 13.2、同步器设置 14.6 等软件侧内容）；硬件选型、规格与电气接线属于 Dantec 各自硬件手册 / datasheet，不在本语料内。",
+      "action": "硬件规格、接线、激光安全距离等以硬件手册为准；本技能只回答软件侧。若软件侧的相机/激光“选择与配置”问题，用 14.5（Cameras p.210）、14.6（Synchronizers p.315）等章节回答。"
+    }
+  ]
+}

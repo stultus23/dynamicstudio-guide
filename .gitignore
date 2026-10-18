@@ -40,3 +40,7 @@ Thumbs.db
 *.bak
 *.log
 *.cache
+
+# 术语回写暂存（tools/merge_terms.py --from）
+references/_terms-pending.json
+
