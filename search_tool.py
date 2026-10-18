@@ -97,6 +97,67 @@ class DynamicStudioSearch:
                 return int(marker.group(1))
         return None
 
+    @staticmethod
+    def _page_blocks(lines: list[str]) -> dict[int, tuple[int, int]]:
+        """把原文切成 ``PAGE|N`` 页块：{打印页: (start, end)}，区间为半开 [start, end)。
+
+        ``PAGE|N`` 是**页首标记**：它之后、下一个标记之前的行都属于第 N 页。
+        """
+        marks: list[tuple[int, int]] = []
+        for index, line in enumerate(lines):
+            marker = PAGE_MARKER.fullmatch(line.strip())
+            if marker:
+                marks.append((int(marker.group(1)), index))
+        blocks: dict[int, tuple[int, int]] = {}
+        for position, (page, marker_index) in enumerate(marks):
+            start = marker_index + 1
+            end = marks[position + 1][1] if position + 1 < len(marks) else len(lines)
+            blocks.setdefault(page, (start, end))
+        return blocks
+
+    def section_spans(self, chapter: int, section: str) -> tuple[int, int] | None:
+        """返回某小节正文在原文中的跨页区间 ``(first_page, last_page)``。
+
+        小节起点按“小节编号（如 ``16.6``）出现在行首”定位；终点是下一个同级或更高级
+        小节标题出现的位置。目录骨架只记录**小节起始页**，而小节正文常跨页，直接用起始页
+        取整页会得到上一小节的内容——这是 ``ask.py`` 曾出现“候选页指向错误内容”的根因。
+        """
+        path = self.raw_dir / f"ch{chapter:02d}.txt"
+        if not path.is_file() or not section:
+            return None
+        lines = path.read_text(encoding="utf-8").splitlines()
+        blocks = self._page_blocks(lines)
+        if not blocks:
+            return None
+        prefix = f"{section} "
+        start_index: int | None = None
+        for index, line in enumerate(lines):
+            stripped = line.strip()
+            if stripped.startswith(prefix) or stripped == section:
+                start_index = index
+                break
+        if start_index is None:
+            return None
+        start_page = self._page_at(lines, start_index)
+        if start_page is None:
+            return None
+        # 找下一个同级/更高级小节标题（如 16.6 → 找 16.7 或 17），限定在同一章内。
+        depth = section.count(".")
+        boundary: int = len(lines)
+        for index in range(start_index + 1, len(lines)):
+            stripped = lines[index].strip()
+            candidate = re.match(r"^(\d+(?:\.\d+)*)\s+\S", stripped)
+            if not candidate:
+                continue
+            number = candidate.group(1)
+            if number.count(".") <= depth and number != section:
+                boundary = index
+                break
+        end_page = self._page_at(lines, boundary - 1) if boundary > 0 else start_page
+        if end_page is None:
+            end_page = start_page
+        return (start_page, max(start_page, end_page))
+
     def _scan(self, keyword: str, paths: Iterable[Path], context_lines: int, *, with_page: bool) -> list[SearchResult]:
         needle = _norm(keyword)
         if not needle:
@@ -179,13 +240,14 @@ class DynamicStudioSearch:
             section = str(entry["section"])
             if needle in _norm(str(entry["title"])) or needle in _norm(section):
                 page = int(entry["page"]) if entry.get("page") is not None else None
+                chapter_of_entry = int(entry["chapter"])
                 results.append(
                     SearchResult(
                         "toc",
                         number,
                         page,
                         f"{section} {entry['title']}  →  p.{page}",
-                        (f"ch{int(entry['chapter']):02d}",),
+                        (f"ch{chapter_of_entry:02d}", section),
                     )
                 )
                 if len(results) >= max_results:

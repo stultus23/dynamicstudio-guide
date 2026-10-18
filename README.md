@@ -91,7 +91,7 @@ dynamicstudio-guide/
 ├── 🔧 troubleshooting.md    # 故障排除指南
 ├── 🔍 search_tool.py        # 检索工具（默认 auto：先索引，无命中自动降级 chapters/raw）
 ├── 🛠️ tools/               # 问答与维护工具
-│   ├── ask.py               # 问题入口：中文问题 → 分型 + 术语展开 + 候选页 + 原页证据包
+│   ├── ask.py               # 问题入口：中文问题 → 分型 + 术语展开 + 候选页（raw 校验）+ 原页证据包
 │   ├── build_toc.py         # 从印刷目录 + 正文标题重抽目录骨架
 │   ├── merge_terms.py       # 术语回写（英文值自动对照原文校验）
 │   └── check_tasks.py       # 校验任务表 section/page 与原文、目录一致性
@@ -102,7 +102,8 @@ dynamicstudio-guide/
 │   └── corpus-gaps.json     # 语料缺口台账
 ├── 🧪 tests/                # 回归测试
 │   ├── test_search_tool.py  # auto 降级 / --chapter 作用域 / 空白归一化 / 0 命中退出码 / TOC
-│   └── test_task_map.py     # 校验任务映射的小节和页码仍存在
+│   ├── test_task_map.py     # 校验任务映射的小节和页码仍存在
+│   └── test_ask_evidence.py # 页锚校验 / 故障分型 / 未收录词降噪 / 截断提示
 ├── 📂 chapters/             # 各章结构化摘要：核心概念+操作步骤+完整小节目录（含页码）+注意事项
 │   ├── ch01-introduction.md
 │   ├── ...
@@ -127,7 +128,8 @@ dynamicstudio-guide/
 ### 搜索工具
 
 ```bash
-python tools/ask.py "<中文问题>" --top-pages 6     # 首选：分型 + 术语展开 + 候选页 + 原页证据包
+python tools/ask.py "<中文问题>" --top-pages 6     # 首选：分型 + 术语展开 + 候选页（raw 校验）+ 原页证据包
+python tools/ask.py "<中文问题>" --page-lines 200  # 单页打印上限（默认 120 行，超限会显式提示截断）
 python search_tool.py "<关键词>"                       # 默认 auto：先索引，无命中自动降级 chapters/raw
 python search_tool.py "<关键词>" --source raw --chapter 16 # 在指定章节原文中核验
 python search_tool.py "<关键词>" --source chapters          # 搜索章节摘要

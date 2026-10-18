@@ -28,6 +28,15 @@
       "inferred_version": "8.5",
       "evidence": "本 Users Guide 覆盖软件操作（含设备注册 13.2、同步器设置 14.6 等软件侧内容）；硬件选型、规格与电气接线属于 Dantec 各自硬件手册 / datasheet，不在本语料内。",
       "action": "硬件规格、接线、激光安全距离等以硬件手册为准；本技能只回答软件侧。若软件侧的相机/激光“选择与配置”问题，用 14.5（Cameras p.210）、14.6（Synchronizers p.315）等章节回答。"
+    },
+    {
+      "term": "DatasetException / Dataset.LoadFile failed to deserialize",
+      "aliases": "failed to deserialize 反序列化 数据集加载失败 打不开数据集 数据库报错 DatasetException exception 异常 报错",
+      "kind": "corpus-missing",
+      "status": "manual-incomplete",
+      "inferred_version": "8.5.0058",
+      "evidence": "在 full_text.txt 与 raw/ 全部 26,165 行中检索 deserialize / Dataset.LoadFile / DatasetException 均 0 命中（search_tool.py 返回 STATUS: NOT_FOUND_IN_DOCSET）。手册不解释 .NET 层序列化异常，也不给该类报错的处置步骤。相邻可用证据只有：数据集按独立文件存放、单个数据集损坏不连累整库（p.55）；DynamicStudio 8 起每条数据集文件格式变更、旧库需用 Database converter 转换（p.64-65）；转换器在库内含已删除内容或旧项目相机 scale factor 不一致时会报错（p.66）；库内移动 ensemble 可能导致依赖丢失并使数据库损坏（p.76）；不可恢复错误会弹出 Dantec Feedback Tool（p.125-126）。",
+      "action": "此类问题归 D 型（故障排查），不要继续换词搜索该报错本身。回答口径：先声明“手册未覆盖该异常”（引用本条台账即可，勿再检索），再按“数据集文件损坏 / 旧版本未转换 / 转换残余缺陷”三条前提推出结论，并附 p.55、p.64-66、p.76、p.125-126 的相邻证据。绝不可把该报错的成因说成手册明文。"
     }
   ]
 }
