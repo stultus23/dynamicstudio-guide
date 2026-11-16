@@ -1,0 +1,15 @@
+[
+  {"q": "Adaptive PIV 的 Grid Step Size 是什么", "expect": [486]},
+  {"q": "grid step size", "expect": [486]},
+  {"q": "怎么标定相机", "expect": [541, 542, 543]},
+  {"q": "双相机触发率不同还能同步吗", "expect": [351], "kind": "B"},
+  {"q": "POD 模态分析怎么做", "expect": [722, 723]},
+  {"q": "N-Sigma 验证参数怎么设", "expect": [774, 775]},
+  {"q": "Universal Outlier Detection 参数", "expect": [936, 937]},
+  {"q": "Stereo PIV 标定精化", "expect": [551, 552]},
+  {"q": "动态去背景怎么做", "expect": [584, 585, 588]},
+  {"q": "怎么画掩模 Define Mask", "expect": [571, 572]},
+  {"q": "Image Min/Mean/Max 怎么用", "expect": [631, 632]},
+  {"q": "Python Link 怎么用", "expect": [824, 825]},
+  {"q": "Acquisition Manager 网格采集", "expect": [130, 131, 132, 133]}
+]

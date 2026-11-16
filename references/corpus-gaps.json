@@ -37,6 +37,42 @@
       "inferred_version": "8.5.0058",
       "evidence": "在 full_text.txt 与 raw/ 全部 26,165 行中检索 deserialize / Dataset.LoadFile / DatasetException 均 0 命中（search_tool.py 返回 STATUS: NOT_FOUND_IN_DOCSET）。手册不解释 .NET 层序列化异常，也不给该类报错的处置步骤。相邻可用证据只有：数据集按独立文件存放、单个数据集损坏不连累整库（p.55）；DynamicStudio 8 起每条数据集文件格式变更、旧库需用 Database converter 转换（p.64-65）；转换器在库内含已删除内容或旧项目相机 scale factor 不一致时会报错（p.66）；库内移动 ensemble 可能导致依赖丢失并使数据库损坏（p.76）；不可恢复错误会弹出 Dantec Feedback Tool（p.125-126）。",
       "action": "此类问题归 D 型（故障排查），不要继续换词搜索该报错本身。回答口径：先声明“手册未覆盖该异常”（引用本条台账即可，勿再检索），再按“数据集文件损坏 / 旧版本未转换 / 转换残余缺陷”三条前提推出结论，并附 p.55、p.64-66、p.76、p.125-126 的相邻证据。绝不可把该报错的成因说成手册明文。"
+    },
+    {
+      "term": "peak locking",
+      "aliases": "峰值锁定 peak locking peak-locking",
+      "kind": "terminology-gap",
+      "status": "absent-in-manual",
+      "inferred_version": "8.5（全文 0 命中）",
+      "evidence": "raw 全文检索 peak locking / peak-locking / 峰值锁定 均为 0 命中；手册用 sub-pixel interpolation、peak validation 等表述描述相关现象，但未使用 peak locking 这一术语。",
+      "action": "按术语缺口处理：不要声称“手册 p.N 有定义”。讲现象时引用 sub-pixel / peak validation 相关原文并标页码，机制解释标 [未覆盖·判断] 并说明适用条件。"
+    },
+    {
+      "term": "window offset",
+      "aliases": "窗口偏移 window offset window shifting 窗口偏移量",
+      "kind": "terminology-gap",
+      "status": "absent-in-manual",
+      "inferred_version": "8.5（全文 0 命中）",
+      "evidence": "raw 全文检索 window offset / 窗口偏移 均为 0 命中；手册在 16.6.6 Reference Vector Map 与 16.6.x 中描述的是 “Interrogation Areas on frame 1 & 2 are offset relative to one another”，用的是 displacement predictor / reference vector map 的说法。",
+      "action": "用 16.6.6 的 offset / displacement predictor 原文回答并标页码（p.495 起），术语本身标 [未覆盖·判断]。"
+    },
+    {
+      "term": "self-calibration",
+      "aliases": "自标定 self-calibration self calibration 自校准",
+      "kind": "terminology-gap",
+      "status": "renamed-in-manual",
+      "inferred_version": "8.5（与通用 PIV 文献用词不同）",
+      "evidence": "raw 全文 0 命中 self-calibration；手册对应能力名为 calibration refinement（16.16，p.551；体积版本 16.108，p.965 起）。",
+      "action": "中文“自标定”已映射到 calibration refinement（references/zh-en-terms.json），回答时用 16.16 原文，不要写 self-calibration 作为手册术语。"
+    },
+    {
+      "term": "quarter rule (1/4 法则)",
+      "aliases": "1/4 法则 四分之一法则 quarter rule quarter displacement rule",
+      "kind": "engineering-rule-gap",
+      "status": "absent-in-manual",
+      "inferred_version": "8.5（全文 0 命中）",
+      "evidence": "raw 全文检索 quarter 为 0 命中；“粒子位移不超过查询窗口 1/4”属工程经验规则，手册只给 IA Size / Grid Step Size 的机制与重叠条件（p.486）。",
+      "action": "该规则登记在 references/param-guidelines.json（source=judgement），回答时必须标 [未覆盖·判断] 并写清适用条件与推翻条件，不得标成手册默认值。"
     }
   ]
 }

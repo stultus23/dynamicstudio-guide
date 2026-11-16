@@ -7,10 +7,12 @@
 用法：
     # 只看会写什么，不落盘（默认）
     python tools/merge_terms.py --add "体视标定=stereo calibration"
+    python tools/merge_terms.py --add "同步=synchronized / synchronization"   # 斜杠分隔多个同义写法
     python tools/merge_terms.py --from pending.json
 
     # 真正并回
     python tools/merge_terms.py --add "体视标定=stereo calibration" --apply
+    python tools/merge_terms.py --from pending.json --apply
 
 pending.json 格式：
     {"体视标定": "stereo calibration", "图像对": "image pair"}
@@ -51,15 +53,20 @@ def load_corpus() -> dict[str, str]:
 
 
 def verify(english: str, corpus: dict[str, str]) -> tuple[bool, str]:
-    needle = _norm(english)
-    if not needle:
+    """英文值可以写多个同义写法（``a / b``），每一个都必须在原文里出现过。"""
+    parts = [part.strip() for part in english.split("/") if part.strip()]
+    if not parts:
         return False, "空值"
-    if len(needle) < 3:
-        return False, "过短（<3 字符），可能是误识别"
-    docs = [name for name, text in corpus.items() if needle in text]
-    if docs:
-        return True, f"命中 {len(docs)} 章：" + ", ".join(docs[:3]) + ("..." if len(docs) > 3 else "")
-    return False, "全部 raw 章节均未命中"
+    checks = []
+    for part in parts:
+        needle = _norm(part)
+        if len(needle) < 3:
+            return False, f"过短（<3 字符）：{part}"
+        docs = [name for name, text in corpus.items() if needle in text]
+        if not docs:
+            return False, f"「{part}」全部 raw 章节均未命中"
+        checks.append(f"{part}@{len(docs)}章")
+    return True, "命中 " + ", ".join(checks)
 
 
 def parse_pairs(args: argparse.Namespace) -> dict[str, str]:

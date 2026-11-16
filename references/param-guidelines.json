@@ -1,0 +1,186 @@
+{
+  "note": "参数推荐与方案确认依据。source=manual 必须给页码（tools/check_guidelines.py 会核对页码存在且该页确实出现相关词）；source=judgement 必须给适用条件（applies_when）与推翻条件（overturn_when），引用时标 [未覆盖·判断]。",
+  "version": "2026.11",
+  "items": [
+    {
+      "id": "piv-ia-displacement",
+      "params": ["interrogation area", "displacement"],
+      "zh": ["查询窗口", "IA", "位移", "粒子位移"],
+      "rule": "粒子在脉冲间隔内的位移不宜超过 IA 边长的 1/4；超过后互相关峰值展宽、偏差增大",
+      "source": "judgement",
+      "applies_when": "标准单帧/双帧互相关 PIV，无窗口偏移与多重迭代",
+      "overturn_when": "启用多重迭代 + 窗口偏移（如 Adaptive PIV，p.485）时可放宽到约 1/2；强剪切/强旋转流场需更保守",
+      "manual_refs": []
+    },
+    {
+      "id": "adaptive-grid-step",
+      "params": ["grid step size"],
+      "zh": ["网格步长", "Grid Step"],
+      "rule": "Grid Step Size 是相邻 IA 中心的像素间距；它小于 IA Size 时 IA 重叠，步长越小矢量越密",
+      "source": "manual",
+      "manual_refs": ["p.486"]
+    },
+    {
+      "id": "adaptive-ia-range",
+      "params": ["interrogation area", "ia size"],
+      "zh": ["IA 尺寸", "查询窗口大小", "最小 IA", "最大 IA"],
+      "rule": "Adaptive PIV 可自动选择每个 IA 的尺寸，但必须给出最小/最大 IA 尺寸限幅；首次迭代总是用允许的最大 IA",
+      "source": "manual",
+      "manual_refs": ["p.486"]
+    },
+    {
+      "id": "piv-dt-selection",
+      "params": ["time between pulses"],
+      "zh": ["时间间隔", "脉冲间隔", "dt", "跨帧时间"],
+      "rule": "Time between pulses 与触发率、图像数一起在采集设置中指定；它直接决定粒子位移量，须与 IA 尺寸匹配",
+      "source": "manual",
+      "manual_refs": ["p.60"]
+    },
+    {
+      "id": "piv-trigger-rate",
+      "params": ["trigger rate"],
+      "zh": ["触发率", "采集频率", "帧率"],
+      "rule": "Trigger rate 可设，但受相机能力上限约束；双相机可以不同触发率同步运行",
+      "source": "manual",
+      "manual_refs": ["p.60", "p.351"]
+    },
+    {
+      "id": "piv-exposure",
+      "params": ["exposure time"],
+      "zh": ["曝光", "曝光时间"],
+      "rule": "曝光时间决定粒子像的亮度与拖影；脉冲宽度/曝光需覆盖激光脉冲并避免明显运动模糊",
+      "source": "manual",
+      "manual_refs": ["p.201"]
+    },
+    {
+      "id": "piv-image-buffer",
+      "params": ["image buffer"],
+      "zh": ["图像缓冲", "缓存帧数", "采集张数"],
+      "rule": "可采集张数受 image buffer 大小限制；双帧模式按帧对占用",
+      "source": "manual",
+      "manual_refs": ["p.60"]
+    },
+    {
+      "id": "vector-validation-nsigma",
+      "params": ["n-sigma"],
+      "zh": ["N-Sigma", "验证阈值", "标准差异值", "离群阈值"],
+      "rule": "N-Sigma 验证以均值 m 与 rms s 判定，剔除偏离超过 N·s 的样本；N 越大保留越多可疑矢量",
+      "source": "manual",
+      "manual_refs": ["p.774"]
+    },
+    {
+      "id": "vector-validation-uod",
+      "params": ["universal outlier detection"],
+      "zh": ["通用奇异值检测", "UOD", "归一化中值检验"],
+      "rule": "UOD 用邻域矢量的归一化中值检验识别并可选替换错误矢量（Westerweel & Scarano 2005）",
+      "source": "manual",
+      "manual_refs": ["p.936"]
+    },
+    {
+      "id": "vector-validation-peak",
+      "params": ["peak validation"],
+      "zh": ["峰值验证", "峰值比", "相关峰值"],
+      "rule": "Peak Validation 按相关峰高度判定：可选相对零峰、相对第二峰等模式；粒子稀少时峰值比不可靠",
+      "source": "manual",
+      "manual_refs": ["p.792"]
+    },
+    {
+      "id": "vector-validation-moving-average",
+      "params": ["moving average"],
+      "zh": ["滑动平均", "移动平均验证", "邻域平均"],
+      "rule": "Moving Average 验证把每个矢量与邻域平均比较，偏离过大者用邻域平均替换；需设平均区域 M×N",
+      "source": "manual",
+      "manual_refs": ["p.763"]
+    },
+    {
+      "id": "vector-validation-range",
+      "params": ["range validation"],
+      "zh": ["范围验证", "速度范围", "矢量长度上限"],
+      "rule": "Range Validation 按用户给定速度范围/矢量长度剔除越界矢量",
+      "source": "manual",
+      "manual_refs": ["p.825"]
+    },
+    {
+      "id": "calibration-refinement-input",
+      "params": ["calibration refinement"],
+      "zh": ["自标定", "标定精化", "精化标定"],
+      "rule": "Calibration refinement 需要一组在标定靶位置附近采集的粒子图像序列，按成像模型拟合修正标定",
+      "source": "manual",
+      "manual_refs": ["p.551", "p.552"]
+    },
+    {
+      "id": "calibration-target-coverage",
+      "params": ["calibration target"],
+      "zh": ["标定靶", "靶标覆盖", "标定板"],
+      "rule": "标定靶应覆盖整个测量视场（含四角），并尽量覆盖测量体厚度方向的多个 Z 位置",
+      "source": "judgement",
+      "applies_when": "针孔/多项式成像模型的双相机或多相机标定",
+      "overturn_when": "使用 Active Target 自动遍历或体积标定时按向导流程摆放即可，但仍须覆盖视场边缘",
+      "manual_refs": []
+    },
+    {
+      "id": "particle-image-diameter",
+      "params": ["particle image"],
+      "zh": ["粒子图像", "粒子像直径", "像元直径"],
+      "rule": "粒子像直径以 2–3 像素为宜：太小易 peak locking，太大降低空间分辨率并增加重叠",
+      "source": "judgement",
+      "applies_when": "互相关 PIV，8/10/12 bit 相机常规光圈设置",
+      "overturn_when": "亚像素插值算法改进（如 Adaptive PIV 的多轮迭代）后可放宽到 ~4 像素；微尺度 PIV 受光学极限约束时不适用",
+      "manual_refs": []
+    },
+    {
+      "id": "seeding-density",
+      "params": ["particle image", "interrogation area"],
+      "zh": ["播撒密度", "示踪粒子浓度", "粒子密度"],
+      "rule": "每个 IA 内 5–15 个粒子对互相关最稳；密度过高会造成散斑去相关，过低则峰值不明显",
+      "source": "judgement",
+      "applies_when": "标准双帧互相关、IA ≥ 16×16 像素",
+      "overturn_when": "使用 ensemble correlation（低密度）或 PTV（极低密度）时按各自方法的要求，不适用本区间",
+      "manual_refs": []
+    },
+    {
+      "id": "light-sheet-thickness",
+      "params": ["light sheet"],
+      "zh": ["片光", "片光厚度", "激光厚度"],
+      "rule": "片光厚度应覆盖被测流场的面外运动范围；厚度不足会造成面外丢失（loss of pairs）",
+      "source": "judgement",
+      "applies_when": "2D2C / Stereo PIV 的平面测量",
+      "overturn_when": "体测量（Tomographic PIV / VV）需要足够厚且均匀的照明体，厚度不再按“越薄越好”评价",
+      "manual_refs": []
+    },
+    {
+      "id": "mask-region",
+      "params": ["define mask"],
+      "zh": ["掩模", "遮罩", "剔除区域"],
+      "rule": "对激光反射、壁面反光等无效区先用 Define Mask 标出，再在该区域排除矢量或做插值",
+      "source": "manual",
+      "manual_refs": ["p.571"]
+    },
+    {
+      "id": "background-removal",
+      "params": ["background removal"],
+      "zh": ["去背景", "背景去除", "动态背景"],
+      "rule": "静态背景用 Background removal（减平均值/最小值）；随时间变化的背景用 Dynamic background removal",
+      "source": "manual",
+      "manual_refs": ["p.584"]
+    },
+    {
+      "id": "stereo-piv-matching",
+      "params": ["stereo piv"],
+      "zh": ["体视 PIV", "立体 PIV", "双相机 PIV"],
+      "rule": "Stereo PIV 两相机需共面标定并经自标定/精化，否则面外分量误差迅速放大",
+      "source": "judgement",
+      "applies_when": "两相机成角度布置的 2D3C 测量，仰角约 30°–45°",
+      "overturn_when": "使用四相机（双平面 Stereo）或层析 PIV 时按各自标定流程；角度过大导致有效重叠区过小则应改布置",
+      "manual_refs": []
+    },
+    {
+      "id": "python-link-usage",
+      "params": ["python link"],
+      "zh": ["Python 链接", "Python 脚本", "脚本扩展"],
+      "rule": "Python Link 用于在 DynamicStudio 中执行自定义 Python 处理；需匹配本机 Python 环境与版本",
+      "source": "manual",
+      "manual_refs": ["p.824"]
+    }
+  ]
+}

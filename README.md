@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/DynamicStudio-8.5-blue?style=for-the-badge&logo=dantec" alt="DynamicStudio 8.5">
-  <img src="https://img.shields.io/badge/Pages-1128-green?style=for-the-badge" alt="1128 Pages">
+  <img src="https://img.shields.io/badge/Pages-1114-green?style=for-the-badge" alt="1114 Pages">
   <img src="https://img.shields.io/badge/Chapters-20-orange?style=for-the-badge" alt="20 Chapters">
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License">
 </p>
@@ -19,7 +19,7 @@
 
 ## 🤔 这是什么？为什么有用？
 
-DynamicStudio 是 Dantec Dynamics 的 **PIV/DIC/BOS/LIF/LII/PTV** 测量系统核心软件。其官方手册长达 **1128 页**，日常使用中"怎么设置某功能""某参数什么意思"极难翻查。
+DynamicStudio 是 Dantec Dynamics 的 **PIV/DIC/BOS/LIF/LII/PTV** 测量系统核心软件。其官方手册长达 **1,114 个打印页**（20 章 / 26,165 行 / 1,080 个 `PAGE|N` 锚点），日常使用中"怎么设置某功能""某参数什么意思"极难翻查。
 
 本技能解决两个问题：
 
@@ -98,11 +98,14 @@ dynamicstudio-guide/
 ├── 📂 references/           # 按需读取的结构化路由资料
 │   ├── high-frequency-tasks.json # 20 个高频任务：原文定位、前提、风险（curated 已校验）
 │   ├── toc_full.json        # 722 条目录骨架（小节 → 标题 → 打印页）
-│   ├── zh-en-terms.json     # 96 条中文→英文手册术语（ask.py 依赖）
+│   ├── zh-en-terms.json     # 中文→英文手册术语（ask.py 依赖）
 │   └── corpus-gaps.json     # 语料缺口台账
 ├── 🧪 tests/                # 回归测试
 │   ├── test_search_tool.py  # auto 降级 / --chapter 作用域 / 空白归一化 / 0 命中退出码 / TOC
 │   ├── test_task_map.py     # 校验任务映射的小节和页码仍存在
+│   ├── test_ask_evidence.py # 页锚错配 / 分型 / 未收录词噪声 / 截断提示回归
+│   ├── test_retrieval_quality.py  # 13 条金标准：top1/top3、输出长度、单次耗时
+│   ├── golden_queries.json  # 检索质量金标准（问题 → 期望页集合）
 │   └── test_ask_evidence.py # 页锚校验 / 故障分型 / 未收录词降噪 / 截断提示
 ├── 📂 chapters/             # 各章结构化摘要：核心概念+操作步骤+完整小节目录（含页码）+注意事项
 │   ├── ch01-introduction.md
@@ -128,8 +131,10 @@ dynamicstudio-guide/
 ### 搜索工具
 
 ```bash
-python tools/ask.py "<中文问题>" --top-pages 6     # 首选：分型 + 术语展开 + 候选页（raw 校验）+ 原页证据包
-python tools/ask.py "<中文问题>" --page-lines 200  # 单页打印上限（默认 120 行，超限会显式提示截断）
+python tools/ask.py "<中文问题>"                   # 首选：分型 + 置信度 + 候选页 + 命中片段（默认 top 3，输出 ≤3,400 字符）
+python tools/ask.py "<中文问题>" --json            # 结构化输出，便于接入其它 Agent
+python tools/ask.py "<中文问题>" --full            # 需要整页上下文时（旧行为）
+python tools/ask.py "<中文问题>" --page-lines 200  # 单页打印上限（片段默认 24 行 / 整页 120 行，超限会显式提示截断）
 python search_tool.py "<关键词>"                       # 默认 auto：先索引，无命中自动降级 chapters/raw
 python search_tool.py "<关键词>" --source raw --chapter 16 # 在指定章节原文中核验
 python search_tool.py "<关键词>" --source chapters          # 搜索章节摘要

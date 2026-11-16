@@ -96,6 +96,19 @@
     "项目": "project",
     "预览": "preview",
     "频率": "frequency",
-    "验证": "validation"
+    "验证": "validation",
+    "片光": "light sheet",
+    "片光厚度": "light sheet",
+    "时间间隔": "time between pulses",
+    "脉冲间隔": "time between pulses",
+    "去背景": "background removal",
+    "背景去除": "background removal",
+    "粒子图像": "particle image",
+    "自标定": "calibration refinement",
+    "数据": "data",
+    "同步": "synchronized / synchronization",
+    "IA": "interrogation area",
+    "安全": "safety",
+    "警告": "warning"
   }
 }
